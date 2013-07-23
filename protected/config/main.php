@@ -2,7 +2,7 @@
 
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
-Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
+Yii::setPathOfAlias('bootstrap', dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'extensions'.DIRECTORY_SEPARATOR.'bootstrap');
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
@@ -57,7 +57,7 @@ return array(
 		    'behaviors' => array(
 		        'auth' => array(
 		        	'class' => 'auth.components.AuthBehavior',
-		        	'admins' => array('admin', 'foo', 'bar'), // users with full access
+		        	'admins' => array('admin'), // users with full access
 		        ),
 		    ),
 	    ),
@@ -95,7 +95,7 @@ return array(
 		),
 		*/
 		// uncomment the following to use a MySQL database
-		
+		/*
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=commerz',
 			'emulatePrepare' => true,
@@ -104,7 +104,7 @@ return array(
 			'charset' => 'utf8',
 			'tablePrefix' => 'cz_',
 		),
-		
+		*/
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
