@@ -1,0 +1,40 @@
+2013/07/26 09:35:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site".' in E:\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#1 E:\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 E:\czshop\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/26 09:35:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site".' in E:\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#1 E:\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 E:\czshop\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/26 09:36:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site".' in E:\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#1 E:\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 E:\czshop\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/26 09:38:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site".' in E:\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#1 E:\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 E:\czshop\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/26 09:38:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site".' in E:\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#1 E:\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 E:\czshop\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
