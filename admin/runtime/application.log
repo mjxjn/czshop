@@ -1,0 +1,98 @@
+2013/07/26 08:31:50 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Access denied.' in E:\czshop\admin\modules\auth\AuthModule.php:122
+Stack trace:
+#0 E:\framework\web\CController.php(263): AuthModule->beforeControllerAction(Object(AssignmentController), Object(CInlineAction))
+#1 E:\framework\web\CWebApplication.php(282): CController->run('')
+#2 E:\framework\web\CWebApplication.php(141): CWebApplication->runController('auth')
+#3 E:\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 E:\czshop\admin.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin.php?r=auth
+---
+2013/07/26 08:31:55 [error] [php] include(LoginForm.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (E:\framework\YiiBase.php:421)
+Stack trace:
+#0 E:\czshop\admin\controllers\SiteController.php(80): spl_autoload_call()
+#1 E:\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#2 E:\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 E:\framework\web\CController.php(286): SiteController->runAction()
+#4 E:\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 E:\framework\web\CWebApplication.php(282): SiteController->run()
+#6 E:\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 E:\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#8 E:\czshop\admin.php(15): CWebApplication->run()
+REQUEST_URI=/admin.php?r=site/login
+in E:\czshop\admin\controllers\SiteController.php (80)
+in E:\czshop\admin.php (15)
+2013/07/26 08:31:56 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Access denied.' in E:\czshop\admin\modules\auth\AuthModule.php:122
+Stack trace:
+#0 E:\framework\web\CController.php(263): AuthModule->beforeControllerAction(Object(AssignmentController), Object(CInlineAction))
+#1 E:\framework\web\CWebApplication.php(282): CController->run('')
+#2 E:\framework\web\CWebApplication.php(141): CWebApplication->runController('auth')
+#3 E:\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 E:\czshop\admin.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin.php?r=auth
+---
+2013/07/26 08:31:58 [error] [php] include(LoginForm.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (E:\framework\YiiBase.php:421)
+Stack trace:
+#0 E:\czshop\admin\controllers\SiteController.php(80): spl_autoload_call()
+#1 E:\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#2 E:\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 E:\framework\web\CController.php(286): SiteController->runAction()
+#4 E:\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 E:\framework\web\CWebApplication.php(282): SiteController->run()
+#6 E:\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 E:\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#8 E:\czshop\admin.php(15): CWebApplication->run()
+REQUEST_URI=/admin.php?r=site/login
+in E:\czshop\admin\controllers\SiteController.php (80)
+in E:\czshop\admin.php (15)
+2013/07/26 08:32:04 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Access denied.' in E:\czshop\admin\modules\auth\AuthModule.php:122
+Stack trace:
+#0 E:\framework\web\CController.php(263): AuthModule->beforeControllerAction(Object(AssignmentController), Object(CInlineAction))
+#1 E:\framework\web\CWebApplication.php(282): CController->run('')
+#2 E:\framework\web\CWebApplication.php(141): CWebApplication->runController('auth')
+#3 E:\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 E:\czshop\admin.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin.php?r=auth
+---
+2013/07/26 08:37:41 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Access denied.' in E:\czshop\admin\modules\auth\AuthModule.php:122
+Stack trace:
+#0 E:\framework\web\CController.php(263): AuthModule->beforeControllerAction(Object(AssignmentController), Object(CInlineAction))
+#1 E:\framework\web\CWebApplication.php(282): CController->run('')
+#2 E:\framework\web\CWebApplication.php(141): CWebApplication->runController('auth')
+#3 E:\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 E:\czshop\admin.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin.php?r=auth
+---
+2013/07/26 08:37:42 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Access denied.' in E:\czshop\admin\modules\auth\AuthModule.php:122
+Stack trace:
+#0 E:\framework\web\CController.php(263): AuthModule->beforeControllerAction(Object(AssignmentController), Object(CInlineAction))
+#1 E:\framework\web\CWebApplication.php(282): CController->run('')
+#2 E:\framework\web\CWebApplication.php(141): CWebApplication->runController('auth')
+#3 E:\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 E:\czshop\admin.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin.php?r=auth
+---
+2013/07/26 08:39:50 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Access denied.' in E:\czshop\admin\modules\auth\AuthModule.php:122
+Stack trace:
+#0 E:\framework\web\CController.php(263): AuthModule->beforeControllerAction(Object(AssignmentController), Object(CInlineAction))
+#1 E:\framework\web\CWebApplication.php(282): CController->run('')
+#2 E:\framework\web\CWebApplication.php(141): CWebApplication->runController('auth')
+#3 E:\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 E:\czshop\admin.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin.php?r=auth
+---
+2013/07/26 08:40:22 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Access denied.' in E:\czshop\admin\modules\auth\AuthModule.php:122
+Stack trace:
+#0 E:\framework\web\CController.php(263): AuthModule->beforeControllerAction(Object(AssignmentController), Object(CInlineAction))
+#1 E:\framework\web\CWebApplication.php(282): CController->run('')
+#2 E:\framework\web\CWebApplication.php(141): CWebApplication->runController('auth')
+#3 E:\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 E:\czshop\admin.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin.php?r=auth
+---

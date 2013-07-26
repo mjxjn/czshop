@@ -9,7 +9,7 @@ defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
 
 require_once($yii);
 //$config = dirname(__FILE__) . '/protected/config/main-admin.php';
-$local=require('./protected/config/main-db.php');
-$base=require('./protected/admin/config/main.php');
+$local=require('./common/config/main-db.php');
+$base=require('./admin/config/main.php');
 $config=CMap::mergeArray($base, $local);
 Yii::createWebApplication($config)->run();
