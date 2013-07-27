@@ -96,3 +96,17 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/admin.php?r=auth
 ---
+2013/07/26 09:49:14 [error] [php] include(ContactForm.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (E:\framework\YiiBase.php:421)
+Stack trace:
+#0 E:\czshop\admin\controllers\SiteController.php(54): spl_autoload_call()
+#1 E:\framework\web\actions\CInlineAction.php(49): SiteController->actionContact()
+#2 E:\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 E:\framework\web\CController.php(286): SiteController->runAction()
+#4 E:\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 E:\framework\web\CWebApplication.php(282): SiteController->run()
+#6 E:\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 E:\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#8 E:\czshop\admin.php(15): CWebApplication->run()
+REQUEST_URI=/admin.php?r=site/contact
+in E:\czshop\admin\controllers\SiteController.php (54)
+in E:\czshop\admin.php (15)

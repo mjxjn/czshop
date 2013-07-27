@@ -38,3 +38,51 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/favicon.ico
 ---
+2013/07/26 09:49:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site".' in E:\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#1 E:\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 E:\czshop\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/26 09:49:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site".' in E:\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#1 E:\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 E:\czshop\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/26 09:49:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site".' in E:\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#1 E:\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 E:\czshop\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/26 09:49:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site".' in E:\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#1 E:\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 E:\czshop\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/26 09:49:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site".' in E:\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#1 E:\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 E:\czshop\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/27 08:33:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site".' in E:\czshop\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#1 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 E:\czshop\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
