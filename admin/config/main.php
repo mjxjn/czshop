@@ -3,13 +3,12 @@
 $admin = dirname(dirname(__FILE__));
 $front = dirname($admin) . DIRECTORY_SEPARATOR . 'www';
 $root = dirname($front);
-
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
 Yii::setPathOfAlias('root', $root);
 Yii::setPathOfAlias('common', $root . DIRECTORY_SEPARATOR . 'common');
-Yii::setPathOfAlias('backend', $root . DIRECTORY_SEPARATOR . 'backend');
-Yii::setPathOfAlias('www', $root . DIRECTORY_SEPARATOR . 'backend' . DIRECTORY_SEPARATOR . 'www');
+Yii::setPathOfAlias('admin', $root . DIRECTORY_SEPARATOR . 'admin');
+Yii::setPathOfAlias('www', $root . DIRECTORY_SEPARATOR . 'www');
 Yii::setPathOfAlias('comext', $root . DIRECTORY_SEPARATOR . 'common' . DIRECTORY_SEPARATOR . 'extensions');
 Yii::setPathOfAlias('bootstrap', $root . DIRECTORY_SEPARATOR . 'common' . DIRECTORY_SEPARATOR . 'extensions' . DIRECTORY_SEPARATOR . 'bootstrap');
 // This is the main Web application configuration. Any writable
@@ -17,11 +16,11 @@ Yii::setPathOfAlias('bootstrap', $root . DIRECTORY_SEPARATOR . 'common' . DIRECT
 
 return array(
 
-	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
+	'basePath'=>$admin,
 	'name'=>'Commerz Board',
 	//'theme'=>'bootstrap',
-    'runtimePath' => $admin . '/runtime',
-
+            'runtimePath' => $admin . '/runtime',
+            'defaultController'=>'index', //设置默认控制器类
 	// autoloading model and component classes
 	'import' => require(dirname(__FILE__) . '/imports.php'),
 

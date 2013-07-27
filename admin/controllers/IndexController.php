@@ -1,7 +1,14 @@
 <?php
 
-class SiteController extends Controller
+class IndexController extends Controller
 {
+	public function filters()
+	{
+		return array(
+		    array('auth.filters.AuthFilter'),
+		  );
+	}
+
 	/**
 	 * Declares class-based actions.
 	 */

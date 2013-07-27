@@ -19,7 +19,7 @@ return array(
 	    'user' => array(
 		    'class' => 'auth.components.AuthWebUser',
 		    'allowAutoLogin' => true,
-		    'loginUrl' => array('site/login'),
+		    'loginUrl' => array('index/login'),
 	    ),
 		// uncomment the following to enable URLs in path-format
 		/*
@@ -35,7 +35,7 @@ return array(
 		// uncomment the following to use a MySQL database
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
-			'errorAction'=>'site/error',
+			'errorAction'=>'index/error',
 		),
 		'log'=>array(
 			'class'=>'CLogRouter',
