@@ -9,6 +9,7 @@ class LoginForm extends CFormModel
 {
 	public $username;
 	public $password;
+	public $verifyCode;
 	public $rememberMe;
 
 	private $_identity;
@@ -22,11 +23,16 @@ class LoginForm extends CFormModel
 	{
 		return array(
 			// username and password are required
-			array('username, password', 'required'),
+			array('username', 'required','message'=>'用户名必填'),
+			array('password', 'required','message'=>'密码必填'),
+			array('username', 'length', 'min'=>5, 'max'=>12,'message'=>'用户名格式不正确'),
+			array('password', 'length', 'min'=>5, 'max'=>12,'message'=>'密码格式不正确'),
+			array('password', 'compare', 'compareAttribute'=>'password2', 'on'=>'register'),
 			// rememberMe needs to be a boolean
-			array('rememberMe', 'boolean'),
+			array('rememberMe', 'boolean', 'on'=>'login'),
 			// password needs to be authenticated
-			array('password', 'authenticate'),
+			array('password', 'authenticate', 'on'=>'login'),
+			array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements(), 'on'=>'login','message'=>'验证码错误'),
 		);
 	}
 
@@ -36,7 +42,10 @@ class LoginForm extends CFormModel
 	public function attributeLabels()
 	{
 		return array(
-			'rememberMe'=>'Remember me next time',
+			'username' => '用户名',
+			'password' => '密码',
+			'rememberMe'=>'下次登录记住密码',
+			'verifyCode'=>'验证码',
 		);
 	}
 
@@ -50,7 +59,7 @@ class LoginForm extends CFormModel
 		{
 			$this->_identity=new UserIdentity($this->username,$this->password);
 			if(!$this->_identity->authenticate())
-				$this->addError('password','Incorrect username or password.');
+				$this->addError('password','用户名或密码错误.');
 		}
 	}
 

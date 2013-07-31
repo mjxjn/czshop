@@ -18,29 +18,31 @@ return array(
 
 	'basePath'=>$admin,
 	'name'=>'Commerz Board',
-	//'theme'=>'bootstrap',
+	'theme'=>'admin-bootcss',
+            'language' => 'zh_cn',
             'runtimePath' => $admin . '/runtime',
             'defaultController'=>'index', //设置默认控制器类
 	// autoloading model and component classes
 	'import' => require(dirname(__FILE__) . '/imports.php'),
 
-    // application components
-    'components' =>  require(dirname(__FILE__) . '/components.php'),
+            'modules' => require(dirname(__FILE__) . '/modules.php'),
 
-    // preloading 'log' component
-    'preload' => require(dirname(__FILE__) . '/preloads.php'),
+            // application components
+            'components' =>  require(dirname(__FILE__) . '/components.php'),
 
-    'modules' => require(dirname(__FILE__) . '/modules.php'),
-    // application-level parameters that can be accessed
-	// using Yii::app()->params['paramName']
-    'params' => require(dirname(__FILE__) . '/params.php'),
+            // preloading 'log' component
+            'preload' => require(dirname(__FILE__) . '/preloads.php'),
 
-    'behaviors' => require(dirname(__FILE__) . '/behaviors.php'),
+            // application-level parameters that can be accessed
+        	// using Yii::app()->params['paramName']
+            'params' => require(dirname(__FILE__) . '/params.php'),
 
-    'controllerMap' => require(dirname(__FILE__) . '/controllerMaps.php'),
+            'behaviors' => require(dirname(__FILE__) . '/behaviors.php'),
 
-    'aliases' => array(
-        //assuming you extracted the files to the extensions folder
-        //  'xupload' => 'ext.xupload',
+            'controllerMap' => require(dirname(__FILE__) . '/controllerMaps.php'),
+
+            'aliases' => array(
+                //assuming you extracted the files to the extensions folder
+                //  'xupload' => 'ext.xupload',
     ),
 );

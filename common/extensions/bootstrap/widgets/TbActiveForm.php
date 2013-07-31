@@ -488,8 +488,8 @@ class TbActiveForm extends CActiveForm
 	{
 		ob_start();
 		$this->getOwner()->widget($this->getInputClassName(), array(
-            'form'=>$this,
-            'type'=>$type,
+            			'form'=>$this,
+            			'type'=>$type,
 			'model'=>$model,
 			'attribute'=>$attribute,
 			'data'=>$data,

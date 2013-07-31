@@ -1782,3 +1782,1103 @@ Stack trace:
 #17 {main}
 REQUEST_URI=/favicon.ico
 ---
+2013/07/29 00:09:40 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/29 04:00:38 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/29 23:56:56 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/30 23:50:20 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/31 00:31:51 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 00:31:51 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/31 00:41:11 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 00:41:12 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/31 00:41:12 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 00:41:13 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/31 00:41:13 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 00:41:13 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/31 00:41:13 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 00:41:13 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/31 00:41:13 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 00:41:13 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/31 00:41:14 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 00:41:14 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/31 00:41:14 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 00:41:14 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/31 00:41:14 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 00:41:14 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/31 00:57:56 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 00:57:56 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/31 00:59:51 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 00:59:51 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/31 00:59:51 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 00:59:52 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/31 00:59:52 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 00:59:52 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/31 01:00:10 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 01:00:10 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/31 01:00:11 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 01:00:11 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/31 01:00:11 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 01:00:11 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/31 01:00:11 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 01:00:12 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/31 01:00:12 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 01:00:12 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/31 01:00:12 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 01:00:12 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 01:00:12 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 01:00:12 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/31 01:00:12 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 01:00:12 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 01:00:12 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 01:00:13 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/07/31 01:00:32 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/index/login/
+---
+2013/07/31 01:00:32 [error] [exception.CException] exception 'CException' with message 'Alias "auth.components.AuthWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in E:\czshop\framework\YiiBase.php:316
+Stack trace:
+#0 E:\czshop\framework\YiiBase.php(196): YiiBase::import('auth.components...', true)
+#1 E:\czshop\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\czshop\framework\base\CModule.php(103): CModule->getComponent('user')
+#3 E:\czshop\www\views\site\index.php(5): CModule->__get('user')
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\www\v...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\www\v...', NULL, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\www\v...', NULL, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 E:\czshop\www\controllers\SiteController.php(30): CController->render('index')
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\czshop\framework\web\CWebApplication.php(282): CController->run('')
+#14 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\czshop\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/favicon.ico
+---

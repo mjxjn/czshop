@@ -2,11 +2,41 @@
 
 class IndexController extends Controller
 {
+	public $layout = '//layouts/main';
+
 	public function filters()
 	{
 		return array(
-		    array('auth.filters.AuthFilter'),
-		  );
+		    'accessControl',
+		);
+	}
+
+	/**
+actions: 设置哪个动作匹配此规则。
+users: 设置哪个用户匹配此规则。 此当前用户的name 被用来匹配. 三种设定字符在这里可以用：
+	*: 任何用户，包括匿名和验证通过的用户。
+	?: 匿名用户。
+	@: 验证通过的用户。
+roles: 设定哪个角色匹配此规则。 这里用到了将在后面描述的role-based access control技术。In particular, the rule is applied if CWebUser::checkAccess returns true for one of the roles.提示，用户角色应该被设置成allow规则，因为角色代表能做某些事情。
+ips: 设定哪个客户端IP匹配此规则。
+verbs: 设定哪种请求类型(例如：GET, POST)匹配此规则。
+expression: 设定一个PHP表达式。它的值用来表明这条规则是否适用。在表达式，你可以使用一个叫$user的变量，它代表的是Yii::app()->user。这个选项是在1.0.3版本里引入的。
+	 * @return [type] [description]
+	 */
+	public function accessRules() {
+	        return array(
+	            array('allow', // Allow registration form for anyone
+			'actions' => array('login', 'captcha', 'error'),
+			'users' => array('*'),
+		),
+		array('allow', // Allow all actions for logged in users ("@")
+			'actions' => array('index', 'logout', 'error'),
+			'users' => array('@'),
+		),
+		array('deny',
+			'users' => array('*'),
+		), 
+	        );
 	}
 
 	/**
@@ -16,9 +46,12 @@ class IndexController extends Controller
 	{
 		return array(
 			// captcha action renders the CAPTCHA image displayed on the contact page
-			'captcha'=>array(
-				'class'=>'CCaptchaAction',
-				'backColor'=>0xFFFFFF,
+			'captcha' => array(
+				'class' => 'CCaptchaAction',
+				'backColor' => 0xFFFFFF,
+				'foreColor' => 0x0099CC,
+				'minLength' => '4',
+				'maxLength' => '4',
 			),
 			// page action renders "static" pages stored under 'protected/views/site/pages'
 			// They can be accessed via: index.php?r=site/page&view=FileName
@@ -54,42 +87,17 @@ class IndexController extends Controller
 	}
 
 	/**
-	 * Displays the contact page
-	 */
-	public function actionContact()
-	{
-		$model=new ContactForm;
-		if(isset($_POST['ContactForm']))
-		{
-			$model->attributes=$_POST['ContactForm'];
-			if($model->validate())
-			{
-				$name='=?UTF-8?B?'.base64_encode($model->name).'?=';
-				$subject='=?UTF-8?B?'.base64_encode($model->subject).'?=';
-				$headers="From: $name <{$model->email}>\r\n".
-					"Reply-To: {$model->email}\r\n".
-					"MIME-Version: 1.0\r\n".
-					"Content-type: text/plain; charset=UTF-8";
-
-				mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
-				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
-				$this->refresh();
-			}
-		}
-		$this->render('contact',array('model'=>$model));
-	}
-
-	/**
 	 * Displays the login page
 	 */
 	public function actionLogin()
 	{
+		var_dump($_POST);
 		$model=new LoginForm;
 
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
 		{
-			echo CActiveForm::validate($model);
+			echo CActiveForm::validate($model, array('username', 'password', 'verifyCode'));
 			Yii::app()->end();
 		}
 
@@ -98,7 +106,7 @@ class IndexController extends Controller
 		{
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
+			if($model->validate(array('username', 'password', 'verifyCode')) && $model->login())
 				$this->redirect(Yii::app()->user->returnUrl);
 		}
 		// display the login form

@@ -1048,3 +1048,290 @@ Stack trace:
 REQUEST_URI=/admin.php?r=index/index
 HTTP_REFERER=http://www.czshop.com/admin.php?r=index/page&view=about
 ---
+2013/07/31 01:24:31 [error] [exception.CException] exception 'CException' with message 'Theme directory "E:\czshop\themes" does not exist.' in E:\czshop\framework\web\CThemeManager.php:110
+Stack trace:
+#0 E:\czshop\framework\web\CThemeManager.php(98): CThemeManager->setBasePath('E:\czshop\theme...')
+#1 E:\czshop\framework\web\CThemeManager.php(60): CThemeManager->getBasePath()
+#2 E:\czshop\framework\web\CWebApplication.php(257): CThemeManager->getTheme('bootcss')
+#3 E:\czshop\framework\web\CController.php(586): CWebApplication->getTheme()
+#4 E:\czshop\framework\web\CController.php(867): CController->getViewFile('login')
+#5 E:\czshop\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#6 E:\czshop\admin\controllers\IndexController.php(133): CController->render('login', Array)
+#7 E:\czshop\framework\web\actions\CInlineAction.php(49): IndexController->actionLogin()
+#8 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 E:\czshop\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 E:\czshop\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 E:\czshop\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 E:\czshop\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 E:\czshop\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 E:\czshop\framework\web\CController.php(291): CFilterChain->run()
+#15 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 E:\czshop\framework\web\CWebApplication.php(282): CController->run('login')
+#17 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('index/login')
+#18 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#19 E:\czshop\admin.php(15): CApplication->run()
+#20 {main}
+REQUEST_URI=/admin.php?r=index/login
+---
+2013/07/31 01:25:02 [error] [exception.CException] exception 'CException' with message 'Theme directory "E:\czshop\themes" does not exist.' in E:\czshop\framework\web\CThemeManager.php:110
+Stack trace:
+#0 E:\czshop\framework\web\CThemeManager.php(98): CThemeManager->setBasePath('E:\czshop\theme...')
+#1 E:\czshop\framework\web\CThemeManager.php(60): CThemeManager->getBasePath()
+#2 E:\czshop\framework\web\CWebApplication.php(257): CThemeManager->getTheme('admin.bootcss')
+#3 E:\czshop\framework\web\CController.php(586): CWebApplication->getTheme()
+#4 E:\czshop\framework\web\CController.php(867): CController->getViewFile('login')
+#5 E:\czshop\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#6 E:\czshop\admin\controllers\IndexController.php(133): CController->render('login', Array)
+#7 E:\czshop\framework\web\actions\CInlineAction.php(49): IndexController->actionLogin()
+#8 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 E:\czshop\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 E:\czshop\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 E:\czshop\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 E:\czshop\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 E:\czshop\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 E:\czshop\framework\web\CController.php(291): CFilterChain->run()
+#15 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 E:\czshop\framework\web\CWebApplication.php(282): CController->run('login')
+#17 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('index/login')
+#18 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#19 E:\czshop\admin.php(15): CApplication->run()
+#20 {main}
+REQUEST_URI=/admin.php?r=index/login
+---
+2013/07/31 01:25:03 [error] [exception.CException] exception 'CException' with message 'Theme directory "E:\czshop\themes" does not exist.' in E:\czshop\framework\web\CThemeManager.php:110
+Stack trace:
+#0 E:\czshop\framework\web\CThemeManager.php(98): CThemeManager->setBasePath('E:\czshop\theme...')
+#1 E:\czshop\framework\web\CThemeManager.php(60): CThemeManager->getBasePath()
+#2 E:\czshop\framework\web\CWebApplication.php(257): CThemeManager->getTheme('admin.bootcss')
+#3 E:\czshop\framework\web\CController.php(586): CWebApplication->getTheme()
+#4 E:\czshop\framework\web\CController.php(867): CController->getViewFile('login')
+#5 E:\czshop\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#6 E:\czshop\admin\controllers\IndexController.php(133): CController->render('login', Array)
+#7 E:\czshop\framework\web\actions\CInlineAction.php(49): IndexController->actionLogin()
+#8 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 E:\czshop\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 E:\czshop\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 E:\czshop\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 E:\czshop\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 E:\czshop\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 E:\czshop\framework\web\CController.php(291): CFilterChain->run()
+#15 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 E:\czshop\framework\web\CWebApplication.php(282): CController->run('login')
+#17 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('index/login')
+#18 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#19 E:\czshop\admin.php(15): CApplication->run()
+#20 {main}
+REQUEST_URI=/admin.php?r=index/login
+---
+2013/07/31 02:20:16 [error] [exception.CException] exception 'CException' with message 'IndexController contains improperly nested widget tags in its view "E:\czshop\themes\admin-bootcss\views/index\login.php". A TbActiveForm widget does not have an endWidget() call.' in E:\czshop\framework\web\CBaseController.php:101
+Stack trace:
+#0 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\theme...', Array, true)
+#1 E:\czshop\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#2 E:\czshop\admin\controllers\IndexController.php(135): CController->render('login', Array)
+#3 E:\czshop\framework\web\actions\CInlineAction.php(49): IndexController->actionLogin()
+#4 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 E:\czshop\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 E:\czshop\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 E:\czshop\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 E:\czshop\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 E:\czshop\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 E:\czshop\framework\web\CController.php(291): CFilterChain->run()
+#11 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 E:\czshop\framework\web\CWebApplication.php(282): CController->run('login')
+#13 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('index/login')
+#14 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 E:\czshop\admin.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/admin.php?r=index/login
+---
+2013/07/31 03:19:46 [error] [exception.CException] exception 'CException' with message 'Property "LoginForm.remember" is not defined.' in E:\czshop\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\czshop\framework\web\helpers\CHtml.php(2255): CComponent->__get('remember')
+#1 E:\czshop\framework\web\helpers\CHtml.php(1506): CHtml::resolveValue(Object(LoginForm), 'remember')
+#2 E:\czshop\framework\web\widgets\CActiveForm.php(747): CHtml::activeCheckBox(Object(LoginForm), 'remember', Array)
+#3 E:\czshop\themes\admin-bootcss\views\index\login.php(38): CActiveForm->checkBox(Object(LoginForm), 'remember', Array)
+#4 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\theme...')
+#5 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\theme...', Array, true)
+#6 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\theme...', Array, true)
+#7 E:\czshop\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#8 E:\czshop\admin\controllers\IndexController.php(109): CController->render('login', Array)
+#9 E:\czshop\framework\web\actions\CInlineAction.php(49): IndexController->actionLogin()
+#10 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\czshop\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 E:\czshop\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 E:\czshop\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 E:\czshop\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 E:\czshop\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 E:\czshop\framework\web\CController.php(291): CFilterChain->run()
+#17 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 E:\czshop\framework\web\CWebApplication.php(282): CController->run('login')
+#19 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('index/login')
+#20 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 E:\czshop\admin.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/admin.php?r=index/login
+---
+2013/07/31 09:17:51 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:17:55 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:17:58 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:18:00 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:18:02 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:18:05 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:19:09 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:19:10 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:19:14 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:19:18 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:20:00 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:20:06 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:20:14 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:20:18 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:20:24 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:22:10 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:22:18 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:42:23 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:42:24 [error] [exception.CException] exception 'CException' with message '属性 "LoginForm.verifyCode" 未被定义.' in E:\czshop\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\czshop\framework\web\helpers\CHtml.php(2255): CComponent->__get('verifyCode')
+#1 E:\czshop\framework\web\helpers\CHtml.php(1980): CHtml::resolveValue(Object(LoginForm), 'verifyCode')
+#2 E:\czshop\framework\web\helpers\CHtml.php(1257): CHtml::activeInputField('text', Object(LoginForm), 'verifyCode', Array)
+#3 E:\czshop\framework\web\widgets\CActiveForm.php(657): CHtml::activeTextField(Object(LoginForm), 'verifyCode', Array)
+#4 E:\czshop\themes\admin-bootcss\views\index\login.php(47): CActiveForm->textField(Object(LoginForm), 'verifyCode')
+#5 E:\czshop\framework\web\CBaseController.php(126): require('E:\czshop\theme...')
+#6 E:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\czshop\theme...', Array, true)
+#7 E:\czshop\framework\web\CController.php(869): CBaseController->renderFile('E:\czshop\theme...', Array, true)
+#8 E:\czshop\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#9 E:\czshop\admin\controllers\IndexController.php(110): CController->render('login', Array)
+#10 E:\czshop\framework\web\actions\CInlineAction.php(49): IndexController->actionLogin()
+#11 E:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 E:\czshop\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 E:\czshop\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 E:\czshop\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 E:\czshop\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 E:\czshop\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 E:\czshop\framework\web\CController.php(291): CFilterChain->run()
+#18 E:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 E:\czshop\framework\web\CWebApplication.php(282): CController->run('login')
+#20 E:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('index/login')
+#21 E:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#22 E:\czshop\admin.php(15): CApplication->run()
+#23 {main}
+REQUEST_URI=/admin.php?r=index/login
+HTTP_REFERER=http://www.czshop.com/admin.php?r=index/login
+---
+2013/07/31 09:42:48 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:43:36 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:45:15 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:45:17 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:45:17 [warning] [application] Failed to set unsafe attribute "verifyCode" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:45:20 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:45:20 [warning] [application] Failed to set unsafe attribute "verifyCode" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:45:23 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:45:23 [warning] [application] Failed to set unsafe attribute "verifyCode" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (104)
+in E:\czshop\admin.php (15)
+2013/07/31 09:46:00 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (105)
+in E:\czshop\admin.php (15)
+2013/07/31 09:46:00 [warning] [application] Failed to set unsafe attribute "verifyCode" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (105)
+in E:\czshop\admin.php (15)
+2013/07/31 09:49:22 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (105)
+in E:\czshop\admin.php (15)
+2013/07/31 09:49:22 [warning] [application] Failed to set unsafe attribute "verifyCode" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (105)
+in E:\czshop\admin.php (15)
+2013/07/31 09:49:41 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (105)
+in E:\czshop\admin.php (15)
+2013/07/31 09:49:41 [warning] [application] Failed to set unsafe attribute "verifyCode" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (105)
+in E:\czshop\admin.php (15)
+2013/07/31 10:01:44 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (105)
+in E:\czshop\admin.php (15)
+2013/07/31 10:01:44 [warning] [application] Failed to set unsafe attribute "verifyCode" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (105)
+in E:\czshop\admin.php (15)
+2013/07/31 10:03:20 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (105)
+in E:\czshop\admin.php (15)
+2013/07/31 10:03:20 [warning] [application] Failed to set unsafe attribute "verifyCode" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (105)
+in E:\czshop\admin.php (15)
+2013/07/31 10:06:41 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (105)
+in E:\czshop\admin.php (15)
+2013/07/31 10:06:41 [warning] [application] Failed to set unsafe attribute "verifyCode" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (105)
+in E:\czshop\admin.php (15)
+2013/07/31 10:06:47 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (105)
+in E:\czshop\admin.php (15)
+2013/07/31 10:06:47 [warning] [application] Failed to set unsafe attribute "verifyCode" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (105)
+in E:\czshop\admin.php (15)
+2013/07/31 10:07:45 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (105)
+in E:\czshop\admin.php (15)
+2013/07/31 10:07:45 [warning] [application] Failed to set unsafe attribute "verifyCode" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (105)
+in E:\czshop\admin.php (15)
+2013/07/31 10:12:03 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (107)
+in E:\czshop\admin.php (15)
+2013/07/31 10:12:03 [warning] [application] Failed to set unsafe attribute "verifyCode" of "LoginForm".
+in E:\czshop\admin\controllers\IndexController.php (107)
+in E:\czshop\admin.php (15)

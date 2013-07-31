@@ -1,6 +1,6 @@
 <?php
 return array(
-		'bootstrap'=>array(
+        'bootstrap'=>array(
             'class'=>'bootstrap.components.Bootstrap',
         ),
         'authManager' => array(
@@ -15,7 +15,8 @@ return array(
 		        	'admins' => array('admin'), // users with full access
 		        ),
 		    ),
-	    ),
+	),
+
 	    'user' => array(
 		    'class' => 'auth.components.AuthWebUser',
 		    'allowAutoLogin' => true,
@@ -29,6 +30,17 @@ return array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+			),
+		),
+		
+		'urlManager' => array(
+		    'urlFormat' => 'path',
+		    'showScriptName' => false,
+		    'urlSuffix' => '/',
+		    'rules' => array(
+				'<controller:\w+>/<id:\d+>' => '<controller>/view',
+				'<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+				'<controller:\w+>/<action:\w+>' => '<controller>/<action>',
 			),
 		),
 		*/
