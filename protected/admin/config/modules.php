@@ -1,6 +1,7 @@
 <?php
 return array(
 	'auth' => array(
+	    	'class' => 'admin.modules.auth.AuthModule', // Path to module in backend.
 		'strictMode' => true, // when enabled authorization items cannot be assigned children of the same type.
 		'userClass' => 'admin', // the name of the user model class.
 		'userIdColumn' => 'admin_id', // the name of the user id column.

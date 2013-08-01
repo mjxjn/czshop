@@ -7,14 +7,11 @@
  */
 class LoginForm extends CFormModel
 {
-	// maximum number of login attempts before display captcha
-	const MAX_LOGIN_ATTEMPTS = 3;
 
 	public $username;
 	public $password;
 	public $verifyCode;
 	public $rememberMe;
-	private $_user = null;
 	private $_identity;
 
 	/**
@@ -35,10 +32,10 @@ class LoginForm extends CFormModel
 			// rememberMe needs to be a boolean
 			array('rememberMe', 'boolean', 'on'=>'login'),
 			// password needs to be authenticated
-			array('password', 'authenticate', 'on'=>'login'),
-			array('verifyCode', 'validateCaptcha'),
+			array('password', 'authenticate'),
+
 			array('verifyCode','required','message'=>'验证码必填'),
-			array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements(), 'on'=>'login'),
+			array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
 		);
 	}
 
@@ -65,30 +62,11 @@ class LoginForm extends CFormModel
 		{
 			$this->_identity=new UserIdentity($this->username,$this->password);
 			if(!$this->_identity->authenticate()){
-				if (($user = $this->user) !== null && $user->login_attempts < 100)
-					$user->saveAttributes(array('login_attempts' => $user->login_attempts + 1));
 				$this->addError('password','用户名或密码错误.');
 			}
 		}
 	}
 
-	/**
-	 * Validates captcha code
-	 * @param $attribute
-	 * @param $params
-	 */
-	public function validateCaptcha($attribute, $params) {
-		if ($this->getRequireCaptcha())
-			CValidator::createValidator('captcha', $this, $attribute, $params)->validate($this);
-	}
-
-	/**
-	 * Returns whether it requires captcha or not
-	 * @return bool
-	 */
-	public function getRequireCaptcha() {
-		return ($user = $this->user) !== null && $user->login_attempts >= self::MAX_LOGIN_ATTEMPTS;
-	}
 
 	/**
 	 * Logs in the user using the given username and password in the model.
@@ -111,14 +89,4 @@ class LoginForm extends CFormModel
 			return false;
 	}
 
-	/**
-	 * Returns
-	 * @return null
-	 */
-	public function getUser() {
-		if ($this->_user === null) {
-			$this->_user = Admin::model()->find(array('condition' => 'LOWER(admin_name)=:loginname', 'params' => array(':loginname' => strtolower($this->username))));
-		}
-		return $this->_user;
-	}
 }

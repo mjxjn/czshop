@@ -20,6 +20,7 @@ return array(
 	    'user' => array(
 		    'class' => 'auth.components.AuthWebUser',
 		    'allowAutoLogin' => true,
+		    'stateKeyPrefix' => 'admin_',
 		    'loginUrl' => array('index/login'),
 	    ),
 		// uncomment the following to enable URLs in path-format

@@ -3,7 +3,8 @@ return array(
 
 	'application.models.*',
           'application.components.*',
+          'admin.models.Admin',
           'admin.models.*',
-	'admin.modules.*',
 	'admin.components.*',
+	'ext.*',
 );

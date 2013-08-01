@@ -2,10 +2,11 @@
 
 $admin=dirname(dirname(__FILE__));
 $front=dirname($admin);
-
+$root = dirname($front);
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
 Yii::setPathOfAlias('root', $root);
+Yii::setPathOfAlias('front', $front);
 Yii::setPathOfAlias('admin', $admin);
 Yii::setPathOfAlias('bootstrap', $front . DIRECTORY_SEPARATOR . 'extensions' . DIRECTORY_SEPARATOR . 'bootstrap');
 // This is the main Web application configuration. Any writable
@@ -18,6 +19,7 @@ return array(
 	'theme'=>'admin-bootcss',
             'language' => 'zh_cn',
             'controllerPath' => $admin . '/controllers',
+            'viewPath' => $admin . '/views',
             'runtimePath' => $admin . '/runtime',
             'defaultController'=>'index', //设置默认控制器类
 	// autoloading model and component classes

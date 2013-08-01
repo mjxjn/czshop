@@ -17,7 +17,6 @@
 						'id'=>'login-form',
 						'enableAjaxValidation'=>true,
 						'enableClientValidation'=>true,
-						//'focus'=>array($model,'username'),
 						'htmlOptions'=>array('class'=>'form-horizontal'),
 						'clientOptions'=>array(
 							'validateOnSubmit'=>true,
@@ -30,7 +29,7 @@
 							<div class="clearfix"></div>
 
 							<div class="input-prepend" title="Password" data-rel="tooltip">
-								<span class="add-on"><i class="icon-lock"></i></span><?php echo $form->passwordField($model,'password',array('class'=>'input-large span10','value'=>'admin123456'));?><?php echo $form->error($model,'password'); ?>
+								<span class="add-on"><i class="icon-lock"></i></span><?php echo $form->passwordField($model,'password',array('class'=>'input-large span10','value'=>'admin'));?><?php echo $form->error($model,'password'); ?>
 							</div>
 							<div class="clearfix"></div>
 
