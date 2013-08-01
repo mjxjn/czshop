@@ -1,21 +1,19 @@
 <?php
 
-$admin = dirname(dirname(__FILE__));
-$front = $root . DIRECTORY_SEPARATOR . 'www';
+$admin=dirname(dirname(__FILE__));
+$front=dirname($admin);
+
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
 Yii::setPathOfAlias('root', $root);
-Yii::setPathOfAlias('common', $common);
-Yii::setPathOfAlias('admin', $root . DIRECTORY_SEPARATOR . 'admin');
-Yii::setPathOfAlias('www', $root . DIRECTORY_SEPARATOR . 'www');
-Yii::setPathOfAlias('comext', $root . DIRECTORY_SEPARATOR . 'common' . DIRECTORY_SEPARATOR . 'extensions');
-Yii::setPathOfAlias('bootstrap', $root . DIRECTORY_SEPARATOR . 'common' . DIRECTORY_SEPARATOR . 'extensions' . DIRECTORY_SEPARATOR . 'bootstrap');
+Yii::setPathOfAlias('admin', $admin);
+Yii::setPathOfAlias('bootstrap', $front . DIRECTORY_SEPARATOR . 'extensions' . DIRECTORY_SEPARATOR . 'bootstrap');
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 
 return array(
 
-	'basePath'=>'admin',
+	'basePath'=>$front,
 	'name'=>'Commerz Board',
 	'theme'=>'admin-bootcss',
             'language' => 'zh_cn',
@@ -23,7 +21,7 @@ return array(
             'runtimePath' => $admin . '/runtime',
             'defaultController'=>'index', //设置默认控制器类
 	// autoloading model and component classes
-	'import' => require(dirname(__FILE__) . '/imports.php'),
+	  'import' => require(dirname(__FILE__) . '/imports.php'),
 
             'modules' => require(dirname(__FILE__) . '/modules.php'),
 
@@ -44,5 +42,6 @@ return array(
             'aliases' => array(
                 //assuming you extracted the files to the extensions folder
                 //  'xupload' => 'ext.xupload',
-    ),
+                'auth' => 'admin.modules.auth',
+            ),
 );

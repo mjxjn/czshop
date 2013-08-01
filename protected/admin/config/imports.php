@@ -1,8 +1,9 @@
 <?php
 return array(
-	'admin.models.Admin',
-	'admin.models.LoginForm',
+
+	'application.models.*',
+          'application.components.*',
+          'admin.models.*',
 	'admin.modules.*',
 	'admin.components.*',
-	'common.components.*',
 );
