@@ -95,6 +95,8 @@ expression: 设定一个PHP表达式。它的值用来表明这条规则是否�
 	 */
 	public function actionLogin()
 	{
+		if(isset(Yii::app()->user->_id))
+			$this->redirect(Yii::app()->homeUrl);
 		$model=new LoginForm;
 
 		// if it is ajax validation request

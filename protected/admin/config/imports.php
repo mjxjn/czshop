@@ -1,10 +1,8 @@
 <?php
 return array(
-
 	'application.models.*',
-          'application.components.*',
-          'admin.models.Admin',
-          'admin.models.*',
-	'admin.components.*',
+            'application.components.*',
+            'back.models.*',
+	'back.components.*',
 	'ext.*',
 );
