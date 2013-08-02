@@ -95,6 +95,8 @@ expression: 设定一个PHP表达式。它的值用来表明这条规则是否�
 	 */
 	public function actionLogin()
 	{
+		if(isset(Yii::app()->user->_id))
+			$this->redirect(Yii::app()->homeUrl);
 		$model=new LoginForm;
 
 		// if it is ajax validation request
@@ -116,24 +118,6 @@ expression: 设定一个PHP表达式。它的值用来表明这条规则是否�
 		$this->render('login',array('model'=>$model));
 	}
 
-public function generateSalt($cost = 10) {
-		if (!is_numeric($cost) || $cost < 4 || $cost > 31) {
-		    throw new CException(Yii::t('Cost parameter must be between 4 and 31.'));
-		}
-		// Get some pseudo-random data from mt_rand().
-		$rand = '';
-		for ($i = 0; $i < 8; ++$i)
-		    $rand.=pack('S', mt_rand(0, 0xffff));
-		// Add the microtime for a little more entropy.
-		$rand.=microtime();
-		// Mix the bits cryptographically.
-		$rand = sha1($rand, true);
-		// Form the prefix that specifies hash algorithm type and cost parameter.
-		$salt = '$2a$' . str_pad((int) $cost, 2, '0', STR_PAD_RIGHT) . '$';
-		// Append the random salt string in the required base64 format.
-		$salt.=strtr(substr(base64_encode($rand), 0, 22), array('+' => '.'));
-		return $salt;
-	    }
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */

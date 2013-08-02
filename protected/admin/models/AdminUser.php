@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "{{admin}}".
+ * This is the model class for table "{{admin_user}}".
  *
- * The followings are the available columns in table '{{admin}}':
+ * The followings are the available columns in table '{{admin_user}}':
  * @property integer $admin_id
  * @property string $admin_name
  * @property string $password
@@ -13,7 +13,7 @@
  * @property string $login_count
  * @property integer $add_time
  */
-class Admin extends CActiveRecord
+class AdminUser extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
@@ -30,7 +30,7 @@ class Admin extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{admin}}';
+		return '{{admin_user}}';
 	}
 
 	/**

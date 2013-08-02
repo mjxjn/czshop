@@ -19,7 +19,7 @@ class UserIdentity extends CUserIdentity
 	public function authenticate()
 	{
 		//$users=Admin::model()->find('LOWER(admin_name)=?',array(strtolower($this->username)));
-		$user=Admin::model()->find(array('condition' => 'LOWER(admin_name)=:loginname', 'params' => array(':loginname' => strtolower($this->username))));
+		$user=AdminUser::model()->find(array('condition' => 'LOWER(admin_name)=:loginname', 'params' => array(':loginname' => strtolower($this->username))));
 		if($user===null)
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
 		else if(!$user->validatePassword($this->password))
