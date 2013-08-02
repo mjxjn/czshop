@@ -115,7 +115,7 @@ expression: 设定一个PHP表达式。它的值用来表明这条规则是否�
 				$this->redirect(Yii::app()->user->returnUrl);
 		}
 		// display the login form
-		$this->render('login',array('model'=>$model));
+		$this->renderPartial('login',array('model'=>$model));
 	}
 
 	/**

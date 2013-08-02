@@ -3,7 +3,7 @@ return array(
 	'auth' => array(
 	    	'class' => 'admin.modules.auth.AuthModule', // Path to module in backend.
 		'strictMode' => true, // when enabled authorization items cannot be assigned children of the same type.
-		'userClass' => 'admin', // the name of the user model class.
+		'userClass' => 'AdminUser', // the name of the user model class.
 		'userIdColumn' => 'admin_id', // the name of the user id column.
 	    	'userNameColumn' => 'admin_name', // the name of the user name column.
 		'appLayout' => 'application.views.layouts.main', // the layout used by the module.
