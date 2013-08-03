@@ -77,7 +77,6 @@
 		</div>
 	</div>
 </div>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
 	function show_region(id,grade){
 		$.post("/admin.php?r=area/ajaxregion","ajax=ajax&id="+id+"&grade="+grade,function(msg){
