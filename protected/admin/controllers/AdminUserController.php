@@ -117,10 +117,21 @@ class AdminUserController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('AdminUser');
+		/*
+		 $dataProvider=new CActiveDataProvider('AdminUser');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
+		*/
+		$condition = 'status = 0';
+		$count = AdminUser::model()->count(array('condition'=>$condition));
+		$pages = new CPagination($count);
+		$pages->pageSize = 20; //分页显示条数
+		$pages->pageVar = 'p';
+
+		$adminUserList = AdminUser::model()->findAll(array('condition'=>$condition,'limit'=>$pages->pageSize,'offset'=>$pages->currentPage*$pages->pageSize,'order'=>'admin_id asc'));
+
+		$this->render('index', compact('adminUserList', 'pages'));
 	}
 
 	/**
