@@ -1,125 +1,103 @@
-<?php
-/* @var $this AdminUserController */
-/* @var $dataProvider CActiveDataProvider */
+<div>
+	<ul class="breadcrumb">
+		<li>
+			<a href="#">Home</a>
+			<span class="divider">/</span>
+		</li>
+		<li>
+			<a href="#">Admin User</a>
+		</li>
+	</ul>
+</div>
 
-$this->breadcrumbs=array(
-	'Admin Users',
-);
-
-$this->menu=array(
-	array('label'=>'Create AdminUser', 'url'=>array('create')),
-	array('label'=>'Manage AdminUser', 'url'=>array('admin')),
-);
-?>
-
-			<div>
-				<ul class="breadcrumb">
-					<li>
-						<a href="#">Home</a> <span class="divider">/</span>
-					</li>
-					<li>
-						<a href="#">Admin User</a>
-					</li>
-				</ul>
+<div class="row-fluid sortable">
+	<div class="box span12">
+		<div class="box-header well" data-original-title>
+			<h2> <i class="icon-user"></i>
+				Members
+			</h2>
+			<div class="box-icon">
+				<a href="#" class="btn btn-setting btn-round"> <i class="icon-cog"></i>
+				</a>
+				<a href="#" class="btn btn-minimize btn-round">
+					<i class="icon-chevron-up"></i>
+				</a>
+				<a href="#" class="btn btn-close btn-round">
+					<i class="icon-remove"></i>
+				</a>
 			</div>
+		</div>
+		<div class="box-content">
+			<table class="table table-striped table-bordered">
+				<thead>
+					<th>管理员ID</th>
+					<th>管理员帐号</th>
+					<th>邮箱</th>
+					<th>最后登录时间</th>
+					<th>最后登录IP</th>
+					<th>登录次数</th>
+					<th>创建时间</th>
+					<th>操作</th>
+				</thead>
+				<tbody>
+					<?php foreach($adminUserList as $row):?>
+					<tr>
+						<td>
+							<?php echo $row['admin_id'] ?></td>
+						<td class="center">
+							<?php echo $row['admin_name'] ?></td>
+						<td class="center">
+							<?php echo $row['email'] ?></td>
+						<td class="center">
+							<?php echo $row['last_login'] ?></td>
+						<td class="center">
+							<?php echo $row['last_ip'] ?></td>
+						<td class="center">
+							<?php echo $row['login_count'] ?></td>
+						<td class="center">
+							<?php echo $row['add_time'] ?></td>
+						<td class="center">
+							<?php echo CHtml::link('<i class="icon-zoom-in icon-white"></i>
+								View', array('adminuser/view','id'=>$row['admin_id']),array(
+									'class'=>'btn btn-success',
+								)); ?>
+							
+							<a class="btn btn-info" href="#">
+								<i class="icon-edit icon-white"></i>
+								Edit
+							</a>
+							<a class="btn btn-danger" href="#">
+								<i class="icon-trash icon-white"></i>
+								Delete
+							</a>
+						</td>
+					</tr>
+					<?php endforeach;?>
+				</tbody>
+			</table>
+			<div class="pagination pagination-centered">
+						  <?php
+			  				$this->widget('CLinkPager',array(
+			  				        'selectedPageCssClass'=>'active',
+			  				        'hiddenPageCssClass'=>'',
+							        'header'=>'',
+							        'firstPageLabel' => '首页',
+							        'lastPageLabel' => '末页',
+							        'prevPageLabel' => '上一页',
+							        'nextPageLabel' => '下一页',
+							        'pages' => $pages,
+							        'maxButtonCount'=>13,
+							        'htmlOptions'=>array(
+							        		'class'=>'',
+							        		'id'=>'',
+							        	)
+						        )
+						    );
+						?>
+			</div>   
+		</div>
+	</div>
+	<!--/span-->
 
-
-
-							<?php $this->widget('zii.widgets.CListView', array(
-
-    'dataProvider'=>$dataProvider,
-
-
-    'itemView'=>'_view',
-
-    'template'=>'<div class="row-fluid sortable">		
-				<div class="box span12">
-					<div class="box-header well" data-original-title>
-						<h2><i class="icon-user"></i> Members</h2>
-						<div class="box-icon">
-							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
-							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
-						</div>
-					</div>
-					<div class="box-content">
-						<table class="table table-striped table-bordered">
-						  <thead>
-							  <th>管理员ID</th>
-								  <th>管理员帐号</th>
-								  <th>邮箱</th>
-								  <th>最后登录时间</th>
-								  <th>最后登录IP</th>
-								  <th>登录次数</th>
-								  <th>创建时间</th>
-								  <th>操作</th>
-						  </thead>   
-						  <tbody>
-							{items}
-						  </tbody>
-					  </table>
-
-					  	
-					  	{pager}
-						    
-					</div>
-				</div><!--/span-->
-			
-			</div><!--/row-->',
-
-    //template是整个CListView的模板：
-
-    //{summary}的位置会显示基本描述，可修改summaryText项来设置描述的模板
-
-    //{sorter}的位置会显示更改排序方式的按钮，需要定义sortableAttributes项来描述哪一属性是可排序的
-
-    //{items}的位置会显示列表，列表中每一项的格式来自itemView项定义的文件
-
-    //{pager}的位置会显示分页器，可通过定义pager项来设定分页器的显示方式
-
- 
-
-    //'summaryCssClass'=>'summary_container',//定义summary的div容器的class
-
-    //'summaryText'=>'共{count}条，当前页显示第{start}-{end}条',
-
-    //定义summary的显示内容，其中可用到以下变量：
-
-    //{start}表示本页的第一条是全部中的第几条
-
-    //{end}表示本页最后一条是全部中的第几条
-
-    //{count}表示全部共几条
-
-    //{page}表示当前页码
-
-    //{pages}表示总页数
-
- 
-
-   // 'sortableAttributes'=>array('title','create_time'),//定义可排序的属性
-
-  //  'sorterCssClass'=>'sorter_container',//定义sorter的div容器的class
-
-  //  'sorterHeader'=>'更改排序：',//定义的文字显示在sorter可排序属性的前面
-
-  //  'sorterFooter'=>'',//定义的文字显示在sorter可排序属性的后面
-
- 
-
-    'pagerCssClass'=>'pagination pagination-centered',//定义pager的div容器的class
-
-    'pager'=>array(
-
-        'class'=>'CLinkPager',//定义要调用的分页器类，默认是CLinkPager，需要完全自定义，还可以重写一个，参考我的另一篇博文：http://blog.sina.com.cn/s/blog_71d4414d0100yu6k.html
-        'cssFile'=>false,//定义分页器的要调用的css文件，false为不调用，不调用则需要亲自己css文件里写这些样式
-        'header'=>'转往分页：',//定义的文字将显示在pager的最前面
-        'footer'=>'',//定义的文字将显示在pager的最后面
-        'firstPageLabel'=>'首页',//定义首页按钮的显示文字
-        'lastPageLabel'=>'尾页',//定义末页按钮的显示文字
-        'nextPageLabel'=>'下一页',//定义下一页按钮的显示文字
-        'prevPageLabel'=>'前一页',//定义上一页按钮的显示文字
-
-        //关于分页器这个array，具体还有很多属性，可参考CLinkPager的API
-    ),
-));?>
+</div>
+<!--/row-->
