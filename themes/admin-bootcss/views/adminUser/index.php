@@ -30,9 +30,7 @@
 		<div class="box-content">
 			<table class="table table-striped table-bordered">
 				<thead>
-					<th>管理员ID</th>
 					<th>管理员帐号</th>
-					<th>邮箱</th>
 					<th>最后登录时间</th>
 					<th>最后登录IP</th>
 					<th>登录次数</th>
@@ -42,12 +40,8 @@
 				<tbody>
 					<?php foreach($adminUserList as $row):?>
 					<tr>
-						<td>
-							<?php echo $row['admin_id'] ?></td>
 						<td class="center">
 							<?php echo $row['admin_name'] ?></td>
-						<td class="center">
-							<?php echo $row['email'] ?></td>
 						<td class="center">
 							<?php echo F::format_date($row['last_login']); ?></td>
 						<td class="center">
@@ -57,16 +51,16 @@
 						<td class="center">
 							<?php echo F::format_date($row['add_time']); ?></td>
 						<td class="center">
+							<?php echo CHtml::link('<i class="icon-edit icon-white"></i>
+								编辑',array('adminuser/update','id'=>$row['admin_id']),array('class'=>'btn btn-info'));?>
 							<?php echo CHtml::link('<i class="icon-zoom-in icon-white"></i>
-								View', array('adminuser/view','id'=>$row['admin_id']),array(
+								权限', array('#','id'=>$row['admin_id']),array(
 									'class'=>'btn btn-success',
 								)); ?>
-							<?php echo CHtml::link('<i class="icon-edit icon-white"></i>
-								Edit',array('adminuser/update','id'=>$row['admin_id']),array('class'=>'btn btn-info'));?>
-							<a class="btn btn-danger" href="#">
-								<i class="icon-trash icon-white"></i>
-								Delete
-							</a>
+							<?php echo CHtml::link('<i class="icon-trash icon-white"></i>
+								删除', array('adminuser/delete','id'=>$row['admin_id']),array(
+									'class'=>'btn btn-danger',
+								)); ?>
 						</td>
 					</tr>
 					<?php endforeach;?>

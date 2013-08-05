@@ -10,7 +10,7 @@ class AdminUserController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
+			//'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
 
@@ -89,6 +89,9 @@ class AdminUserController extends Controller
 		if(isset($_POST['AdminUser']))
 		{
 			$model->attributes=$_POST['AdminUser'];
+			if ($_POST['AdminUser']['password'] !== '') {
+		                $model->password = md5($_POST['AdminUser']['password']);
+		           }
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->admin_id));
 		}
@@ -117,10 +120,21 @@ class AdminUserController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('AdminUser');
+		/*
+		 $dataProvider=new CActiveDataProvider('AdminUser');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
+		*/
+		$condition = 'status = 0';
+		$count = AdminUser::model()->count(array('condition'=>$condition));
+		$pages = new CPagination($count);
+		$pages->pageSize = 20; //分页显示条数
+		$pages->pageVar = 'p';
+
+		$adminUserList = AdminUser::model()->findAll(array('condition'=>$condition,'limit'=>$pages->pageSize,'offset'=>$pages->currentPage*$pages->pageSize,'order'=>'admin_id asc'));
+
+		$this->render('index', compact('adminUserList', 'pages'));
 	}
 
 	/**

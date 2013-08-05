@@ -3759,3 +3759,68 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/admin.php?r=adminuser/creat
 ---
+2013/08/05 14:12:37 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in D:\czshop\protected\admin\controllers\IndexController.php (112)
+in D:\czshop\admin.php (17)
+2013/08/05 14:12:59 [warning] [application] Failed to set unsafe attribute "password2" of "AdminUser".
+in D:\czshop\protected\admin\controllers\AdminUserController.php (91)
+in D:\czshop\admin.php (17)
+2013/08/05 14:42:10 [warning] [application] Failed to set unsafe attribute "password2" of "AdminUser".
+in D:\czshop\protected\admin\controllers\AdminUserController.php (91)
+in D:\czshop\admin.php (17)
+2013/08/05 15:00:31 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in D:\czshop\protected\admin\controllers\IndexController.php (112)
+in D:\czshop\admin.php (17)
+2013/08/05 15:00:39 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in D:\czshop\protected\admin\controllers\IndexController.php (112)
+in D:\czshop\admin.php (17)
+2013/08/05 15:44:40 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in D:\czshop\protected\admin\controllers\IndexController.php (112)
+in D:\czshop\admin.php (17)
+2013/08/05 15:44:49 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in D:\czshop\protected\admin\controllers\IndexController.php (112)
+in D:\czshop\admin.php (17)
+2013/08/05 15:47:25 [error] [exception.CException] exception 'CException' with message '属性 "AdminUser.email" 未被定义.' in D:\czshop\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\czshop\framework\db\ar\CActiveRecord.php(143): CComponent->__get('email')
+#1 D:\czshop\framework\base\CModel.php(595): CActiveRecord->__get('email')
+#2 D:\czshop\themes\admin-bootcss\views\adminUser\update.php(66): CModel->offsetGet('email')
+#3 D:\czshop\framework\web\CBaseController.php(126): require('D:\czshop\theme...')
+#4 D:\czshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\czshop\theme...', Array, true)
+#5 D:\czshop\framework\web\CController.php(869): CBaseController->renderFile('D:\czshop\theme...', Array, true)
+#6 D:\czshop\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#7 D:\czshop\protected\admin\controllers\AdminUserController.php(101): CController->render('update', Array)
+#8 [internal function]: AdminUserController->actionUpdate('1')
+#9 D:\czshop\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(AdminUserController), Array)
+#10 D:\czshop\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdminUserController), Object(ReflectionMethod), Array)
+#11 D:\czshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\czshop\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 D:\czshop\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 D:\czshop\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 D:\czshop\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 D:\czshop\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\czshop\framework\web\CController.php(291): CFilterChain->run()
+#18 D:\czshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\czshop\framework\web\CWebApplication.php(282): CController->run('update')
+#20 D:\czshop\framework\web\CWebApplication.php(141): CWebApplication->runController('adminuser/updat...')
+#21 D:\czshop\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#22 D:\czshop\admin.php(17): CApplication->run()
+#23 {main}
+REQUEST_URI=/admin.php?r=adminuser/update&id=1
+HTTP_REFERER=http://www.czshop.com/admin.php?r=adminuser/index
+---
+2013/08/05 15:55:37 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in D:\czshop\protected\admin\controllers\IndexController.php (112)
+in D:\czshop\admin.php (17)
+2013/08/05 15:56:13 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in D:\czshop\protected\admin\controllers\IndexController.php (112)
+in D:\czshop\admin.php (17)
+2013/08/05 16:05:03 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in D:\czshop\protected\admin\controllers\IndexController.php (112)
+in D:\czshop\admin.php (17)
+2013/08/05 16:07:26 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in D:\czshop\protected\admin\controllers\IndexController.php (112)
+in D:\czshop\admin.php (17)
+2013/08/05 16:08:25 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in D:\czshop\protected\admin\controllers\IndexController.php (112)
+in D:\czshop\admin.php (17)

@@ -70,7 +70,7 @@
 					<div class="alert alert-info">
 						Please login with your Username and Password.
 					</div>
-					<!-- <form class="form-horizontal" action="index.html" method="post"> -->
+					
 					<?php $form=$this->beginWidget('CActiveForm', array(
 						'id'=>'login-form',
 						'enableAjaxValidation'=>true,
@@ -122,7 +122,7 @@
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	<!-- jQuery -->
-	
+	<script src="<?php echo F::themeUrl(); ?>/js/jquery-1.7.2.min.js"></script>
 	<!-- jQuery UI -->
 	<script src="<?php echo F::themeUrl(); ?>/js/jquery-ui-1.8.21.custom.min.js"></script>
 	<script src="<?php echo F::themeUrl(); ?>/js/bootstrap.min.js"></script>
