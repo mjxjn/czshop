@@ -66,15 +66,16 @@
 	<!-- Placed at the end of the document so the pages load faster -->
 	<!-- jQuery -->
 	<script src="<?php echo F::themeUrl(); ?>/js/jquery-1.7.2.min.js"></script>
+	<!-- Bootstrap Min -->
+	<script src="<?php echo F::themeUrl(); ?>/js/bootstrap.min.js"></script>
 	<!-- jQuery UI -->
 	<script src="<?php echo F::themeUrl(); ?>/js/jquery-ui-1.8.21.custom.min.js"></script>
-	<script src="<?php echo F::themeUrl(); ?>/js/bootstrap.min.js"></script>
 	<!-- transition / effect library -->
 	<script src="<?php echo F::themeUrl(); ?>/js/bootstrap-transition.js"></script>
 	<!-- alert enhancer library -->
 	<script src="<?php echo F::themeUrl(); ?>/js/bootstrap-alert.js"></script>
 	<!-- modal / dialog library -->
-	<script src="<?php echo F::themeUrl(); ?>/js/bootstrap-modal.js"></script>
+	<!-- 此处删了一个js(<script src="js/bootstrap-modal.js"></script>) -->
 	<!-- custom dropdown library -->
 	<script src="<?php echo F::themeUrl(); ?>/js/bootstrap-dropdown.js"></script>
 	<!-- scrolspy library -->
