@@ -169,6 +169,10 @@ class AreaController extends Controller
         	foreach ($area_list as $key => $value) {
         		if($_POST['grade'] === "2"){
         			$span = '<td width="20"></td><td width="20"><span class="icon icon-color icon-add" onclick="show_region('.$value['area_id'].',3)"></span></td>';
+        			$child = '<a class="btn btn-success" href="#">
+							<i class="icon-zoom-in icon-white"></i>
+							添加子地区
+							</a>';
         		}elseif ($_POST['grade'] === "3") {
         			$span = '<td width="20" colspan=2></td>';
         		}
@@ -179,18 +183,15 @@ class AreaController extends Controller
 							<td class="center">'.$value['grade'].'</td>
 							<td class="center">'.$value['sort'].'</td>
 							<td class="center">
-								<a class="btn btn-success" href="#">
-									<i class="icon-zoom-in icon-white"></i>  
-									View                                         
-								</a>
-								<a class="btn btn-info" href="#">
-									<i class="icon-edit icon-white"></i>  
-									Edit                                            
-								</a>
-								<a class="btn btn-danger" href="#">
-									<i class="icon-trash icon-white"></i> 
-									Delete
-								</a>
+							'.$child.'
+							<a class="btn btn-info" href="#">
+							<i class="icon-edit icon-white"></i>
+							编辑
+							</a>
+							<a class="btn btn-danger" href="#">
+							<i class="icon-trash icon-white"></i>
+							删除
+							</a>
 							</td>
 						</tr>';
         	}
