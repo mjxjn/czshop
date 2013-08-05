@@ -2,7 +2,7 @@
 /**
  * Regional Settings
  * @author DouShiChao <coolboydsc@163.com>
- */
+*/
 class AreaController extends Controller
 {
 	/**
@@ -127,19 +127,19 @@ class AreaController extends Controller
 		
 		$criteria = new CDbCriteria();
 
-        $criteria->condition = "grade = 1";
+	        $criteria->condition = "grade = 1";
 
-        $area_model = Area::model();
+	        $area_model = Area::model();
 
-        $count = $area_model -> count($criteria);        
+	        $count = $area_model -> count($criteria);        
 
-        $page = new CPagination($count);
+	        $page = new CPagination($count);
 
-        $page->pageSize = 10;             
-        
-        $page->applyLimit($criteria);    
-    
-        $area_list = $area_model->findAll($criteria);    
+	        $page->pageSize = 10;             
+	        
+	        $page->applyLimit($criteria);    
+	    
+	        $area_list = $area_model->findAll($criteria);    
 
 		$this->render("index",array('page'=>$page,'list' => $area_list));
 
@@ -153,8 +153,9 @@ class AreaController extends Controller
 	 * @param int grade level
 	 * @param int id get region list of parent id
 	 * @return html region List
-	 * @author DouShiChao <coolboydsc@163.com>
-	 */
+	 * @author DouShiChao
+<coolboydsc@163.com>
+	*/
 	public function actionAjaxregion(){
 		if(isset($_POST['id']) && $_POST['ajax'] ==='ajax' && isset($_POST['grade']))
         {
@@ -168,32 +169,38 @@ class AreaController extends Controller
 
         	foreach ($area_list as $key => $value) {
         		if($_POST['grade'] === "2"){
-        			$span = '<td width="20"></td><td width="20"><span class="icon icon-color icon-add" onclick="show_region('.$value['area_id'].',3)"></span></td>';
-        			$child = '<a class="btn btn-success" href="#">
-							<i class="icon-zoom-in icon-white"></i>
-							添加子地区
-							</a>';
+        			$span = '
+	<td width="20"></td>
+	<td width="20">
+		<span class="icon icon-color icon-add" onclick="show_region('.$value['area_id'].',3)"></span>
+	</td>
+	';
         		}elseif ($_POST['grade'] === "3") {
-        			$span = '<td width="20" colspan=2></td>';
+        			$span = '
+	<td width="20" colspan=2></td>
+	';
         		}
-        		$html .= '<tr id="area_'.$value['area_id'].'" class="area_'.$_POST['id'].'">
-							'.$span.'
-							<td> '.$value['area_id'].'</td>
-							<td class="center">'.$value['area_name'].'</td>
-							<td class="center">'.$value['grade'].'</td>
-							<td class="center">'.$value['sort'].'</td>
-							<td class="center">
-							'.$child.'
-							<a class="btn btn-info" href="#">
-							<i class="icon-edit icon-white"></i>
-							编辑
-							</a>
-							<a class="btn btn-danger" href="#">
-							<i class="icon-trash icon-white"></i>
-							删除
-							</a>
-							</td>
-						</tr>';
+        		$html .= '
+	<tr id="area_'.$value['area_id'].'" class="area_'.$_POST['id'].'">
+		'.$span.'
+		<td>'.$value['area_id'].'</td>
+		<td class="center">'.$value['area_name'].'</td>
+		<td class="center">'.$value['grade'].'</td>
+		<td class="center">'.$value['sort'].'</td>
+		<td class="center">
+			<a class="btn btn-success" href="#"> <i class="icon-zoom-in icon-white"></i>
+				View
+			</a>
+			<a class="btn btn-info" href="#"> <i class="icon-edit icon-white"></i>
+				Edit
+			</a>
+			<a class="btn btn-danger" href="#">
+				<i class="icon-trash icon-white"></i>
+				Delete
+			</a>
+		</td>
+	</tr>
+	';
         	}
 
         	echo $html;
