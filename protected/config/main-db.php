@@ -8,10 +8,10 @@
 return array(
     'components' => array(
         'db'=>array(
-            'connectionString' => 'mysql:host=localhost;dbname=commerz',
+            'connectionString' => 'mysql:host=mysql21.100ws.com;dbname=maxia5_czshop',
             'emulatePrepare' => true,
-            'username' => 'root',
-            'password' => '',
+            'username' => 'maxia5_czshop',
+            'password' => '7482925',
             'charset' => 'utf8',
             'tablePrefix' => 'cz_',
         ),

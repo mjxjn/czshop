@@ -49,23 +49,20 @@
 						<td class="center">
 							<?php echo $row['email'] ?></td>
 						<td class="center">
-							<?php echo $row['last_login'] ?></td>
+							<?php echo F::format_date($row['last_login']); ?></td>
 						<td class="center">
 							<?php echo $row['last_ip'] ?></td>
 						<td class="center">
 							<?php echo $row['login_count'] ?></td>
 						<td class="center">
-							<?php echo $row['add_time'] ?></td>
+							<?php echo F::format_date($row['add_time']); ?></td>
 						<td class="center">
 							<?php echo CHtml::link('<i class="icon-zoom-in icon-white"></i>
 								View', array('adminuser/view','id'=>$row['admin_id']),array(
 									'class'=>'btn btn-success',
 								)); ?>
-							
-							<a class="btn btn-info" href="#">
-								<i class="icon-edit icon-white"></i>
-								Edit
-							</a>
+							<?php echo CHtml::link('<i class="icon-edit icon-white"></i>
+								Edit',array('adminuser/update','id'=>$row['admin_id']),array('class'=>'btn btn-info'));?>
 							<a class="btn btn-danger" href="#">
 								<i class="icon-trash icon-white"></i>
 								Delete

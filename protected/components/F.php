@@ -105,7 +105,8 @@ class F {
     }
 
     static public function script($file) {
-	Yii::app()->getClientScript()->registerScriptFile($file);
+	Yii::app()->
+getClientScript()->registerScriptFile($file);
     }
 
     /**
@@ -160,9 +161,13 @@ class F {
 
     static public function renderFlash() {
 	if (Yii::app()->user->hasFlash('mysite')) {
-	    echo '<div class="errorSummary">';
+	    echo '
+<div class="errorSummary">
+	';
 	    echo F::getFlash();
-	    echo '</div>';
+	    echo '
+</div>
+';
 	    Yii::app()->clientScript->registerScript('fade', "
 setTimeout(function() { $('.errorSummary').fadeOut('slow'); }, 5000);	
 ");
@@ -182,7 +187,9 @@ setTimeout(function() { $('.errorSummary').fadeOut('slow'); }, 5000);
 	    if ($rs->$pid == 0) {
 		if ($selected == $rs->$id)
 		    $select = "selected='selected'";
-		$str .= "<option value='" . $rs->$id . "' $select >" . F::t($rs->$name) . "</option>";
+		$str .= "
+<option value='" . $rs->$id . "' $select >" . F::t($rs->$name) . "</option>
+";
 		$str .= self::toTreeHelper($arr, $selected, $rs->$id, $pid, $id, $name, $span);
 	    }
 	}
@@ -192,14 +199,18 @@ setTimeout(function() { $('.errorSummary').fadeOut('slow'); }, 5000);
     //辅助生成tree
     static public function toTreeHelper($arr, $selected, $value, $pid, $id, $name, $span) {
 	$array = array();
-	for ($i = 0; $i < $span; $i++) {
+	for ($i = 0; $i
+< $span; $i++) {
 	    $string .='&nbsp;&nbsp;&nbsp;&nbsp;';
 	}
 	foreach ($arr as $rs) {
-	    if ($value == $rs->$pid) {
+	    if ($value == $rs->
+	$pid) {
 		if ($selected == $rs->$id)
 		    $select = "selected='selected'";
-		$str .="<option value='" . $rs->$id . "' $select>" . $string . F::t($rs->$name) . "</option>";
+		$str .="
+	<option value='" . $rs->$id . "' $select>" . $string . F::t($rs->$name) . "</option>
+	";
 		if (self::toTreeHelper($arr, $selected, $rs->$id, $pid, $id, $name, $span))
 		    $str .=self::toTreeHelper($arr, $selected, $rs->$id, $pid, $id, $name, $span + 1);
 	    }
@@ -251,7 +262,8 @@ setTimeout(function() { $('.errorSummary').fadeOut('slow'); }, 5000);
 		if ($file != "." && $file != "..") {
 		    if (is_dir($dir . "\\" . $file)) {
 			$cFileNameArray = self::listFile($dir . "\\" . $file);
-			for ($i = 0; $i < count($cFileNameArray); $i++) {
+			for ($i = 0; $i
+	< count($cFileNameArray); $i++) {
 			    $fileArray[] = $cFileNameArray[$i];
 			}
 		    } else {
@@ -269,17 +281,19 @@ setTimeout(function() { $('.errorSummary').fadeOut('slow'); }, 5000);
     //以下四个函数为必须函数。
     static public function sub($content, $maxlen = 300, $show = false, $f = '……') {
 	//把字符按HTML标签变成数组。
-	$content = preg_split("/(<[^>]+?>)/si", $content, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
+	$content = preg_split("/(<[^>
+		]+?>)/si", $content, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
 	$wordrows = 0; //中英字数
 	$outstr = "";  //生成的字串
 	$wordend = false; //是否符合最大的长度
-	$beginTags = 0; //除<img><br><hr>这些短标签外，其它计算开始标签，如<div*>
-	$endTags = 0;  //计算结尾标签，如</div>，如果$beginTags==$endTags表示标签数目相对称，可以退出循环。
+	$beginTags = 0; //除<img><br><hr>这些短标签外，其它计算开始标签，如<div*>$endTags = 0;  //计算结尾标签，如</div>		，如果$beginTags==$endTags表示标签数目相对称，可以退出循环。
 	//print_r($content);
 	foreach ($content as $value) {
 	    if (trim($value) == "")
 		continue; //如果该值为空，则继续下一个值
-	    if (strpos(";$value", "<") > 0) {
+	    if (strpos(";$value", "
+		<") >
+			0) {
 		//如果与要载取的标签相同，则到处结束截取。
 		if (trim($value) == $maxlen) {
 		    $wordend = true;
@@ -287,16 +301,38 @@ setTimeout(function() { $('.errorSummary').fadeOut('slow'); }, 5000);
 		}
 		if ($wordend == false) {
 		    $outstr.=$value;
-		    if (!preg_match("/<img([^>]+?)>/is", $value) && !preg_match("/<param([^>]+?)>/is", $value) && !preg_match("/<!([^>]+?)>/is", $value) && !preg_match("/<br([^>]+?)>/is", $value) && !preg_match("/<hr([^>]+?)>/is", $value)) {
+		    if (!preg_match("/
+			<img([^>
+			]+?)>/is", $value) && !preg_match("/
+			<param([^>
+			]+?)>/is", $value) && !preg_match("/
+			<!([^>
+			]+?)>/is", $value) && !preg_match("/
+			<br([^>
+			]+?)>/is", $value) && !preg_match("/
+			<hr([^>
+			]+?)>/is", $value)) {
 			$beginTags++; //除img,br,hr外的标签都加1
 		    }
-		} elseif (preg_match("/<\/([^>]+?)>/is", $value, $matches)) {
+		} elseif (preg_match("/
+			<\/([^>
+				]+?)>/is", $value, $matches)) {
 		    $endTags++;
 		    $outstr.=$value;
 		    if ($beginTags == $endTags && $wordend == true)
 			break; //字已载完了，并且标签数相称，就可以退出循环。
 		}else {
-		    if (!preg_match("/<img([^>]+?)>/is", $value) && !preg_match("/<param([^>]+?)>/is", $value) && !preg_match("/<!([^>]+?)>/is", $value) && !preg_match("/<br([^>]+?)>/is", $value) && !preg_match("/<hr([^>]+?)>/is", $value)) {
+		    if (!preg_match("/
+				<img([^>
+				]+?)>/is", $value) && !preg_match("/
+				<param([^>
+				]+?)>/is", $value) && !preg_match("/
+				<!([^>
+				]+?)>/is", $value) && !preg_match("/
+				<br([^>
+				]+?)>/is", $value) && !preg_match("/
+				<hr([^>
+				]+?)>/is", $value)) {
 			$beginTags++; //除img,br,hr外的标签都加1
 			$outstr.=$value;
 		    }
@@ -322,13 +358,23 @@ setTimeout(function() { $('.errorSummary').fadeOut('slow'); }, 5000);
 	}
 
 	//循环替换掉多余的标签，如<p></p>这一类
-	while (preg_match("/<([^\/][^>]*?)><\/([^>]+?)>/is", $outstr)) {
-	    $outstr = preg_replace_callback("/<([^\/][^>]*?)><\/([^>]+?)>/is", "strip_empty_html", $outstr);
+	while (preg_match("/
+				<([^\/][^>
+					]*?)>
+					<\/([^>
+						]+?)>/is", $outstr)) {
+	    $outstr = preg_replace_callback("/
+						<([^\/][^>
+							]*?)>
+							<\/([^>
+								]+?)>/is", "strip_empty_html", $outstr);
 	}
 	//把误换的标签换回来
 	if (strpos(";" . $outstr, "[html_") > 0) {
-	    $outstr = str_replace("[html_&lt;]", "<", $outstr);
-	    $outstr = str_replace("[html_&gt;]", ">", $outstr);
+	    $outstr = str_replace("[html_&lt;]", "
+								<", $outstr);
+	    $outstr = str_replace("[html_&gt;]", ">
+									", $outstr);
 	}
 	//echo htmlspecialchars($outstr);
 	if (true == $show && true == $wordend) {
@@ -397,8 +443,10 @@ setTimeout(function() { $('.errorSummary').fadeOut('slow'); }, 5000);
 	$url .= md5(strtolower(trim($email)));
 	$url .= "?s=$s&d=$d&r=$r";
 	if ($img) {
-	    $url = '<img src="' . $url . '"';
-	    foreach ($atts as $key => $val)
+	    $url = '
+									<img src="' . $url . '"';
+	    foreach ($atts as $key =>
+									$val)
 		$url .= ' ' . $key . '="' . $val . '"';
 	    $url .= ' />';
 	}
@@ -411,8 +459,10 @@ setTimeout(function() { $('.errorSummary').fadeOut('slow'); }, 5000);
 	if ($arr_tags1[0] == $matches[2]) { //如果前后标签相同，则替换为空。
 	    return "";
 	} else {
-	    $matches[0] = str_replace("<", "[html_&lt;]", $matches[0]);
-	    $matches[0] = str_replace(">", "[html_&gt;]", $matches[0]);
+	    $matches[0] = str_replace("
+									<", "[html_&lt;]", $matches[0]);
+	    $matches[0] = str_replace(">
+										", "[html_&gt;]", $matches[0]);
 	    return $matches[0];
 	}
     }
@@ -522,6 +572,33 @@ setTimeout(function() { $('.errorSummary').fadeOut('slow'); }, 5000);
 	$format = new CDateFormatter(Yii::app()->translate->getLanguage());
 	return $format->formatDateTime($date, $dateWidth, $timeWidth);
     }
+
+    /**
+     * 格式化时间
+     * @param  int  $date       时间戳
+     * @param  boolean $isShowDate 是否显示日期格式
+     * @return string
+     */
+      public static function format_date($date,$isShowDate=true) {
+    $limit = F::gmtime() - $date;
+    if($limit< 60){
+      return $limit . '秒钟之前';
+    }
+    if($limit >= 60 && $limit< 3600){
+      return floor($limit/60) . '分钟之前';
+    }
+    if($limit >= 3600 && $limit< 86400){
+      return floor($limit/3600) . '小时之前';
+    }
+    if($limit >= 86400 and $limit<259200){
+      return floor($limit/86400) . '天之前';
+    }
+    if($limit >= 259200 and $isShowDate){
+      return date('Y-m-d', $date);
+    }else{
+      return '';
+    }
+  }
 
     /**
      * PHP判断字符串纯汉字 OR 纯英文 OR 汉英混合 

@@ -26,6 +26,10 @@ class UserIdentity extends CUserIdentity
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		else
 		{
+			$user->last_login=F::gmtime();
+			$user->last_ip=Yii::app()->request->UserHostAddress;//IP地址
+			$user->login_count+=1;
+			$user->save(false);
 			$this->_id=$user->admin_id;
 			$this->username=$user->admin_name;
 			$this->errorCode=self::ERROR_NONE;
