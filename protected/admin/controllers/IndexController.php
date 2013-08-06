@@ -126,4 +126,7 @@ expression: 设定一个PHP表达式。它的值用来表明这条规则是否�
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+	public function actionHome(){
+		$this->renderPartial('home');
+	}
 }

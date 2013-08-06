@@ -21,7 +21,7 @@ class SystemController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','webinfo','saveSystem'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -36,36 +36,6 @@ class SystemController extends Controller
 				'users'=>array('*'),
 			),
 		);
-	}
-	public function actionWebinfo(){
-
-	    $system_model = System::model();
-
-	    $condition = "groupid = 1";
-	    $list = $system_model->findAll($condition);
-	    foreach ($list as $key => $value) {
-	    	$array[$value['varname']]['varname'] = $value['varname'];
-	    	$array[$value['varname']]['info'] = $value['info'];
-	    	$array[$value['varname']]['groupid'] = $value['groupid'];
-	    	$array[$value['varname']]['value'] = $value['value'];
-	    	$array[$value['varname']]['lang'] = $value['lang'];
-	    }
-	    
-	    $this->render('webinfo',array('list'=>$array));
-	}
-	public function actionSaveSystem(){
-
-	    $system_model = System::model();
-
-	    if(isset($_POST['groupid'])){
-	    	foreach ($_POST as $key => $value) {
-	    		$c=new CDbCriteria;
-			$c->condition = "varname = '".$key."'";
-			$a=array('value'=>$value);
-			$result[$key] = $system_model->updateAll($a, $c);
-	    	}
-	    	$this->redirect(array('webinfo'));
-	    }
 	}
 	/**
 	 * Displays a particular model.
@@ -108,21 +78,18 @@ class SystemController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+		$system_model = System::model();
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+	    if(isset($_POST['groupid'])){
+	    	foreach ($_POST as $key => $value) {
+	    		$c=new CDbCriteria;
+				$c->condition = "varname = '".$key."'";
+				$a=array('value'=>$value);
+				$result[$key] = $system_model->updateAll($a, $c);
+	    	}
 
-		if(isset($_POST['System']))
-		{
-			$model->attributes=$_POST['System'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->varname));
-		}
-
-		$this->render('update',array(
-			'model'=>$model,
-		));
+	    	$this->redirect(array('index'));
+	    }
 	}
 
 	/**
@@ -150,10 +117,19 @@ class SystemController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('System');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$system_model = System::model();
+
+	    $condition = "groupid = 1";
+	    $list = $system_model->findAll($condition);
+	    foreach ($list as $key => $value) {
+	    	$array[$value['varname']]['varname'] = $value['varname'];
+	    	$array[$value['varname']]['info'] = $value['info'];
+	    	$array[$value['varname']]['groupid'] = $value['groupid'];
+	    	$array[$value['varname']]['value'] = $value['value'];
+	    	$array[$value['varname']]['lang'] = $value['lang'];
+	    }
+	    
+	    $this->render('index',array('list'=>$array));
 	}
 
 	/**
