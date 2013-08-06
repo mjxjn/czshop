@@ -1,8 +1,7 @@
 <?php
 
-class AdminUserController extends Controller
+class SystemController extends Controller
 {
-
 	/**
 	 * @return array action filters
 	 */
@@ -10,7 +9,6 @@ class AdminUserController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-			//'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
 
@@ -23,7 +21,7 @@ class AdminUserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','webinfo','saveSystem'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -39,7 +37,36 @@ class AdminUserController extends Controller
 			),
 		);
 	}
+	public function actionWebinfo(){
 
+	    $system_model = System::model();
+
+	    $condition = "groupid = 1";
+	    $list = $system_model->findAll($condition);
+	    foreach ($list as $key => $value) {
+	    	$array[$value['varname']]['varname'] = $value['varname'];
+	    	$array[$value['varname']]['info'] = $value['info'];
+	    	$array[$value['varname']]['groupid'] = $value['groupid'];
+	    	$array[$value['varname']]['value'] = $value['value'];
+	    	$array[$value['varname']]['lang'] = $value['lang'];
+	    }
+	    
+	    $this->render('webinfo',array('list'=>$array));
+	}
+	public function actionSaveSystem(){
+
+	    $system_model = System::model();
+
+	    if(isset($_POST['groupid'])){
+	    	foreach ($_POST as $key => $value) {
+	    		$c=new CDbCriteria;
+			$c->condition = "varname = '".$key."'";
+			$a=array('value'=>$value);
+			$result[$key] = $system_model->updateAll($a, $c);
+	    	}
+	    	$this->redirect(array('webinfo'));
+	    }
+	}
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -57,16 +84,16 @@ class AdminUserController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new AdminUser;
+		$model=new System;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['AdminUser']))
+		if(isset($_POST['System']))
 		{
-			$model->attributes=$_POST['AdminUser'];
+			$model->attributes=$_POST['System'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->admin_id));
+				$this->redirect(array('view','id'=>$model->varname));
 		}
 
 		$this->render('create',array(
@@ -86,14 +113,11 @@ class AdminUserController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['AdminUser']))
+		if(isset($_POST['System']))
 		{
-			$model->attributes=$_POST['AdminUser'];
-			if ($_POST['AdminUser']['password'] !== '') {
-		                $model->password = md5($_POST['AdminUser']['password']);
-		           }
+			$model->attributes=$_POST['System'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->admin_id));
+				$this->redirect(array('view','id'=>$model->varname));
 		}
 
 		$this->render('update',array(
@@ -108,11 +132,17 @@ class AdminUserController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		if(Yii::app()->request->isPostRequest)
+		{
+			// we only allow deletion via POST request
+			$this->loadModel($id)->delete();
 
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+			if(!isset($_GET['ajax']))
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		}
+		else
+			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
 	}
 
 	/**
@@ -120,21 +150,10 @@ class AdminUserController extends Controller
 	 */
 	public function actionIndex()
 	{
-		/*
-		 $dataProvider=new CActiveDataProvider('AdminUser');
+		$dataProvider=new CActiveDataProvider('System');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
-		*/
-		$condition = 'status = 0';
-		$count = AdminUser::model()->count(array('condition'=>$condition));
-		$pages = new CPagination($count);
-		$pages->pageSize = 20; //分页显示条数
-		$pages->pageVar = 'p';
-
-		$adminUserList = AdminUser::model()->findAll(array('condition'=>$condition,'limit'=>$pages->pageSize,'offset'=>$pages->currentPage*$pages->pageSize,'order'=>'admin_id asc'));
-
-		$this->render('index', compact('adminUserList', 'pages'));
 	}
 
 	/**
@@ -142,10 +161,10 @@ class AdminUserController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new AdminUser('search');
+		$model=new System('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['AdminUser']))
-			$model->attributes=$_GET['AdminUser'];
+		if(isset($_GET['System']))
+			$model->attributes=$_GET['System'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -155,13 +174,11 @@ class AdminUserController extends Controller
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
-	 * @param integer $id the ID of the model to be loaded
-	 * @return AdminUser the loaded model
-	 * @throws CHttpException
+	 * @param integer the ID of the model to be loaded
 	 */
 	public function loadModel($id)
 	{
-		$model=AdminUser::model()->findByPk($id);
+		$model=System::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -169,11 +186,11 @@ class AdminUserController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param AdminUser $model the model to be validated
+	 * @param CModel the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='admin-user-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='system-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

@@ -48,41 +48,28 @@
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="password">新密码：</label>
+						<label class="control-label" for="password">密码（*）：</label>
 						<div class="controls">
 							<?php echo $form->passwordField($model,'password',array('class'=>'input-xlarge focused','value'=>'','id'=>'password'));?>
-							<p>留空不改变</p>
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label" for="password2">确认新密码：</label>
-						<div class="controls">
-							<?php echo $form->passwordField($model,'password2',array('class'=>'input-xlarge focused','value'=>'','id'=>'password2'));?>
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label" for="email">Email（*）：</label>
-						<div class="controls">
-							<input class="input-xlarge focused" id="email" type="text" value="<?php echo $model['email'];?>">
 						</div>
 					</div>
 					<div class="control-group">
 								<label class="control-label" for="lastLogin">最后登录时间</label>
 								<div class="controls">
-								  <input class="input-xlarge disabled" id="lastLogin" type="text" placeholder="<?php echo F::format_date($model['last_login']);?>" disabled="">
+								  <input class="input-xlarge disabled" id="lastLogin" type="text" placeholder="<?php echo F::format_date($model['last_login']);?>" disabled="true">
 								</div>
 					</div>
 
 					<div class="control-group">
 								<label class="control-label" for="lastIP">最后登录IP</label>
 								<div class="controls">
-								  <input class="input-xlarge disabled" id="lastIP" type="text" placeholder="<?php echo $model['last_ip'];?>" disabled="">
+								  <input class="input-xlarge disabled" id="lastIP" type="text" placeholder="<?php echo $model['last_ip'];?>" disabled="true">
 								</div>
 					</div>
 					<div class="control-group">
 								<label class="control-label" for="addTime">创建时间</label>
 								<div class="controls">
-								  <input class="input-xlarge disabled" id="addTime" type="text" placeholder="<?php echo F::format_date($model['add_time']);?>" disabled="">
+								  <input class="input-xlarge disabled" id="addTime" type="text" placeholder="<?php echo F::format_date($model['add_time']);?>" disabled="true">
 								</div>
 					</div>
 					<div class="form-actions">

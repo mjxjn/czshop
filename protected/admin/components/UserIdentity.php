@@ -32,6 +32,9 @@ class UserIdentity extends CUserIdentity
 			$user->save(false);
 			$this->_id=$user->admin_id;
 			$this->username=$user->admin_name;
+			$this->setState('__id',$user->admin_id);
+			//设置session信息
+			$this->setState('username',$user->admin_name);
 			$this->errorCode=self::ERROR_NONE;
 		}
 		return $this->errorCode==self::ERROR_NONE;
