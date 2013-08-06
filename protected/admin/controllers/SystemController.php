@@ -119,17 +119,18 @@ class SystemController extends Controller
 	{
 		$system_model = System::model();
 
-	    $condition = "groupid = 1";
-	    $list = $system_model->findAll($condition);
-	    foreach ($list as $key => $value) {
-	    	$array[$value['varname']]['varname'] = $value['varname'];
-	    	$array[$value['varname']]['info'] = $value['info'];
-	    	$array[$value['varname']]['groupid'] = $value['groupid'];
-	    	$array[$value['varname']]['value'] = $value['value'];
-	    	$array[$value['varname']]['lang'] = $value['lang'];
-	    }
+		$condition = "groupid = 1";
+		
+		$model = $system_model->findAll($condition);
+		/*foreach ($list as $key => $value) {
+		    	$array[$value['varname']]['varname'] = $value['varname'];
+		    	$array[$value['varname']]['info'] = $value['info'];
+		    	$array[$value['varname']]['groupid'] = $value['groupid'];
+		    	$array[$value['varname']]['value'] = $value['value'];
+		    	$array[$value['varname']]['lang'] = $value['lang'];
+		}*/
 	    
-	    $this->render('index',array('list'=>$array));
+		$this->render('index',array('model'=>$model));
 	}
 
 	/**
