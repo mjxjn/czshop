@@ -65,9 +65,8 @@ DD_belatedPNG.fix('*');
     </div>
     
     <div id="Container">
-        <div class="ico_left"><img src="<?php echo F::themeUrl(); ?>/images/ico_8.png" /></div>
-        <iframe id="mainFrame" name="mainFrame" frameborder="0"  src="./admin.php?r=index/home" width="100%" height="100%" >  
-        </iframe> 
+        <div class="ico_left"><img src="<?php echo F::themeUrl(); ?>/images/ico_8.png" /></div> 
+        <?php echo $content; ?>
     </div>
     
 

@@ -16,7 +16,7 @@ return array(
 
 	'basePath'=>$front,
 	'name'=>'Commerz Board',
-	'theme'=>'admin-bootcss',
+	'theme'=>'admin-new',
             'language' => 'zh_cn',
             'controllerPath' => $admin . DIRECTORY_SEPARATOR . 'controllers',
             'viewPath' => $admin . DIRECTORY_SEPARATOR . 'views',

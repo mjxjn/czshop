@@ -20,7 +20,7 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Commerz Board',
 	//'theme'=>'bootstrap',
-    'runtimePath' => $admin . '/runtime',
+            'runtimePath' => $admin . '/runtime',
 
 	// autoloading model and component classes
 	'import' => require(dirname(__FILE__) . '/imports.php'),
