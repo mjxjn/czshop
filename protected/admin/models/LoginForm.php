@@ -34,8 +34,8 @@ class LoginForm extends CFormModel
 			// password needs to be authenticated
 			array('password', 'authenticate'),
 
-			array('verifyCode','required','message'=>'验证码必填'),
-			array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
+			//array('verifyCode','required','message'=>'验证码必填'),
+			//array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
 		);
 	}
 
