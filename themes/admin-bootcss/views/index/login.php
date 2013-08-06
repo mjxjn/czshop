@@ -73,7 +73,6 @@
 					
 					<?php $form=$this->beginWidget('CActiveForm', array(
 						'id'=>'login-form',
-						'enableAjaxValidation'=>true,
 						'enableClientValidation'=>true,
 						'htmlOptions'=>array('class'=>'form-horizontal'),
 						'clientOptions'=>array(
