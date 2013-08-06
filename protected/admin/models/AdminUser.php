@@ -40,10 +40,10 @@ class AdminUser extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('admin_name', 'required','on'=>'create,update'),
-			array('admin_name', 'unique' , 'on'=>'create,update'),
-			array('password', 'required','on'=>'create,update'),
-			array('add_time', 'required','on'=>'create'),
+			array('admin_name', 'required'),
+			array('admin_name', 'unique'),
+			array('password', 'required'),
+			array('add_time', 'required'),
 			array('add_time', 'numerical', 'integerOnly'=>true),
 			array('add_time', 'length', 'max'=>11),
 			array('admin_name', 'length', 'max'=>50),
@@ -75,10 +75,9 @@ class AdminUser extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'admin_id' => 'Admin ID',
-			'admin_name' => 'Admin Name',
-			'password' => 'Password',
-			'email' => 'Email',
+			'admin_id' => '用户ID',
+			'admin_name' => '用户名',
+			'password' => '密码',
 			'last_login' => 'Last Login',
 			'last_ip' => 'Last Ip',
 			'login_count' => 'Login Count',

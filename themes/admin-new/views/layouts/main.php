@@ -19,13 +19,13 @@ DD_belatedPNG.fix('*');
 <div class="header">
     <div class="logo fl"><img src="<?php echo F::themeUrl(); ?>/images/logo.png" width="160" height="21" alt="" /></div>
     <div class="menu fl">
-        <a href="index.html">全局设置</a>
+        <a href="index.html" class="hover">全局设置</a>
         <a href="index1.html">商品管理</a>
         <a href="index2.html">订单管理</a>
         <a href="index3.html">会员管理</a>
         <a href="index4.html">运营推广</a>
         <a href="#">内容管理</a>
-        <a href="index6.html" class="hover">统计报表</a>
+        <a href="index6.html">统计报表</a>
         <a href="#">应用商店</a>        
     </div>
     <div class="help">

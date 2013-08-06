@@ -5,7 +5,7 @@ class IndexController extends Controller
 	public $layout = '//layouts/system';
 	public $webmenu = array();
     	public $themesmenu = array();
-    	public $adminmenu = array();
+    	public $membermenu = array();
 	public function filters()
 	{
 		return array(

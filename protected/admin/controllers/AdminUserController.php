@@ -2,7 +2,10 @@
 
 class AdminUserController extends Controller
 {
-
+	public $layout = '//layouts/system';
+	public $webmenu = array();
+    	public $themesmenu = array();
+    	public $membermenu = array();
 	/**
 	 * @return array action filters
 	 */
@@ -91,7 +94,7 @@ class AdminUserController extends Controller
 			$model->attributes=$_POST['AdminUser'];
 			if ($_POST['AdminUser']['password'] !== '') {
 		                $model->password = md5($_POST['AdminUser']['password']);
-		           }
+		             }
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->admin_id));
 		}

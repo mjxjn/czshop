@@ -14,8 +14,8 @@ $this->themesmenu=array(
     array('label'=>'物流配送方式设置','url'=>'#','linkOptions'=>array('class'=>'n8')),
     array('label'=>'地区管理','url'=>'#','linkOptions'=>array('class'=>'n9')),
 );
-$this->adminmenu=array(
-    array('label'=>'后台管理团队','url'=>'#','linkOptions'=>array('class'=>'n10')),
+$this->membermenu=array(
+    array('label'=>'后台管理团队','url'=>array('/adminuser/index'),'linkOptions'=>array('class'=>'n10')),
     array('label'=>'管理团队日志','url'=>'#','linkOptions'=>array('class'=>'n11')),
     array('label'=>'数据库管理','url'=>'#','linkOptions'=>array('class'=>'n12')),
     array('label'=>'文件权限检查','url'=>'#','linkOptions'=>array('class'=>'n13')),
@@ -37,7 +37,7 @@ $this->adminmenu=array(
                 'htmlOptions'=>array('class'=>''),
             ));
             $this->widget('zii.widgets.CMenu', array(
-                'items'=>$this->adminmenu,
+                'items'=>$this->membermenu,
                 'htmlOptions'=>array('class'=>''),
             ));
         ?>
