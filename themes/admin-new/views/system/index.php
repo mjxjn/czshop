@@ -4,17 +4,27 @@
     </div>
     <div class="install mt10">
         <dl>
-            <dt><a href="home1.2.1.html" class="hover">站点信息</a><a href="home1.2.2.html">基本设置</a><a href="home1.2.3.html">购物设置</a><a href="home1.2.4.html">显示设置</a><a href="home1.2.5.html">商品设置</a></dt>
+            <dt><a href="./admin.php?r=system/index&groupid=1" <?php echo $groupid == 1 ? "class='hover'" : '' ;?>>站点信息</a>
+                <a href="./admin.php?r=system/index&groupid=2" <?php echo $groupid == 2 ? "class='hover'" : '' ;?>>基本设置</a>
+                <a href="./admin.php?r=system/index&groupid=3" <?php echo $groupid == 3 ? "class='hover'" : '' ;?>>购物设置</a>
+                <a href="./admin.php?r=system/index&groupid=4" <?php echo $groupid == 4 ? "class='hover'" : '' ;?>>显示设置</a>
+                <a href="./admin.php?r=system/index&groupid=5" <?php echo $groupid == 5 ? "class='hover'" : '' ;?>>商品设置</a>
+            </dt>
+            <?php $form=$this->beginWidget('CActiveForm', array(
+                'id'=>'admin-user-form',
+                'enableAjaxValidation'=>false,
+            )); ?>
             <dd>
                 <ul class="web">
                    <?php  foreach ($model as $key=>$values ){ ?>
-                        <?php $this->renderPartial('_web', array('values' => $values)); ?>
+                        <?php $this->renderPartial('_web', array('values' => $values,'groupid' => $groupid)); ?>
                     <?php } ?>
                 </ul>
                 <div class="input1">
-                    <input type="image" src="images/input_1.png" />
+                    <input type="image" src="<?php echo F::themeUrl(); ?>/images/input_1.png" />
                 </div>
             </dd>
+            <?php $this->endWidget(); ?>
         </dl>
     </div>
     <div class="copy">
