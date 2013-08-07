@@ -117,20 +117,24 @@ class SystemController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$system_model = System::model();
 
-		$condition = "groupid = 1";
-		
+		$system_model = System::model();
+		if(isset($_POST['System'])){
+			foreach ($_POST['System'][$_POST['groupid']] as $key => $value) {
+	    		$c=new CDbCriteria;
+				$c->condition = "varname = '".$key."'";
+				$a=array('value'=>$value);
+				$result[$key] = $system_model->updateAll($a, $c);
+	    	}
+		}
+		$groupid = !empty($_GET['groupid']) ? $_GET['groupid'] : 1;
+		$condition = array(
+			'condition'=>'groupid = '.$groupid,
+			'order' => 'sort asc'
+		);
 		$model = $system_model->findAll($condition);
-		/*foreach ($list as $key => $value) {
-		    	$array[$value['varname']]['varname'] = $value['varname'];
-		    	$array[$value['varname']]['info'] = $value['info'];
-		    	$array[$value['varname']]['groupid'] = $value['groupid'];
-		    	$array[$value['varname']]['value'] = $value['value'];
-		    	$array[$value['varname']]['lang'] = $value['lang'];
-		}*/
 	    
-		$this->render('index',array('model'=>$model));
+		$this->render('index',array('model'=>$model,'groupid'=>$groupid));
 	}
 
 	/**
@@ -147,7 +151,6 @@ class SystemController extends Controller
 			'model'=>$model,
 		));
 	}
-
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
