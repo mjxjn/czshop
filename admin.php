@@ -1,17 +1,11 @@
 <?php
-error_reporting(E_ALL & ~(E_STRICT | E_NOTICE));
-// change the following paths if necessary
-$yii=dirname(__FILE__).'/framework/yii.php';
-// remove the following lines when in production mode
-defined('YII_DEBUG') or define('YII_DEBUG',true);
-// specify how many levels of call stack should be shown in each log message
-defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
+//目录安全访问机制
+define('BUILD_DIR_SECURE', true); 
+define('DIR_SECURE_FILENAME', 'index.html');
+define('DIR_SECURE_CONTENT', 'deney Access!'); 
+'DEFAULT_TIMEZONE'=>'Asia/Shanghai' // 设置默认时区为新加坡
 
-$root=dirname(__FILE__);
-
-require_once($yii);
-//$config = dirname(__FILE__) . '/protected/config/main-admin.php';
-$local=require('./protected/config/main-db.php');
-$base=require('./protected/admin/config/main.php');
-$config=CMap::mergeArray($base, $local);
-Yii::createWebApplication($config)->run();
+define('APP_NAME','admin');
+define('APP_PATH','./admin/');
+define('APP_DEBUG',TRUE); 
+require './admin/ThinkPHP/ThinkPHP.php';
