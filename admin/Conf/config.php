@@ -27,5 +27,11 @@ return array(
 	'DEFAULT_THEME'=>'admin', //模版主题
 
 	'SESSION_PREFIX'=>'admin_',//SESSION前缀
+
+	'LAYOUT_ON'=>true,//模板布局开启
+
+	'URL_MODEL'=>0,//URL普通模式
+
+	'URL_CASE_INSENSITIVE' =>true,//URL不区分大小写
 );
 ?>
