@@ -1,0 +1,62 @@
+{__NOLAYOUT__}
+<include file="main:style" />
+<div class="content">
+    <div class="site">
+        Commerz Board <a href="#">管理中心</a> > 注册与登录设置
+    </div>
+    <div class="install mt10">
+        <dl>
+            <dt><a href="__APP__/system/regset" class="hover">注册设置</a><a href="home1.3.2.html">登录设置</a></dt>
+            <form method="post" action="__URL__/save">
+                <input name="groupid" value="{$groupid}" type="hidden">
+                <dd>
+                    <ul class="web">
+                        <volist name="list" id="vo">
+                            <li>
+                                <strong>{$vo.info}：</strong>
+                                <switch name="vo.type" >
+                                    <case value="input">
+                                        <input type="text" value="{$vo.value}" class="text_input" name="system[{$vo.varname}]"/>
+                                    </case>
+                                    <case value="radio">
+                                        <b>
+                                            <volist name="vo.list" id="data">
+                                                <label><input type="radio" name="system[{$vo.varname}]" value="{$data.val}" <eq name='data.val' value='$vo.value'>checked</eq>/> {$data.lang} </label>
+                                            </volist>
+                                        </b>
+                                    </case>
+                                    <case value="textarea">
+                                        <textarea name="system[{$vo.varname}]">{$vo.value}</textarea>
+                                    </case>
+
+                                    <case value="select">
+                                        <select name="system[{$vo.varname}]">
+                                            <volist name="vo.list" id="data">
+                                                <option value="{$data.val}" <eq name='data.val' value='$vo.value'>selected</eq>>{$data.lang}</option>
+                                            </volist>
+                                        </select>
+                                    </case>
+                                    <default />
+                                        <input type="text" value="{$vo.value}" class="text_input" name="system[{$vo.varname}]"/>
+                                </switch>
+                                <span>{$vo.lang}</span>
+                            </li>
+                        </volist>
+                    </ul>
+                    <div class="input1">
+                        <input type="image" src="../Public/images/input_1.png" />
+                    </div>
+                </dd>
+            </form>
+        </dl>
+    </div>
+    <div class="copy">
+        Powered by Commerz 1.0 版权所有 © 2013 迪米盒子网络科技有限公司，并保留所有权利。
+    </div>
+</div>
+<script>
+$(function(){
+    $(".odd li:odd").css("background","#fff");
+    $(".even li:even").css("background","#fff");
+});
+</script>
