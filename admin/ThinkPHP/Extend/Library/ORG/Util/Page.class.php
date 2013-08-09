@@ -141,7 +141,7 @@ class Page {
                 }
             }else{
                 if($this->totalPages != 1){
-                    $linkPage .= "<span class='current'>".$page."</span>";
+                    $linkPage .= "<a href='#' class='hover'>".$page."</span>";
                 }
             }
         }

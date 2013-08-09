@@ -299,3 +299,19 @@ $(function(){
 	
 });
 
+function ajaxPost(act,fun,box,id){
+	$.ajax({
+	   type: "POST",
+	   url: "?m="+act+"&a="+fun,
+	   data: "id="+id,
+	   success: function(msg){
+	   	if(msg.status==1){
+	     		alert( "Data Saved: " + msg.data.admin_name );
+	     		$("#"+box).show();
+	     		
+	     	}else{
+	     		alert(msg.info);
+	     	}
+	   }
+	});
+}

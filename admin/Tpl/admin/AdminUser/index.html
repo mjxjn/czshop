@@ -1,0 +1,76 @@
+{__NOLAYOUT__}
+<include file="main:style" />
+<div class="content">
+    <div class="site">
+        Commerz Board <a href="#">管理中心</a> > 后台管理团队
+    </div>
+    <div class="install mt10">
+        <dl>
+            <dt><a href="{:U('adminUser/index')}" class="hover">团队列表</a><a href="{:U('adminUser/    ')}">添加团队</a></dt>
+            <dd>
+                <div class="login mt10">
+                    <h3>后台管理团队列表</h3>
+                    <div class="table">
+                        <table cellspacing="0" cellpadding="0" border="0" style="font-size: 12px;">
+                            <tr>
+                                <th>用户名</th>
+                                <th>最后登录时间</th>
+                                <th>共计登录次数</th>
+                                <th>操作</th>
+                            </tr>
+                            <volist name='list' id='vo'>
+                            <tr>
+                                <td>{$vo.admin_name}</td>
+                                <td>{$vo.last_login|date='Y-m-d H:i:s',###}</td>
+                                <td>{$vo.login_count}</td>
+                                <td><eq name="vo.admin_id" value="1">超级管理员不可编辑<else /><a href="#" onclick="ajaxPost('adminUser','update','pop_box1',{$vo.admin_id})">编辑</a><a href="#">权限设置</a><a href="{:U('adminUser/delete',array('admin_id'=>$vo['admin_id']))}" onclick="if(confirm('确实要删除吗?')) return true;  else  return false;">删除</a></eq></td>
+                            </tr>
+                            </volist>
+                        </table>
+                    </div>
+                </div>
+                <div class="page">
+                    {$page}
+                </div>
+            </dd>
+        </dl>
+    </div>
+    <div class="copy">
+        Powered by Commerz 1.0 版权所有 © 2013 迪米盒子网络科技有限公司，并保留所有权利。
+    </div>
+</div>
+
+<div class="pop_box1" id='pop_box1' style=" display:none;">
+    <dl>
+        <dt><strong><b>编辑管理员</b></strong><span><a href="#" class="clos1"><img src="../Public/images/ico_close.png" /></a></span></dt>
+        <form name="pop_box1" action="__URL__" id="form">
+        <dd>
+            <ul class="web">
+                <li>
+                    <strong>用户名：</strong>
+                    <input type="text" value="" name='admin_name' id='admin_name' class="text_input"><span>修改登录用户名</span>
+                </li>
+                <li>
+                    <strong>新密码：</strong>
+                    <input type="password" value="" name='password' id='password' class="text_input"><span>留空不做修改</span>
+                </li>
+                <li>
+                    <strong>确认新密码：</strong>
+                    <input type="password" value="" name='repassword' id='repassword' class="text_input"><span>确认与新密码输入一致</span>
+                </li>
+            </ul>
+            <div class="submit1 center mt5">
+                <a href="#" class="clos1">保存</a><a href="#" class="clos1">取消</a>
+                <input type="hidden" name="admin_id" id='admin_id' value="" />
+            </div>
+        </dd>
+        </form>
+    </dl>
+</div>
+<script>
+$(function(){
+    $(".odd li:odd").css("background","#fff");
+    $(".even li:even").css("background","#fff");
+    $(".table tr:odd").css("background","#fff");
+});
+</script>

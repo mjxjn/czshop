@@ -5,10 +5,10 @@ return array(
 
 	// 添加数据库配置信息
 	'DB_TYPE'   => 'mysql', // 数据库类型
-	'DB_HOST'   => 'mysql21.100ws.com', // 服务器地址
-	'DB_NAME'   => 'maxia5_czshop', // 数据库名
-	'DB_USER'   => 'maxia5_czshop', // 用户名
-	'DB_PWD'    => '7482925', // 密码
+	'DB_HOST'   => '113.10.137.161', // 服务器地址
+	'DB_NAME'   => 'my02', // 数据库名
+	'DB_USER'   => 'my02', // 用户名
+	'DB_PWD'    => 'doushichao', // 密码
 	'DB_PORT'   => 3306, // 端口
 	'DB_PREFIX' => 'cz_', // 数据库表前缀
 
@@ -33,5 +33,9 @@ return array(
 	'URL_MODEL'=>0,//URL普通模式
 
 	'URL_CASE_INSENSITIVE' =>true,//URL不区分大小写
+
+	'DB_FIELDTYPE_CHECK'=>true,  // 开启字段类型验证
+
+	'SHOW_PAGE_TRACE'      => true, //显示页面Trace信息
 );
 ?>
