@@ -306,9 +306,16 @@ function ajaxPost(act,fun,box,id){
 	   data: "id="+id,
 	   success: function(msg){
 	   	if(msg.status==1){
-	     		alert( "Data Saved: " + msg.data.admin_name );
-	     		$("#"+box).show();
-	     		
+	   		if(act=='adminUser'){
+	   			$('#admin_id').attr('value', msg.data.admin_id);
+	   			$('#admin_name').attr('value', msg.data.admin_name);
+	   			if(msg.data.status==1){
+	   				$('#status_1').attr('checked', 'checked');
+	   			}else{
+	   				$('#status_0').attr('checked', 'checked');
+	   			}
+	     			$("#"+box).show();
+	     		}
 	     	}else{
 	     		alert(msg.info);
 	     	}

@@ -6,7 +6,7 @@
     </div>
     <div class="install mt10">
         <dl>
-            <dt><a href="{:U('adminUser/index')}" class="hover">团队列表</a><a href="{:U('adminUser/    ')}">添加团队</a></dt>
+            <dt><a href="{:U('adminUser/index')}" class="hover">团队列表</a><a href="{:U('adminUser/create')}">添加团队</a></dt>
             <dd>
                 <div class="login mt10">
                     <h3>后台管理团队列表</h3>
@@ -20,7 +20,7 @@
                             </tr>
                             <volist name='list' id='vo'>
                             <tr>
-                                <td>{$vo.admin_name}</td>
+                                <td><eq name='vo.status' value='1'><font color="red"></eq>{$vo.admin_name}<eq name='vo.status' value='1'></font></eq></td>
                                 <td>{$vo.last_login|date='Y-m-d H:i:s',###}</td>
                                 <td>{$vo.login_count}</td>
                                 <td><eq name="vo.admin_id" value="1">超级管理员不可编辑<else /><a href="#" onclick="ajaxPost('adminUser','update','pop_box1',{$vo.admin_id})">编辑</a><a href="#">权限设置</a><a href="{:U('adminUser/delete',array('admin_id'=>$vo['admin_id']))}" onclick="if(confirm('确实要删除吗?')) return true;  else  return false;">删除</a></eq></td>
@@ -43,7 +43,7 @@
 <div class="pop_box1" id='pop_box1' style=" display:none;">
     <dl>
         <dt><strong><b>编辑管理员</b></strong><span><a href="#" class="clos1"><img src="../Public/images/ico_close.png" /></a></span></dt>
-        <form name="pop_box1" action="__URL__" id="form">
+        <form name="pop_box1" action="{:U('adminUser/update')}" method="post" id="form">
         <dd>
             <ul class="web">
                 <li>
@@ -58,10 +58,16 @@
                     <strong>确认新密码：</strong>
                     <input type="password" value="" name='repassword' id='repassword' class="text_input"><span>确认与新密码输入一致</span>
                 </li>
+                <li>
+                    <strong>当前状态：</strong>
+                    <label><input type="radio" name="status" value="0" id="status_0" /> 开启 </label>
+                    <label><input type="radio" name="status" value="1" id="status_1" /> 禁用 </label>
+                </li>
             </ul>
             <div class="submit1 center mt5">
-                <a href="#" class="clos1">保存</a><a href="#" class="clos1">取消</a>
+                <a href="#" class="clos1" onclick='$("#form").submit()'>保存</a><a href="#" class="clos1">取消</a>
                 <input type="hidden" name="admin_id" id='admin_id' value="" />
+                <input type='hidden' name='act' value="edit" />
             </div>
         </dd>
         </form>
