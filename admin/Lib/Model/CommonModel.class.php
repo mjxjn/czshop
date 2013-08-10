@@ -1,4 +1,4 @@
 <?php
-class CommonModel extends Model{
+class CommonModel extends RelationModel{
 	
 }

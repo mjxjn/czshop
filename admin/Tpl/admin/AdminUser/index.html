@@ -21,9 +21,9 @@
                             <volist name='list' id='vo'>
                             <tr>
                                 <td><eq name='vo.status' value='1'><font color="red"></eq>{$vo.admin_name}<eq name='vo.status' value='1'></font></eq></td>
-                                <td>{$vo.last_login|date='Y-m-d H:i:s',###}</td>
-                                <td>{$vo.login_count}</td>
-                                <td><eq name="vo.admin_id" value="1">超级管理员不可编辑<else /><a href="#" onclick="ajaxPost('adminUser','update','pop_box1',{$vo.admin_id})">编辑</a><a href="#">权限设置</a><a href="{:U('adminUser/delete',array('admin_id'=>$vo['admin_id']))}" onclick="if(confirm('确实要删除吗?')) return true;  else  return false;">删除</a></eq></td>
+                                <td><neq name='vo.last_login' value=''>{$vo.last_login|date='Y-m-d H:i:s',###}<else />无记录</neq></td>
+                                <td>{$vo.login_count|default='0'}</td>
+                                <td><eq name="vo.admin_id" value="1">超级管理员不可编辑<else /><a href="#" onclick="ajaxPost('adminUser','update','pop_box1',{$vo.admin_id})">编辑</a><a href="#">权限设置</a><a href="{:U('adminUser/delete',array('id'=>$vo['admin_id']))}" onclick="if(confirm('确实要删除吗?')) return true;  else  return false;">删除</a></eq></td>
                             </tr>
                             </volist>
                         </table>

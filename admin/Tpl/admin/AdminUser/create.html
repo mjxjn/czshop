@@ -7,33 +7,35 @@
    	<div class="install mt10">
     	<dl>
         	<dt><a href="{:U('adminUser/index')}" >团队列表</a><a href="{:U('adminUser/create')}" class="hover">添加团队</a></dt>
-            <dd>
+            <form name="form" action="{:U('adminUser/create')}" method='post' id="form" >
+            <dd> 
             	<ul class="web">
                     <li>
                         <strong>管理员帐号：</strong>
-                            <input type="text" name="admin_name" value="" class="text_input" /><span>格式可以是3~16位由任意中文，数组，字母组合</span>
+                            <input type="text" name="admin_name" value="" class="text_input" /><span>格式可以是3~16位由任意中文，字母，数组组合而成</span>
                     </li>
                     <li>
                         <strong>密码：</strong>
-                            <input type="text" value="YYYY-MM-DD" class="text_input" /><span>使用 yyyy(yy) 表示年，mm 表示月，dd 表示天。如 yyyy-mm-dd 表示 2000-1-1</span>
+                            <input type="password" name="password" value="" class="text_input" /><span>格式可以是6~22位由任意字母，数组及特殊符号组合而成</span>
                     </li>
                     <li>
                         <strong>确认密码：</strong>
-                            <input type="text" value="YYYY-MM-DD" class="text_input" /><span>使用 yyyy(yy) 表示年，mm 表示月，dd 表示天。如 yyyy-mm-dd 表示 2000-1-1</span>
+                            <input type="password" name="repassword" value="" class="text_input" /><span>请再次输入密码</span>
                     </li>
                     <li>
                         <strong>状态：</strong>
                         <b>
-                            <label><input type="radio" name="time" value="关闭" id="RadioGroup1_0" /> 24小时制 </label>
-                            <label><input type="radio" name="time" value="开启" id="RadioGroup1_1" /> 12小时制 </label>
+                            <label><input type="radio" name="status" checked value="0" id="status_0" /> 开启 </label>
+                            <label><input type="radio" name="status" value="1" id="status_1" /> 禁用 </label>
                         </b>
-                        <span>设置时间格式，默认为24小时制</span>
+                        <span></span>
                     </li>
                 </ul>
                 <div class="input1">
                 	<input type="image" src="../Public/images/input_1.png" />
                 </div>
             </dd>
+            </form>
         </dl>
     </div>
     <div class="copy">

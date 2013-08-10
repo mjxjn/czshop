@@ -1,0 +1,65 @@
+{__NOLAYOUT__}
+<include file="main:style" />
+<link rel="stylesheet" href="../Public/date/css/jquery.ui.all.css">
+<script type="text/javascript" src="../Public/date/jQuery/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../Public/date/jQuery/jquery.ui.core.js"></script>
+<script type="text/javascript" src="../Public/date/jQuery/jquery.ui.datepicker.js"></script>
+<script>
+$(function() {
+	$( "#datepicker" ).datepicker();
+	$( "#datepicker" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
+	$( "#datepicker1" ).datepicker();
+	$( "#datepicker1" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
+});
+</script>
+
+<div class="content">
+    <div class="site">
+        Commerz Board <a href="#">管理中心</a> > 管理团队日志
+    </div>
+   	<div class="install mt10">
+			<div class="guanli">
+            	<span>按管理员查看</span><select><option>古人灏</option></select><input type="image" src="../Public/images/input_2.png" /><span>按时间查看</span><div class="day fl"><input type="text" id="datepicker" class="time_input" /><em>~</em><input type="text" id="datepicker1" class="time_input" /></div><input type="image" src="../Public/images/input_2.png" />
+            </div>
+            	<div class="login mt10">
+                	<h3>管理团队日志列表</h3>
+                    <div class="table">
+                    	<table cellspacing="0" cellpadding="0" border="0" style="font-size: 12px;">
+                        	<tr>
+                            	<th><input type="checkbox" value="" /></th>
+                                <th>操作者</th>
+                                <th>操作时间</th>
+                                <th>IP地址</th>
+                                <th>操作记录</th>
+                            </tr>
+                            <volist name="list" id="vo">
+                            <tr>
+                            	<td><input type="checkbox" value="{$vo.log_id}" /></td>
+                            	<td>古人灏</td>
+                            	<td>{$vo.add_time|date='Y-m-d H:i:s',###}</td>
+                            	<td>{$vo.log_ip}</td>
+                                <td>{$vo.log_info}</td>
+                            </tr>
+                            </volist>
+                        </table>
+                    </div>
+                </div>
+                <div class="submit fl">
+                	<a href="#">清除日志</a>
+                </div>
+                <div class="page fr">
+                	{$page}
+                </div>
+				<div class="clear"></div>
+    </div>
+    <div class="copy">
+        Powered by Commerz 1.0 版权所有 © 2013 迪米盒子网络科技有限公司，并保留所有权利。
+    </div>
+</div>
+<script>
+$(function(){
+	$(".odd li:odd").css("background","#fff");
+	$(".even li:even").css("background","#fff");
+	$(".table tr:odd").css("background","#fff");
+});
+</script>
