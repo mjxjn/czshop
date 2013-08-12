@@ -128,7 +128,7 @@ $(function(){
                         var html = "";
                         for(var i in msg.data){
                             msg.data[i].sort = msg.data[i].sort == null ? '0' : msg.data[i].sort;
-                            html += '<tr class="tr_'+msg.data[i].pid+'" id="area_'+msg.data[i].area_id+'"><td align="left">&nbsp;&nbsp;&nbsp;&nbsp;<b val="'+msg.data[i].area_id+'" onclick="getarea('+msg.data[i].area_id+',3)"><img src="../Public/images/ico_jia.png">&nbsp;'+msg.data[i].area_name+'</b></td><td><span><input type="text" value="'+msg.data[i].sort+'" class="input_shu" onblur="setsort('+msg.data[i].area_id+',this.value,'+msg.data[i].sort+')"/></span></td><td><span><a href="__URL__/addChildren/id/'+msg.data[i].area_id+'" class="show"><img src="../Public/images/ico_33.png" alt="添加子地区" /></a></span></td><td><span><a href="__URL__/uparea/id/'+msg.data[i].area_id+'"><img src="../Public/images/ico_34.png" alt="编辑" /></a></span></td><td><span class="dell"><a href="javascript:void(0)"><img src="../Public/images/ico_cuo.png" alt="删除" /></a></span></td></tr>';
+                            html += '<tr class="tr_'+msg.data[i].pid+'" id="area_'+msg.data[i].area_id+'" lv2="'+msg.data[i].area_id+'"><td align="left">&nbsp;&nbsp;&nbsp;&nbsp;<b val="'+msg.data[i].area_id+'" onclick="getarea('+msg.data[i].area_id+',3)"><img src="../Public/images/ico_jia.png">&nbsp;'+msg.data[i].area_name+'</b></td><td><span><input type="text" value="'+msg.data[i].sort+'" class="input_shu" onblur="setsort('+msg.data[i].area_id+',this.value,'+msg.data[i].sort+')"/></span></td><td><span><a href="__URL__/addChildren/id/'+msg.data[i].area_id+'" class="show"><img src="../Public/images/ico_33.png" alt="添加子地区" /></a></span></td><td><span><a href="__URL__/uparea/id/'+msg.data[i].area_id+'"><img src="../Public/images/ico_34.png" alt="编辑" /></a></span></td><td><span class="dell"><a href="javascript:void(0)"><img src="../Public/images/ico_cuo.png" alt="删除" /></a></span></td></tr>';
                         }
                         thistag.parent().parent().after(html);
                         thistag.children().attr("src","../Public/images/ico_jian.png");
@@ -138,7 +138,9 @@ $(function(){
         },
         function(){
             var area_id = $(this).attr("val");
+            var lv2 = $(".tr_"+area_id).attr("lv2");
             $(".tr_"+area_id).remove();
+            $(".tr_"+lv2).remove();
             thistag.children().attr("src","../Public/images/ico_jia.png")
         }
     );
