@@ -155,7 +155,7 @@ a:hover{ text-decoration:underline;}
 .table_ul img{padding-top:7px;}
 .table_ul li .ico_jia{ display:inline-block;padding-left:15px; background:url(ico_jia.png) no-repeat 0 center;}
 .table_ul li .ico_jian{ display:inline-block;padding-left:15px; background:url(ico_jian.png) no-repeat 0 center;}
-.table_ul li ul{ display:none;width: 98%;padding-left: 2%;}
+.table_ul li ul{ display:none;}
 .toggle{ cursor:pointer;}
 .page{padding-top:10px;padding-right:5px;text-align:right;color:#000;}
 .page a{ display:inline-block;margin:0 2px;height:18px;line-height:18px;padding:0 6px;color:#000;border:1px solid #f1f1f1;}

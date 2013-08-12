@@ -6,51 +6,26 @@
     </div>
    	<div class="goods mt10">
         <div class="login mt10">
-        	<h3><span class="add_pai"><a href="#" class="show_box1">添加新地区</a></span>地区列表</h3>
-            <div class="table_ul">
-            	<ul>
-                	<li>
-                        <strong>地区名称</strong>
-                        <strong>地区排序</strong>
-                        <strong>添加子地区</strong>
-                        <strong>编辑当前地区</strong>
-                        <strong>删除操作</strong>
-                    </li>
+        	<h3><span class="add_pai"><a href="javascript:void(0)" class="show_box1">添加新地区</a></span>地区列表</h3>
+            <div class="table">
+                <table cellspacing="0" cellpadding="0" border="0" style="font-size: 12px;">
+                    <tr>
+                        <th width="19.8%"><strong>地区名称</strong></th>
+                        <th width="19.8%"><strong>地区排序</strong></th>
+                        <th width="19.8%"><strong>添加子地区</strong></th>
+                        <th width="19.8%"><strong>编辑当前地区</strong></th>
+                        <th width="19.8%"><strong>删除操作</strong></th>
+                    </tr>
                     <volist name="list" id="vo">
-                        <li>
-                            <span class="toggle"><b class="ico_jia">{$vo.area_name}</b></span>
-                            <span><input type="text" value="{$vo.sort}" class="input_shu" /></span>
-                            <span><a href="__URL__/addChildren/id/{$vo.area_id}" class="show"><img src="../Public/images/ico_33.png" alt="添加子地区" /></a></span>
-                            <span><a href="__URL__/uparea/id/{$vo.area_id}"><img src="../Public/images/ico_34.png" alt="编辑" /></a></span>
-                            <span class="dell"><a href="javascript:void(0)"><img src="../Public/images/ico_cuo.png" alt="删除" /></a></span>
-                            <div class="clear"></div>
-                            <volist name="vo.lv2" id="data">
-                                <ul>
-                                    <li>
-                                        <span class="toggle"><b class="ico_jia">{$data.area_name}</b></span>
-                                        <span><input type="text" value="{$data.sort}" class="input_shu" /></span>
-                                        <span><a href="__URL__/addChildren/id/{$data.area_id}" class="show"><img src="../Public/images/ico_33.png" alt="添加子地区" /></a></span>
-                                        <span><a href="__URL__/uparea/id/{$data.area_id}"><img src="../Public/images/ico_34.png" alt=编辑""/></a></span>
-                                        <span class="dell"><a href="javascript:void(0)"><img src="../Public/images/ico_cuo.png" alt="删除" /></a></span>
-                                        <div class="clear"></div>
-                                        <volist name="data.lv3" id="val">
-                                            <ul>
-                                                <li>
-                                                    <span><b>{$val.area_name}</b></span>
-                                                    <span><input type="text" value="{$val.sort}" class="input_shu" /></span>
-                                                    <span><a href="__URL__/uparea/id/{$val.area_id}" class="show"></a></span>
-                                                    <span><a href="__URL__/uparea/id/{$val.area_id}"><img src="../Public/images/ico_34.png" alt="编辑" /></a></span>
-                                                    <span class="dell"><a href="javascript:void(0)"><img src="../Public/images/ico_cuo.png" alt="删除" /></a></span>
-                                                </li>
-                                            </ul>
-                                        </volist>
-                                    </li>
-                                </ul>
-                            </volist>
-                        </li>
+                        <tr>
+                            <td align='left'><b class="areatoggle" val='{$vo.area_id}' grade="2"><img src="../Public/images/ico_jia.png">&nbsp;{$vo.area_name}</b></td>
+                            <td><span><input type="text" value="{$vo.sort}" class="input_shu" onblur="setsort({$vo.area_id},this.value,{$vo.sort})"/></span></td>
+                            <td><span><a href="__URL__/addChildren/id/{$vo.area_id}" class="show"><img src="../Public/images/ico_33.png" alt="添加子地区" /></a></span></td>
+                            <td><span><a href="__URL__/uparea/id/{$vo.area_id}"><img src="../Public/images/ico_34.png" alt="编辑" /></a></span></td>
+                            <td><span class="dell"><a href="javascript:void(0)"><img src="../Public/images/ico_cuo.png" alt="删除" /></a></span></td>
+                        </tr>
                     </volist>
-
-                </ul>
+                </table>
             </div>
         </div>
         <div class="page fr">{$page}</div>
@@ -60,6 +35,141 @@
         Powered by Commerz 1.0 版权所有 © 2013 迪米盒子网络科技有限公司，并保留所有权利。
     </div>
 </div>
+<!-- 添加地区 -->
+<div class="pop_box1">
+    <dl>
+        <dt><strong><b>添加地区</b></strong><span><a href="javascript:void(0)" class="clos1"><img src="../Public/images/ico_close.png" /></a></span></dt>
+        <form method="post" action="__URL__/addsave">
+            <dd>
+                <ul class="web">
+                    <li>
+                        <strong>地区名称设置：</strong>
+                        <input type="text" class="text_input" name="area_name"><span>设置当前地区名称</span>
+                    </li>
+                    <li>
+                        <strong>上级地区设置：</strong>
+                        <select class="addarea" name="pid"></select>
+                        <span>点击加号可以更换地区的上级节点</span>
+                    </li>
+                    <li>
+                        <strong>排序：</strong>
+                        <input type="text" class="text_input" name="sort"><span>设置当前地区排序，数字越小越靠前</span>
+                    </li>
+                </ul>
+                <div class="submit1 center mt5">
+                    <input type="image" src="../Public/images/input_1.png" /><a href="#" class="clos1">取消</a>
+                </div>
+            </dd>
+        </form>
+    </dl>
+</div>
+<script type="text/javascript">
+function setsort(area_id,sort,old){
+
+    var Datatype = /^\d{1,4}$/;
+
+    if(false === Datatype.test(sort)){
+        alert("只能输入4为以内的数字！");
+    }else{
+        if(sort != old){
+            $.ajax({
+                type: "POST",
+                url: "__URL__/ajaxsort",
+                data: "sort="+sort+"&area_id="+area_id,
+                success: function(msg){
+                     if(msg.status=='0'){
+                        alert(msg.data);
+                    }
+                }
+            });
+        }
+    }
+}
+$(function(){
+    $(".show_box1").click(function(){
+        $.ajax({
+            type: "POST",
+            url: "__URL__/ajaxaddarea",
+            data: "time="+Date.parse(new Date()),
+            success: function(msg){
+                 if(msg.status=='0'){
+                    alert(msg.data);
+                }else{
+                    var html = "<option value='0'>无上级地区</option>";
+                    for(var i in msg.data){
+                        var lv2 = "";
+                        for(var j in msg.data[i].list){
+                            lv2 +='<option value="'+msg.data[i].list[j].area_id+'">&nbsp;&nbsp;&nbsp;--'+msg.data[i].list[j].area_name+'</option>';
+                        }
+                        html +='<option value="'+msg.data[i].area_id+'">'+msg.data[i].area_name+'</option>'+lv2;
+                    }
+                    $(".addarea").append(html);
+                    $(".pop_box1").show();
+                }
+            }
+        });
+    })
+    $(".clos1").click(function(){
+            $(".pop_box1").hide();
+    });
+    $(".areatoggle").toggle(
+        function(){
+            var area_id = $(this).attr("val");
+            var grade = $(this).attr("grade");
+            thistag = $(this);
+            $.ajax({
+                type: "POST",
+                url: "__URL__/ajaxarea",
+                data: "grade="+grade+"&area_id="+area_id,
+                success: function(msg){
+                    if(msg.status=='0'){
+                        alert(msg.data);
+                    }else{
+                        var html = "";
+                        for(var i in msg.data){
+                            msg.data[i].sort = msg.data[i].sort == null ? '0' : msg.data[i].sort;
+                            html += '<tr class="tr_'+msg.data[i].pid+'" id="area_'+msg.data[i].area_id+'"><td align="left">&nbsp;&nbsp;&nbsp;&nbsp;<b val="'+msg.data[i].area_id+'" onclick="getarea('+msg.data[i].area_id+',3)"><img src="../Public/images/ico_jia.png">&nbsp;'+msg.data[i].area_name+'</b></td><td><span><input type="text" value="'+msg.data[i].sort+'" class="input_shu" onblur="setsort('+msg.data[i].area_id+',this.value,'+msg.data[i].sort+')"/></span></td><td><span><a href="__URL__/addChildren/id/'+msg.data[i].area_id+'" class="show"><img src="../Public/images/ico_33.png" alt="添加子地区" /></a></span></td><td><span><a href="__URL__/uparea/id/'+msg.data[i].area_id+'"><img src="../Public/images/ico_34.png" alt="编辑" /></a></span></td><td><span class="dell"><a href="javascript:void(0)"><img src="../Public/images/ico_cuo.png" alt="删除" /></a></span></td></tr>';
+                        }
+                        thistag.parent().parent().after(html);
+                        thistag.children().attr("src","../Public/images/ico_jian.png");
+                    }
+                }
+            });
+        },
+        function(){
+            var area_id = $(this).attr("val");
+            $(".tr_"+area_id).remove();
+            thistag.children().attr("src","../Public/images/ico_jia.png")
+        }
+    );
+})
+function delarea(area_id,grade){
+    $(".tr_"+area_id).remove();
+    $("#area_"+area_id).children().children().attr("onclick","getarea("+area_id+","+grade+")");
+    $("#area_"+area_id).children().children().children().attr("src","../Public/images/ico_jia.png");
+}
+function getarea(area_id,grade){
+    $.ajax({
+        type: "POST",
+        url: "__URL__/ajaxarea",
+        data: "grade="+grade+"&area_id="+area_id,
+        success: function(msg){
+            if(msg.status=='0'){
+                alert(msg.data);
+            }else{
+                var html = "";
+                for(var i in msg.data){
+                    msg.data[i].sort = msg.data[i].sort == null ? '0' : msg.data[i].sort;
+                    html += '<tr class="tr_'+msg.data[i].pid+'"><td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>'+msg.data[i].area_name+'</b></td><td><span><input type="text" value="'+msg.data[i].sort+'" class="input_shu" onblur="setsort('+msg.data[i].area_id+',this.value,'+msg.data[i].sort+')"/></span></td><td>&nbsp;</td><td><span><a href="__URL__/uparea/id/'+msg.data[i].area_id+'"><img src="../Public/images/ico_34.png" alt="编辑" /></a></span></td><td><span class="dell"><a href="javascript:void(0)"><img src="../Public/images/ico_cuo.png" alt="删除" /></a></span></td></tr>';
+                }
+                $("#area_"+area_id).after(html);
+                $("#area_"+area_id).children().children().attr("onclick","delarea("+area_id+","+grade+")");
+                $("#area_"+area_id).children().children().children().attr("src","../Public/images/ico_jian.png");
+            }
+        }
+    });
+}
+</script>
 <script>
 $(function(){
     $(".odd li:odd").css("background","#fff");
