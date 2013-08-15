@@ -18,15 +18,32 @@ $(function() {
         Commerz Board <a href="#">管理中心</a> > 管理团队日志
     </div>
    	<div class="install mt10">
-			<div class="guanli">
-            	<span>按管理员查看</span><select><option>古人灏</option></select><input type="image" src="../Public/images/input_2.png" /><span>按时间查看</span><div class="day fl"><input type="text" id="datepicker" class="time_input" /><em>~</em><input type="text" id="datepicker1" class="time_input" /></div><input type="image" src="../Public/images/input_2.png" />
+	<div class="guanli">
+            <form name="form1" id="form1" action="{:U('adminLog/find')}" method="post">
+            	<span>按管理员查看</span>
+                <select name="adminid">
+                    <volist name="adminlist" id="vo">
+                    <option value="{$vo.admin_id}">{$vo.admin_name}</option>
+                    </volist>
+                </select>
+                <input type="image" src="../Public/images/input_2.png" />
+                <input type="hidden" name="act" value="byadmin">
+            </form>
+            <form name="form1" id="form1" action="{:U('adminLog/find')}" method="post">
+                <span>按时间查看</span>
+                <div class="day fl">
+                    <input type="text" name="starttime" id="datepicker" class="time_input" /><em>~</em><input type="text" name="endtime" id="datepicker1" class="time_input" />
+                </div>
+                <input type="image" src="../Public/images/input_2.png" />
+                <input type="hidden" name="act" value="bytime">
+            </form>
             </div>
             	<div class="login mt10">
                 	<h3>管理团队日志列表</h3>
                     <div class="table">
                     	<table cellspacing="0" cellpadding="0" border="0" style="font-size: 12px;">
                         	<tr>
-                            	<th><input type="checkbox" value="" /></th>
+                                <th><input type="checkbox" value="" /></th>
                                 <th>操作者</th>
                                 <th>操作时间</th>
                                 <th>IP地址</th>

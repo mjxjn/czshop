@@ -11,8 +11,14 @@ class AdminLogAction extends CommonAction{
 		$Page->setConfig('theme','%first% %upPage% %linkPage% %downPage% %end%');
 		$show = $Page->show();// 分页显示输出
 		$list = $adminLog->scope('default,list')->limit($Page->firstRow.','.$Page->listRows)->select();
+
+		//getAdmin
+		$adminUser=D('System/adminUser');
+		$adminlist = $adminUser->scope('selectList')->select();
+
 		$this->assign('list',$list);
 		$this->assign('page',$show);// 赋值分页输出
+		$this->assign('adminlist',$adminlist);
 		$this->display();
 	}
 }

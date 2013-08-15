@@ -7,6 +7,10 @@ class AdminUserModel extends CommonModel{
 	        	),
 	        	'list'=>array('field'=>'admin_id,admin_name,last_login,login_count,status'),
 	        	'info'=>array('field'=>'admin_id,admin_name,status'),
+	        	'selectList'=>array(
+	        		'field'=>'admin_id,admin_name',
+	        		'where'=>array('status'=>'0');
+	        	);
 	);
 	protected $_auto = array( 
 	    	array('status','0'),  // 新增的时候把status字段设置为0
