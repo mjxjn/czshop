@@ -3,6 +3,7 @@
  * Global set - Area set
  * @author DouShiChao <coolboydsc@163.com>
  */
+if(!defined("Commerz")) exit("Access Denied");
 class AreaAction extends CommonAction {
 
 	/**

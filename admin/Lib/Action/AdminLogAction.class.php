@@ -1,4 +1,5 @@
 <?php
+if(!defined("Commerz")) exit("Access Denied");
 class AdminLogAction extends CommonAction{
 	public function index(){
 		$adminLog = D('System/adminLog');

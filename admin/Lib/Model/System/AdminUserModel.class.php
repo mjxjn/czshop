@@ -9,8 +9,8 @@ class AdminUserModel extends CommonModel{
 	        	'info'=>array('field'=>'admin_id,admin_name,status'),
 	        	'selectList'=>array(
 	        		'field'=>'admin_id,admin_name',
-	        		'where'=>array('status'=>'0');
-	        	);
+	        		'where'=>array('status'=>'0'),
+	        	),
 	);
 	protected $_auto = array( 
 	    	array('status','0'),  // 新增的时候把status字段设置为0

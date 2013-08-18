@@ -7,4 +7,8 @@ class AdminLogModel extends CommonModel{
 	        	),
 	        	'list'=>array('field'=>'log_id,add_time,admin_id,log_info,log_ip'),
 	);
+
+	public function admin_log($sn = '', $action, $content){
+		return L('lan');
+	}
 }

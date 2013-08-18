@@ -3,6 +3,7 @@
  * Global set - Site set
  * @author DouShiChao <coolboydsc@163.com>
  */
+if(!defined("Commerz")) exit("Access Denied");
 class SystemAction extends CommonAction {
 
 	/**

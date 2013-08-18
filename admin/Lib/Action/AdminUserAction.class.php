@@ -1,4 +1,5 @@
 <?php
+if(!defined("Commerz")) exit("Access Denied");
 class adminUserAction extends CommonAction {
 	public function index(){
 		$adminUser=D('System/AdminUser');
@@ -11,6 +12,8 @@ class adminUserAction extends CommonAction {
 		$Page->setConfig('theme','%first% %upPage% %linkPage% %downPage% %end%');
 		$show = $Page->show();// 分页显示输出
 		$list = $adminUser->scope('list')->limit($Page->firstRow.','.$Page->listRows)->select();
+		admin_log('','','');
+		echo '---'.L('welcome');
 		$this->assign('list',$list);
 		$this->assign('page',$show);// 赋值分页输出
 		$this->display();

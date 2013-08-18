@@ -3,7 +3,7 @@
 define('BUILD_DIR_SECURE', true); 
 define('DIR_SECURE_FILENAME', 'index.html');
 define('DIR_SECURE_CONTENT', 'deney Access!'); 
-
+define('Commerz',true);
 define('APP_NAME','admin');
 define('APP_PATH','./admin/');
 define('APP_DEBUG',TRUE); 
