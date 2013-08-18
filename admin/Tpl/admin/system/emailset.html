@@ -1,0 +1,70 @@
+{__NOLAYOUT__}
+<include file="main:style" />
+<div class="content">
+    <div class="site">
+        Commerz Board <a href="{:U('index/home')}">管理中心</a> > 邮件服务器设置
+    </div>
+   	<div class="install mt10">
+    	<dl>
+        	<dt>
+                <a href="{:U('system/emailset')}" class="hover">邮件设置</a>
+                <a href="{:U('system/emailtest')}">测试发送</a>
+            </dt>
+            <form method="post" action="{:U('system/save')}">
+                <input name="groupid" value="{$groupid}" type="hidden">
+                <dd>
+                    <ul class="web">
+                        <li>
+                            <strong>{$list.0.info}：</strong>
+                            <b style="width:450px;">
+                                <volist name="list.0.list" id="data">
+                                    <label><input type="radio" name="system[{$list.0.varname}]" value="{$data.val}" <eq name='data.val' value='$list.0.value'>checked</eq>/> {$data.lang} </label><br />
+                                </volist>
+                            </b>
+                            <span>{$list.0.lang}</span>
+                        </li>
+                        <li>
+                            <strong>{$list.1.info}：</strong>
+                            <b style="width:280px;">
+                                <volist name="list.1.list" id="data">
+                                    <label><input type="radio" name="system[{$list.1.varname}]" value="{$data.val}" <eq name='data.val' value='$list.1.value'>checked</eq>/> {$data.lang} </label><br />
+                                </volist>
+                            </b>
+                            <span>{$list.1.lang}</span>
+                        </li>
+                        <li>
+                            <strong>{$list.2.info}：</strong>
+                            <b>
+                                <volist name="list.2.list" id="data">
+                                    <label><input type="radio" name="system[{$list.2.varname}]" value="{$data.val}" <eq name='data.val' value='$list.2.value'>checked</eq>/> {$data.lang} </label>
+                                </volist>
+                            </b>
+                            <span>{$list.2.lang}</span>
+                        </li>
+                        <li>
+                            <strong>{$list.3.info}：</strong>
+                            <b>
+                                <volist name="list.3.list" id="data">
+                                    <label><input type="radio" name="system[{$list.3.varname}]" value="{$data.val}" <eq name='data.val' value='$list.3.value'>checked</eq>/> {$data.lang} </label>
+                                </volist>
+                            </b>
+                            <span>{$list.3.lang}</span>
+                        </li>
+                    </ul>
+                    <div class="input1">
+                        <input type="image" src="../Public/images/input_1.png" />
+                    </div>
+                </dd>
+            </form>
+        </dl>
+    </div>
+    <div class="copy">
+        Powered by Commerz 1.0 版权所有 © 2013 迪米盒子网络科技有限公司，并保留所有权利。
+    </div>
+</div>
+<script>
+$(function(){
+	$(".odd li:odd").css("background","#fff");
+	$(".even li:even").css("background","#fff");
+});
+</script>

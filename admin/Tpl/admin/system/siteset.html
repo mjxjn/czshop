@@ -2,18 +2,18 @@
 <include file="main:style" />
 <div class="content">
     <div class="site">
-        Commerz Board <a href="__APP__/index/home">管理中心</a> > 站点设置
+        Commerz Board <a href="{:U('index/home')}">管理中心</a> > 站点设置
     </div>
    	<div class="install mt10">
     	<dl>
         	<dt>
-                <a href="__URL__/siteset/groupid/1" <eq name="groupid" value="1">class="hover"</eq>>站点信息</a>
-                <a href="__URL__/siteset/groupid/2" <eq name="groupid" value="2">class="hover"</eq>>基本设置</a>
-                <a href="__URL__/siteset/groupid/3" <eq name="groupid" value="3">class="hover"</eq>>购物设置</a>
-                <a href="__URL__/siteset/groupid/4" <eq name="groupid" value="4">class="hover"</eq>>显示设置</a>
-                <a href="__URL__/siteset/groupid/5" <eq name="groupid" value="5">class="hover"</eq>>商品设置</a>
+                <a href="{:U('system/siteset?groupid=1')}" <eq name="groupid" value="1">class="hover"</eq>>站点信息</a>
+                <a href="{:U('system/siteset?groupid=2')}" <eq name="groupid" value="2">class="hover"</eq>>基本设置</a>
+                <a href="{:U('system/siteset?groupid=3')}" <eq name="groupid" value="3">class="hover"</eq>>购物设置</a>
+                <a href="{:U('system/siteset?groupid=4')}" <eq name="groupid" value="4">class="hover"</eq>>显示设置</a>
+                <a href="{:U('system/siteset?groupid=5')}" <eq name="groupid" value="5">class="hover"</eq>>商品设置</a>
             </dt>
-            <form method="post" action="__URL__/save">
+            <form method="post" action="{:U('system/save')}">
                 <input name="groupid" value="{$groupid}" type="hidden">
                 <dd>
                 	<ul class="web">

@@ -2,12 +2,12 @@
 <include file="main:style" />
 <div class="content">
     <div class="site">
-        Commerz Board <a href="#">管理中心</a> > 注册与登录设置
+        Commerz Board <a href="{:U('index/home')}">管理中心</a> > 注册与登录设置
     </div>
     <div class="install mt10">
         <dl>
-            <dt><a href="__APP__/system/regset" class="hover">注册设置</a><a href="__APP__/system/logset">登录设置</a></dt>
-            <form method="post" action="__URL__/save">
+            <dt><a href="{:U('system/regset')}" class="hover">注册设置</a><a href="{:U('system/logset')}">登录设置</a></dt>
+            <form method="post" action="{:U('system/save')}">
                 <input name="groupid" value="{$groupid}" type="hidden">
                 <dd>
                     <ul class="web">
@@ -28,7 +28,6 @@
                                     <case value="textarea">
                                         <textarea name="system[{$vo.varname}]">{$vo.value}</textarea>
                                     </case>
-
                                     <case value="select">
                                         <select name="system[{$vo.varname}]">
                                             <volist name="vo.list" id="data">

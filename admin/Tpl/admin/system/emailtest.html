@@ -1,0 +1,41 @@
+{__NOLAYOUT__}
+<include file="main:style" />
+<div class="content">
+    <div class="site">
+        Commerz Board <a href="{:U('index/home')}">管理中心</a> > 邮件服务器设置
+    </div>
+   	<div class="install mt10">
+    	<dl>
+        	<dt>
+                <a href="{:U('system/emailset')}">邮件设置</a>
+                <a href="{:U('system/emailtest')}" class="hover">测试发送</a>
+            </dt>
+            <dd>
+            	<ul class="web">
+                    <li>
+                    	<strong>测试发件人：</strong>
+                        <input type="text" class="text_input" value="smtp.qq.com" /><span>填写发件人邮箱</span>
+                    </li>
+                    <li>
+                        <strong>发票内容设置：</strong>
+						<textarea></textarea>
+                        <p>如果要测试包含用户名的邮件地址，格式为 username <user@domain.com> 。多个邮件地址每行一个</p>
+                    </li>
+                    
+                </ul>
+                <div class="input1">
+                	<input type="image" src="../Public/images/input_1.png" />
+                </div>
+            </dd>
+        </dl>
+    </div>
+    <div class="copy">
+        Powered by Commerz 1.0 版权所有 © 2013 迪米盒子网络科技有限公司，并保留所有权利。
+    </div>
+</div>
+<script>
+$(function(){
+	$(".odd li:odd").css("background","#fff");
+	$(".even li:even").css("background","#fff");
+});
+</script>

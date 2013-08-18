@@ -17,12 +17,12 @@
                         <th width="19.8%"><strong>删除操作</strong></th>
                     </tr>
                     <volist name="list" id="vo">
-                        <tr>
+                        <tr id="{$vo.area_id}">
                             <td align='left'><b class="areatoggle" val='{$vo.area_id}' grade="2"><img src="../Public/images/ico_jia.png">&nbsp;{$vo.area_name}</b></td>
                             <td><span><input type="text" value="{$vo.sort}" class="input_shu" onblur="setsort({$vo.area_id},this.value,{$vo.sort})"/></span></td>
-                            <td><span><a href="__URL__/addChildren/id/{$vo.area_id}" class="show"><img src="../Public/images/ico_33.png" alt="添加子地区" /></a></span></td>
-                            <td><span><a href="__URL__/uparea/id/{$vo.area_id}"><img src="../Public/images/ico_34.png" alt="编辑" /></a></span></td>
-                            <td><span class="dell"><a href="javascript:void(0)"><img src="../Public/images/ico_cuo.png" alt="删除" /></a></span></td>
+                            <td><span><a href="javascript:void(0)" class="show" onclick="addchildren({$vo.area_id},'{$vo.area_name}')"><img src="../Public/images/ico_33.png" alt="添加子地区" /></a></span></td>
+                            <td><span><a href="javascript:void(0)" onclick="modifyarea({$vo.area_id})"><img src="../Public/images/ico_34.png" alt="编辑" /></a></span></td>
+                            <td><span class="dell" onclick="dellarea({$vo.area_id},this)"><a href="javascript:void(0)"><img src="../Public/images/ico_cuo.png" alt="删除"/></a></span></td>
                         </tr>
                     </volist>
                 </table>
@@ -39,7 +39,7 @@
 <div class="pop_box1">
     <dl>
         <dt><strong><b>添加地区</b></strong><span><a href="javascript:void(0)" class="clos1"><img src="../Public/images/ico_close.png" /></a></span></dt>
-        <form method="post" action="__URL__/addsave">
+        <form method="post" action="{:U('area/addsave')}">
             <dd>
                 <ul class="web">
                     <li>
@@ -49,7 +49,7 @@
                     <li>
                         <strong>上级地区设置：</strong>
                         <select class="addarea" name="pid"></select>
-                        <span>点击加号可以更换地区的上级节点</span>
+                        <span>选择地区的上级节点</span>
                     </li>
                     <li>
                         <strong>排序：</strong>
@@ -64,6 +64,7 @@
     </dl>
 </div>
 <script type="text/javascript">
+//设置排序
 function setsort(area_id,sort,old){
 
     var Datatype = /^\d{1,4}$/;
@@ -74,7 +75,7 @@ function setsort(area_id,sort,old){
         if(sort != old){
             $.ajax({
                 type: "POST",
-                url: "__URL__/ajaxsort",
+                url: "{:U('area/ajaxsort')}",
                 data: "sort="+sort+"&area_id="+area_id,
                 success: function(msg){
                      if(msg.status=='0'){
@@ -85,11 +86,101 @@ function setsort(area_id,sort,old){
         }
     }
 }
-$(function(){
-    $(".show_box1").click(function(){
+//删除地区
+function dellarea(area_id,tag){
+    if(confirm("确定删除？")){
         $.ajax({
             type: "POST",
-            url: "__URL__/ajaxaddarea",
+            url: "{:U('area/ajaxdel')}",
+            data: "area_id="+area_id,
+            success: function(msg){
+                if(msg.status=='0'){
+                    alert(msg.data);
+                }else{
+                    alert(msg.data);
+                    var thistag = tag.parentNode.parentNode;
+                    thistag.parentNode.removeChild(thistag);
+                }
+            }
+        });
+    }
+}
+// 取消查询该地区的下级地区
+function delarea(area_id,grade){
+    $(".tr_"+area_id).remove();
+    $("#area_"+area_id).children().children().attr("onclick","getarea("+area_id+","+grade+")");
+    $("#area_"+area_id).children().children().children().attr("src","../Public/images/ico_jia.png");
+}
+// 查看该地区的下级地区
+function getarea(area_id,grade){
+    $.ajax({
+        type: "POST",
+        url: "{:U('area/ajaxarea')}",
+        data: "grade="+grade+"&area_id="+area_id,
+        success: function(msg){
+            if(msg.status=='0'){
+                alert(msg.data);
+            }else{
+                var html = "";
+                for(var i in msg.data){
+                    msg.data[i].sort = msg.data[i].sort == null ? '0' : msg.data[i].sort;
+                    html += '<tr class="tr_'+msg.data[i].pid+'"><td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>'+msg.data[i].area_name+'</b></td><td><span><input type="text" value="'+msg.data[i].sort+'" class="input_shu" onblur="setsort('+msg.data[i].area_id+',this.value,'+msg.data[i].sort+')"/></span></td><td>&nbsp;</td><td><span><a href="javascript:void(0)" onclick="modifyarea('+msg.data[i].area_id+')"><img src="../Public/images/ico_34.png" alt="编辑" /></a></span></td><td><span class="dell onclick="dellarea('+msg.data[i].area_id+',this)"><a href="javascript:void(0)"><img src="../Public/images/ico_cuo.png" alt="删除"/></a></span></td></tr>';
+                }
+                $("#area_"+area_id).after(html);
+                $("#area_"+area_id).children().children().attr("onclick","delarea("+area_id+","+grade+")");
+                $("#area_"+area_id).children().children().children().attr("src","../Public/images/ico_jian.png");
+            }
+        }
+    });
+}
+//修改地区
+function modifyarea(area_id){
+    $(".pop_box1 dl dt b").html("编辑当前地区"); // 弹出框标题
+    $(".pop_box1 form").attr("action","{:U('area/modifysave')}"); // 提交表单的地址
+    $("input[name=area_id]").remove(); // 移除area_id
+    $(".addarea").html(""); // 清空地区
+    $.ajax({
+        type: "POST",
+        url: "{:U('area/getAreaById')}",
+        data: "area_id="+area_id,
+        success: function(msg){
+            if(msg.status=='0'){
+                alert(msg.data);
+            }else{
+                $("input[name=area_name]").val(msg.data.area_name);
+                $("input[name=sort]").val(msg.data.sort);
+                $(".addarea").html('<option value="'+msg.data.pid+'">'+msg.data.parent_name+'</option>');// 上级地区
+                $(".addarea").attr("disabled","disabled"); //禁止输入
+                $(".pop_box1 form").append("<input type='hidden' name='area_id' value='"+msg.data.area_id+"'>"); //添加area_id隐藏文本
+                $(".pop_box1").show();
+            }
+        }
+    }); 
+}
+//添加子地区
+function addchildren(id,name){
+    $("input[name=area_name]").val(""); // 清空地区名称
+    $("input[name=sort]").val(""); // 清空排序
+    $(".addarea").html("<option value='"+id+"'>"+name+"</option>"); // 上级地区
+    //$(".addarea").attr("disabled","disabled"); //禁止输入
+    $(".pop_box1 dl dt b").html("添加子地区"); // 弹出框标题
+    $(".pop_box1 form").attr("action","{:U('area/childrensave')}"); // 提交表单的地址
+    $("input[name=area_id]").remove(); // 移除area_id
+    $(".pop_box1").show();
+}
+$(function(){
+    //添加地区
+    $(".show_box1").click(function(){
+        $("input[name=area_name]").val(""); // 清空地区名称
+        $(".addarea").html(""); // 清空地区
+        $(".addarea").attr("disabled",false); // 清空禁止输入
+        $("input[name=sort]").val(""); // 清空排序
+        $(".pop_box1 dl dt b").html("添加地区"); // 弹出框标题
+        $(".pop_box1 form").attr("action","{:U('area/addsave')}"); // 提交表单的地址
+        $("input[name=area_id]").remove(); // 移除area_id
+        $.ajax({
+            type: "POST",
+            url: "{:U('area/ajaxaddarea')}",
             data: "time="+Date.parse(new Date()),
             success: function(msg){
                  if(msg.status=='0'){
@@ -109,9 +200,11 @@ $(function(){
             }
         });
     })
+    // 关闭弹出层
     $(".clos1").click(function(){
-            $(".pop_box1").hide();
+        $(".pop_box1").hide();
     });
+    //查看、取消该地区的下级地区
     $(".areatoggle").toggle(
         function(){
             var area_id = $(this).attr("val");
@@ -119,7 +212,7 @@ $(function(){
             thistag = $(this);
             $.ajax({
                 type: "POST",
-                url: "__URL__/ajaxarea",
+                url: "{:U('area/ajaxarea')}",
                 data: "grade="+grade+"&area_id="+area_id,
                 success: function(msg){
                     if(msg.status=='0'){
@@ -128,7 +221,7 @@ $(function(){
                         var html = "";
                         for(var i in msg.data){
                             msg.data[i].sort = msg.data[i].sort == null ? '0' : msg.data[i].sort;
-                            html += '<tr class="tr_'+msg.data[i].pid+'" id="area_'+msg.data[i].area_id+'" lv2="'+msg.data[i].area_id+'"><td align="left">&nbsp;&nbsp;&nbsp;&nbsp;<b val="'+msg.data[i].area_id+'" onclick="getarea('+msg.data[i].area_id+',3)"><img src="../Public/images/ico_jia.png">&nbsp;'+msg.data[i].area_name+'</b></td><td><span><input type="text" value="'+msg.data[i].sort+'" class="input_shu" onblur="setsort('+msg.data[i].area_id+',this.value,'+msg.data[i].sort+')"/></span></td><td><span><a href="__URL__/addChildren/id/'+msg.data[i].area_id+'" class="show"><img src="../Public/images/ico_33.png" alt="添加子地区" /></a></span></td><td><span><a href="__URL__/uparea/id/'+msg.data[i].area_id+'"><img src="../Public/images/ico_34.png" alt="编辑" /></a></span></td><td><span class="dell"><a href="javascript:void(0)"><img src="../Public/images/ico_cuo.png" alt="删除" /></a></span></td></tr>';
+                            html += '<tr class="tr_'+msg.data[i].pid+'" id="area_'+msg.data[i].area_id+'" lv2="'+msg.data[i].area_id+'"><td align="left">&nbsp;&nbsp;&nbsp;&nbsp;<b val="'+msg.data[i].area_id+'" onclick="getarea('+msg.data[i].area_id+',3)"><img src="../Public/images/ico_jia.png">&nbsp;'+msg.data[i].area_name+'</b></td><td><span><input type="text" value="'+msg.data[i].sort+'" class="input_shu" onblur="setsort('+msg.data[i].area_id+',this.value,'+msg.data[i].sort+')"/></span></td><td><span><a href="javascript:void(0)" class="show" onclick="addchildren({$vo.area_id},'{$vo.area_name}')"><img src="../Public/images/ico_33.png" alt="添加子地区" /></a></span></td><td><span><a href="javascript:void(0)" onclick="modifyarea('+msg.data[i].area_id+')"><img src="../Public/images/ico_34.png" alt="编辑" /></a></span></td><td><span class="dell" onclick="dellarea('+msg.data[i].area_id+',this)"><a href="javascript:void(0)"><img src="../Public/images/ico_cuo.png" alt="删除"/></a></span></td></tr>';
                         }
                         thistag.parent().parent().after(html);
                         thistag.children().attr("src","../Public/images/ico_jian.png");
@@ -145,32 +238,6 @@ $(function(){
         }
     );
 })
-function delarea(area_id,grade){
-    $(".tr_"+area_id).remove();
-    $("#area_"+area_id).children().children().attr("onclick","getarea("+area_id+","+grade+")");
-    $("#area_"+area_id).children().children().children().attr("src","../Public/images/ico_jia.png");
-}
-function getarea(area_id,grade){
-    $.ajax({
-        type: "POST",
-        url: "__URL__/ajaxarea",
-        data: "grade="+grade+"&area_id="+area_id,
-        success: function(msg){
-            if(msg.status=='0'){
-                alert(msg.data);
-            }else{
-                var html = "";
-                for(var i in msg.data){
-                    msg.data[i].sort = msg.data[i].sort == null ? '0' : msg.data[i].sort;
-                    html += '<tr class="tr_'+msg.data[i].pid+'"><td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>'+msg.data[i].area_name+'</b></td><td><span><input type="text" value="'+msg.data[i].sort+'" class="input_shu" onblur="setsort('+msg.data[i].area_id+',this.value,'+msg.data[i].sort+')"/></span></td><td>&nbsp;</td><td><span><a href="__URL__/uparea/id/'+msg.data[i].area_id+'"><img src="../Public/images/ico_34.png" alt="编辑" /></a></span></td><td><span class="dell"><a href="javascript:void(0)"><img src="../Public/images/ico_cuo.png" alt="删除" /></a></span></td></tr>';
-                }
-                $("#area_"+area_id).after(html);
-                $("#area_"+area_id).children().children().attr("onclick","delarea("+area_id+","+grade+")");
-                $("#area_"+area_id).children().children().children().attr("src","../Public/images/ico_jian.png");
-            }
-        }
-    });
-}
 </script>
 <script>
 $(function(){
