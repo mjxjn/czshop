@@ -7,13 +7,12 @@ class adminUserAction extends CommonAction {
 		$count = $adminUser->scope('default')->count();// 查询满足要求的总记录数
 
 		$Page = new Page($count,11);// 实例化分页类 传入总记录数和每页显示的记录数
-		$Page->setConfig('first','首页');
-		$Page->setConfig('last','尾页');
+		$Page->setConfig('first',L('first_page'));
+		$Page->setConfig('last',L('last_page'));
 		$Page->setConfig('theme','%first% %upPage% %linkPage% %downPage% %end%');
 		$show = $Page->show();// 分页显示输出
 		$list = $adminUser->scope('list')->limit($Page->firstRow.','.$Page->listRows)->select();
-		admin_log('','','');
-		echo '---'.L('welcome');
+
 		$this->assign('list',$list);
 		$this->assign('page',$show);// 赋值分页输出
 		$this->display();
@@ -23,7 +22,7 @@ class adminUserAction extends CommonAction {
 	public function create(){
 		if($_POST){
 			if(empty($_POST['password'])){
-				$this->error("密码不能为空!");
+				$this->error(L('no_password'));
 				exit();
 			}
 			$adminUser=D('System/AdminUser');
@@ -33,7 +32,7 @@ class adminUserAction extends CommonAction {
 			}else{
 			    	// 验证通过
 			    	$adminUser->add();
-			    	$this->success('添加管理员成功');
+			    	$this->success(L('ok_adminadd'));
 			}
 			exit();
 		}
@@ -54,7 +53,7 @@ class adminUserAction extends CommonAction {
 					$adminUser->password = md5($_POST['password']);
 				}
 				$adminUser->save();
-				$this->success('修改管理员成功');
+				$this->success(L('ok_adminedit'));
 				exit();
 			}
 		}
@@ -63,10 +62,10 @@ class adminUserAction extends CommonAction {
 		$info = $adminUser->scope('info')->where("admin_id=%d",array($admin_id))->find();
 		if(empty($info)){
 			$data['status'] = 0;
-			$data['info'] = '没有此管理员';
+			$data['info'] = L('no_adminuser');
 		}else{
 			$data['status'] = 1;
-			$data['info'] = '成功';
+			$data['info'] = L('success');
 			$data['data'] = $info;
 		}
 		$this->ajaxReturn($data,'JSON'); 
@@ -77,9 +76,9 @@ class adminUserAction extends CommonAction {
 		$adminUser=D('System/AdminUser');
 		$info = $adminUser->where("admin_id=%d",array($admin_id))->delete();
 		if(empty($info)){
-			$this->error("没有此管理员");
+			$this->error(L('no_adminuser'));
 		}else{
-			$this->success("删除成功！");
+			$this->success(L('del_success'));
 		}
 	}
 }

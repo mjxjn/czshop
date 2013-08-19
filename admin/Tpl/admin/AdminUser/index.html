@@ -2,28 +2,28 @@
 <include file="main:style" />
 <div class="content">
     <div class="site">
-        Commerz Board <a href="#">管理中心</a> > 后台管理团队
+        {$Think.lang.app_name} <a href="#">{$Think.lang.global_set}</a> > {$Think.lang.adminuser}
     </div>
     <div class="install mt10">
         <dl>
-            <dt><a href="{:U('adminUser/index')}" class="hover">团队列表</a><a href="{:U('adminUser/create')}">添加团队</a></dt>
+            <dt><a href="{:U('adminUser/index')}" class="hover">{$Think.lang.adminlist}</a><a href="{:U('adminUser/create')}">{$Think.lang.adminadd}</a></dt>
             <dd>
                 <div class="login mt10">
-                    <h3>后台管理团队列表</h3>
+                    <h3>{$Think.lang.adminuserlist}</h3>
                     <div class="table">
                         <table cellspacing="0" cellpadding="0" border="0" style="font-size: 12px;">
                             <tr>
-                                <th>用户名</th>
-                                <th>最后登录时间</th>
-                                <th>共计登录次数</th>
-                                <th>操作</th>
+                                <th>{$Think.lang.admin_name}</th>
+                                <th>{$Think.lang.last_login}</th>
+                                <th>{$Think.lang.login_count}</th>
+                                <th>{$Think.lang.operate}</th>
                             </tr>
                             <volist name='list' id='vo'>
                             <tr>
                                 <td><eq name='vo.status' value='1'><font color="red"></eq>{$vo.admin_name}<eq name='vo.status' value='1'></font></eq></td>
-                                <td><neq name='vo.last_login' value=''>{$vo.last_login|date='Y-m-d H:i:s',###}<else />无记录</neq></td>
+                                <td><neq name='vo.last_login' value=''>{$vo.last_login|date='Y-m-d H:i:s',###}<else />{$Think.lang.no_log}</neq></td>
                                 <td>{$vo.login_count|default='0'}</td>
-                                <td><eq name="vo.admin_id" value="1">超级管理员不可编辑<else /><a href="#" onclick="ajaxPost('adminUser','update','pop_box1',{$vo.admin_id})">编辑</a><a href="#">权限设置</a><a href="{:U('adminUser/delete',array('id'=>$vo['admin_id']))}" onclick="if(confirm('确实要删除吗?')) return true;  else  return false;">删除</a></eq></td>
+                                <td><eq name="vo.admin_id" value="1">{$Think.lang.super_admin}<else /><a href="#" onclick="ajaxPost('adminUser','update','pop_box1',{$vo.admin_id})">{$Think.lang.edit}</a><a href="#">{$Think.lang.purview_setting}</a><a href="{:U('adminUser/delete',array('id'=>$vo['admin_id']))}" onclick="if(confirm('{$Think.lang.verify_delete}')) return true;  else  return false;">{$Think.lang.delete}</a></eq></td>
                             </tr>
                             </volist>
                         </table>
@@ -36,36 +36,36 @@
         </dl>
     </div>
     <div class="copy">
-        Powered by Commerz 1.0 版权所有 © 2013 迪米盒子网络科技有限公司，并保留所有权利。
+        {$Think.lang.copy}
     </div>
 </div>
 
 <div class="pop_box1" id='pop_box1' style=" display:none;">
     <dl>
-        <dt><strong><b>编辑管理员</b></strong><span><a href="#" class="clos1"><img src="../Public/images/ico_close.png" /></a></span></dt>
+        <dt><strong><b>{$Think.lang.edit_admin}</b></strong><span><a href="#" class="clos1"><img src="../Public/images/ico_close.png" /></a></span></dt>
         <form name="pop_box1" action="{:U('adminUser/update')}" method="post" id="form">
         <dd>
             <ul class="web">
                 <li>
-                    <strong>用户名：</strong>
-                    <input type="text" value="" name='admin_name' id='admin_name' class="text_input"><span>修改登录用户名</span>
+                    <strong>{$Think.lang.admin_name}：</strong>
+                    <input type="text" value="" name='admin_name' id='admin_name' class="text_input"><span>{$Think.lang.edit_admin_name}</span>
                 </li>
                 <li>
-                    <strong>新密码：</strong>
-                    <input type="password" value="" name='password' id='password' class="text_input"><span>留空不做修改</span>
+                    <strong>{$Think.lang.new_password}：</strong>
+                    <input type="password" value="" name='password' id='password' class="text_input"><span>{$Think.lang.edit_password}</span>
                 </li>
                 <li>
-                    <strong>确认新密码：</strong>
-                    <input type="password" value="" name='repassword' id='repassword' class="text_input"><span>确认与新密码输入一致</span>
+                    <strong>{$Think.lang.new_repassword}：</strong>
+                    <input type="password" value="" name='repassword' id='repassword' class="text_input"><span>{$Think.lang.tips_repassword}</span>
                 </li>
                 <li>
-                    <strong>当前状态：</strong>
-                    <label><input type="radio" name="status" value="0" id="status_0" /> 开启 </label>
-                    <label><input type="radio" name="status" value="1" id="status_1" /> 禁用 </label>
+                    <strong>{$Think.lang.admin_status}：</strong>
+                    <label><input type="radio" name="status" value="0" id="status_0" /> {$Think.lang.open} </label>
+                    <label><input type="radio" name="status" value="1" id="status_1" /> {$Think.lang.close} </label>
                 </li>
             </ul>
             <div class="submit1 center mt5">
-                <a href="#" class="clos1" onclick='$("#form").submit()'>保存</a><a href="#" class="clos1">取消</a>
+                <a href="#" class="clos1" onclick='$("#form").submit()'>{$Think.lang.save}</a><a href="#" class="clos1">{$Think.lang.cancle}</a>
                 <input type="hidden" name="admin_id" id='admin_id' value="" />
                 <input type='hidden' name='act' value="edit" />
             </div>

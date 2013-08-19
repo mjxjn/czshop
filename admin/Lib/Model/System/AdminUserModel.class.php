@@ -23,12 +23,12 @@ class AdminUserModel extends CommonModel{
 	    	
 	);
 	protected $_validate = array(
-		array('admin_name','require','帐号名称不能为空！'), //默认情况下用正则进行验证
-    	             array('admin_name','','帐号名称已经存在！',0,'unique',1), // 在新增的时候验证name字段是否唯一
+		array('admin_name','require','{%no_admin_name}'), //默认情况下用正则进行验证
+    	             array('admin_name','','{%had_admin_name}',0,'unique',1), // 在新增的时候验证name字段是否唯一
     		//array('value',array(1,2,3),'值的范围不正确！',2,'in'), // 当值不为空的时候判断是否在一个范围内
-    		array('repassword','password','确认密码不一致',0,'confirm'), // 验证确认密码是否和密码一致
-    		array('admin_name','/^[\x{4e00}-\x{9fa5}A-Za-z0-9]{3,16}$/u','帐号名称格式不正确',0), //
-    		array('password','checkPwd','密码格式不正确！',2,'callback') , 
+    		array('repassword','password','{%err_repassword}',0,'confirm'), // 验证确认密码是否和密码一致
+    		array('admin_name','/^[\x{4e00}-\x{9fa5}A-Za-z0-9]{3,16}$/u','{%err_format_adminname}',0), //
+    		array('password','checkPwd','{%err_format_password}',2,'callback') , 
 	);
 	protected $_link = array(
 		'Adminlog'=> array(  

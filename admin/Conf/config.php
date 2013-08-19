@@ -62,7 +62,7 @@ return array(
 	'RBAC_ACCESS_TABLE' => 'cz_access',
 	'RBAC_NODE_TABLE' => 'cz_node',
 
-	'LANG_SWITCH_ON'=>FALSE,
+	'LANG_SWITCH_ON'=>true,
 	'DEFAULT_LANG'=>'zh-cn',
 	'LANG_AUTO_DETECT'=>true,
 	//'LANG_LIST'=>'en-us,zh-cn,zh-tw',
