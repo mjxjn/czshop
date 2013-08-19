@@ -1,0 +1,63 @@
+{__NOLAYOUT__}
+<include file="main:style" />
+<div class="content">
+    <div class="site">
+        Commerz Board <a href="{:U('index/home')}">管理中心</a> > 支付平台设置
+    </div>
+   	<div class="install mt10">
+        <form action="{:U('payment/saveconfig')}" method='post'>
+            <input name="pay_id" type="hidden" value="{$data.pay_id}">
+    		<div class="sm">网银在线是国内领先的独立第三方支付企业，旨在为各类企业及个人提供安全、便捷和保密的支付清算与账务服务，使用此种方式需先于快钱支付公司签订合作协议。 <a href="#">立刻在线申请</a></div>
+            	<ul class="web">
+                	<li>
+                        <strong>是否开启网银在线方式：</strong>
+                        <b>
+                            <label><input type="radio" name="status" value="1" <eq name="data.status" value="1">checked</eq> /> 开启 </label>
+                            <label><input type="radio" name="status" value="0" <eq name="data.status" value="0">checked</eq> /> 关闭 </label>
+                        </b>
+                        <span>设置是否开启网银在线支付方式，默认为关闭</span>
+                    </li>
+                	<li>
+                        <strong>支付方式名称：</strong>
+    					<input type="text" value="{$data.pay_name}" class="text_input" name="pay_name"/><span>设置支付方式名称，此处设置将在会员结算时显示，默认为网银在线支付</span>
+                    </li>
+    				<li>
+                        <strong>网银在线客户号：</strong>
+    					<input type="text" value="" class="text_input" /><span>填写网银在线签约的客户号</span>
+                    </li>
+                    <li>
+                        <strong>网银在线密钥：</strong>
+    					<input type="text" value="" class="text_input" /><span>填写网银在线密钥</span>
+                    </li>
+                    <li>
+                        <strong>使用接口类型：</strong>
+                        <select><option>登录网银在线支付</option></select>
+                        <span>选择用户在付款时的支付类型</span>
+                    </li>
+                    <li>
+                        <strong>手续费设置：</strong>
+    					<input type="text" value="{$data.pay_fee}" class="text_input" name="pay_fee"/><span>您可以对网银在线设置是否收取手续费，单位为%，默认为0，不收取</span>
+                    </li>
+                    <li>
+                        <strong>支付方式描述：</strong>
+    					<textarea name="pay_desc">{$data.pay_desc}</textarea>
+                        <p>您可以在这里编辑支付方式的详细描述，将在用户结算时显示</p>
+                    </li>
+                    
+                </ul>
+                <div class="submit">
+                	<input type="image" src="../Public/images/input_1.png" style="margin-left: 18px;"/>
+                <a href="{:U('payment/index')}">返回</a>
+            </div>
+        </form>
+    </div>
+    <div class="copy">
+        Powered by Commerz 1.0 版权所有 © 2013 迪米盒子网络科技有限公司，并保留所有权利。
+    </div>
+</div>
+<script>
+$(function(){
+	$(".odd li:odd").css("background","#fff");
+	$(".even li:even").css("background","#fff");
+});
+</script>

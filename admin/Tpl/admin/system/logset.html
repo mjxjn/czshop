@@ -1,0 +1,48 @@
+{__NOLAYOUT__}
+<include file="main:style" />
+<div class="content">
+    <div class="site">
+        Commerz Board <a href="{:U('index/home')}">管理中心</a> > 注册与登录设置
+    </div>
+   	<div class="install mt10">
+    	<dl>
+        	<dt><a href="{:U('system/regset')}">注册设置</a><a href="{:U('system/logset')}" class="hover">登录设置</a></dt>
+            <dd>
+            	<div class="login mt10">
+                	<h3>第三方登录平台</h3>
+                    <div class="table">
+                    	<table>
+                        	<tr>
+                            	<th>图标</th>
+                                <th>名称</th>
+                                <th>状态</th>
+                                <th>描述</th>
+                                <th>操作</th>
+                            </tr>
+                            <volist name="list" id="vo">
+                                <tr>
+                                	<td><img src="{$vo.logo}" alt="{$vo.name}" /></td>
+                                	<td>{$vo.name}</td>
+                                	<td><eq name="vo.status" value="0">关闭<else/>启用</eq></td>
+                                	<td>{$vo.infos}</td>
+                                	<td><a href="#">编辑</a></td>
+                                </tr>
+                            </volist>
+                        </table>
+                    </div>
+                </div>
+                <div class="page">{$page}</div>
+            </dd>
+        </dl>
+    </div>
+    <div class="copy">
+        Powered by Commerz 1.0 版权所有 © 2013 迪米盒子网络科技有限公司，并保留所有权利。
+    </div>
+</div>
+<script>
+$(function(){
+	$(".odd li:odd").css("background","#fff");
+	$(".even li:even").css("background","#fff");
+	$(".table tr:odd").css("background","#fff");
+});
+</script>

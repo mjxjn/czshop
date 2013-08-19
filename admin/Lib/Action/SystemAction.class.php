@@ -48,6 +48,29 @@ class SystemAction extends CommonAction {
         $this->display();
     }
     /**
+     * Global set - Login set
+     */
+    public function logset(){
+
+        $connector = D("System/Author_connector");
+
+        import('ORG.Util.Page');
+
+        $count = $connector->count();
+
+        $Page = new Page($count,10);
+
+        $show = $Page->show();
+
+        $list = $connector->scope("field")->limit($Page->firstRow.','.$Page->listRows)->select();
+
+        $this->assign('list',$list);
+
+        $this->assign('page',$show);
+
+        $this->display();
+    }
+    /**
      * Global set - set save
      */
     public function save(){
@@ -89,11 +112,9 @@ class SystemAction extends CommonAction {
      */
     public function a(){
         $array[0]['val'] = "1";
-        $array[0]['lang'] = "通过 PHP 函数的 sendmail 发送(推荐此方式)";
+        $array[0]['lang'] = "订单下单成功时库存下降";
         $array[1]['val'] = "2";
-        $array[1]['lang'] = "通过 SOCKET 连接 SMTP 服务器发送(支持 ESMTP 验证)";
-        $array[2]['val'] = "3";
-        $array[2]['lang'] = "通过 PHP 函数 SMTP 发送 Email(仅 Windows 主机下有效，不支持 ESMTP 验证)";
+        $array[1]['lang'] = "订单下单发货时库存下降";
 
         echo serialize($array);
     }

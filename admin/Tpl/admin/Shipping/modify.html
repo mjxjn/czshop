@@ -1,0 +1,98 @@
+{__NOLAYOUT__}
+<include file="main:style" />
+<div class="content">
+    <div class="site">
+        Commerz Board <a href="{:U('index/home')}">管理中心</a> > 物流配送方式设置
+    </div>
+   	<div class="install mt10">
+        <dl>
+			<dt>
+                <a href="{:U('shipping/index')}" class="hover">配送设置</a>
+                <a href="{:U('shipping/add')}">添加配送</a>
+            </dt>
+           	<dd>
+                <form action="{:U('shipping/savemodify')}" method='post'>
+                    <input type="hidden" value="{$data.shipping_id}" name="shipping_id">
+                	<div class="sm">设置配送方式请根据实际配送方式进行配置，Commerz系统本身不提供物流公司设置</div>
+                	<ul class="web">
+                    	<li>
+                            <strong>是否开启当前配送方式：</strong>
+                            <b>
+                                <label><input type="radio" name="status" value="1" <eq name="data.status" value="1">checked</eq>/> 开启 </label>
+                                <label><input type="radio" name="status" value="0" <eq name="data.status" value="0">checked</eq>/> 关闭 </label>
+                            </b>
+                            <span>设置是否开启当前配送方式，开启即可使用</span>
+                        </li>
+                    	<li>
+                            <strong>配送方式名称：</strong>
+    						<input type="text" value="{$data.shipping_name}" class="text_input"  name="shipping_name"/>
+                            <span>设置配送方式名称，此处设置将在会员结算时显示，请根据实际情况填写，如宅急送</span>
+                        </li>
+                        <li>
+                            <strong>设置配送方式类型：</strong>
+                            <b>
+                                <label><input type="radio" name="is_cod" value="0" <eq name="data.is_cod" value="0">checked</eq>/> 先支付后发货 </label>
+                                <label><input type="radio" name="is_cod" value="1" <eq name="data.is_cod" value="1">checked</eq>/> 先发货后付款 </label>
+                            </b>
+                            <span>先支付后发货类型需要用户先通过支付平台付款才能发货，先发货后付款类型即为货到付款模式</span>
+                        </li>
+    					<li>
+                            <strong>配送方式重量设置：</strong>
+    						首重:
+                            <select id="select">
+                                <option>1公斤</option>
+                            </select>
+                            续重:
+                            <select id="select">
+                                <option>1公斤</option>
+                            </select>
+                            <span>设置配送方式首重和续重的计重单位重量，默认首重和续重均为一公斤</span>
+                        </li>
+                        <li>
+                            <strong>物流保价费率设置：</strong>
+    						<input type="text" value="{$data.shipping_fee}" class="text_input" name="shipping_fee"/>
+                            <span>您可以当前配送方式设置物流保价费率，单位为%，默认为0</span>
+                        </li>
+                        <li>
+                            <strong>是否开启物流保价：</strong>
+                            <b>
+                                <label><input type="radio" name="is_gua" value="1" <eq name="data.is_gua" value="1">checked</eq>/> 开启 </label>
+                                <label><input type="radio" name="is_gua" value="0" <eq name="data.is_gua" value="0">checked</eq>/> 关闭 </label>
+                            </b>
+                            <span>设置是否开启当前物流配送保价功能，默认为关闭</span>
+                        </li>
+                        <li>
+                            <strong>配送费用设置：</strong>
+    						首重:<input type="text" value="0" class="text_input1" />
+                            续重:<input type="text" value="0" class="text_input1" />
+                            <span>设置当前配送方式的费用，设为0则不收取配送费用</span>
+                        </li>
+                        <li>
+                            <strong>配送方式排序：</strong>
+    						<input type="text" value="{$data.sort}" class="text_input" name="sort"/>
+                            <span>设置配送方式排序，此处设置将会在会员选择配送方式时排序</span>
+                        </li>
+                        <li>
+                            <strong>支付方式描述：</strong>
+    						<textarea name="shipping_desc">{$data.shipping_desc}</textarea>
+                            <p>您可以在这里编辑支付方式的详细描述，将在用户结算时显示</p>
+                        </li>
+                    </ul>
+                </dd>
+           </dl>
+            <div class="submit">
+                <input type="image" src="../Public/images/input_1.png" style="margin-left: 18px;"/>
+                <a href="{:U('shipping/index')}">返回</a>
+            </div>
+        </form>
+    </div>
+    <div class="copy">
+        Powered by Commerz 1.0 版权所有 © 2013 迪米盒子网络科技有限公司，并保留所有权利。
+    </div>
+</div>
+<script>
+$(function(){
+	$(".odd li:odd").css("background","#fff");
+	$(".even li:even").css("background","#fff");
+});
+</script>

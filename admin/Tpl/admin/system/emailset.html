@@ -18,37 +18,55 @@
                             <strong>{$list.0.info}：</strong>
                             <b style="width:450px;">
                                 <volist name="list.0.list" id="data">
-                                    <label><input type="radio" name="system[{$list.0.varname}]" value="{$data.val}" <eq name='data.val' value='$list.0.value'>checked</eq>/> {$data.lang} </label><br />
+                                    <label><input type="radio" name="system[{$list.0.varname}]" value="{$data.val}" class="sendway" <eq name='data.val' value='$list.0.value'>checked</eq> /> {$data.lang} </label><br />
                                 </volist>
                             </b>
                             <span>{$list.0.lang}</span>
                         </li>
+                        <volist name="list" id="vo" offset="1" length='6'>
+                            <li class="sendshow" <neq name='list.0.value' value='2'>style="display:none"</neq>>
+                                <strong>{$vo.info}：</strong>
+                                <switch name="vo.type" >
+                                    <case value="input">
+                                        <input type="text" value="{$vo.value}" class="text_input" name="system[{$vo.varname}]"/>
+                                    </case>
+                                    <case value="radio">
+                                        <b>
+                                            <volist name="vo.list" id="data">
+                                                <label><input type="radio" name="system[{$vo.varname}]" value="{$data.val}" <eq name='data.val' value='$vo.value'>checked</eq>/> {$data.lang} </label>
+                                            </volist>
+                                        </b>
+                                    </case>
+                                </switch>
+                                <span>{$vo.lang}</span>
+                            </li>
+                        </volist>
                         <li>
-                            <strong>{$list.1.info}：</strong>
+                            <strong>{$list.7.info}：</strong>
                             <b style="width:280px;">
-                                <volist name="list.1.list" id="data">
-                                    <label><input type="radio" name="system[{$list.1.varname}]" value="{$data.val}" <eq name='data.val' value='$list.1.value'>checked</eq>/> {$data.lang} </label><br />
+                                <volist name="list.7.list" id="data">
+                                    <label><input type="radio" name="system[{$list.7.varname}]" value="{$data.val}" <eq name='data.val' value='$list.7.value'>checked</eq>/> {$data.lang} </label><br />
                                 </volist>
                             </b>
-                            <span>{$list.1.lang}</span>
+                            <span style="padding-left: 20px;">{$list.7.lang}</span>
                         </li>
                         <li>
-                            <strong>{$list.2.info}：</strong>
+                            <strong>{$list.8.info}：</strong>
                             <b>
-                                <volist name="list.2.list" id="data">
-                                    <label><input type="radio" name="system[{$list.2.varname}]" value="{$data.val}" <eq name='data.val' value='$list.2.value'>checked</eq>/> {$data.lang} </label>
+                                <volist name="list.8.list" id="data">
+                                    <label><input type="radio" name="system[{$list.8.varname}]" value="{$data.val}" <eq name='data.val' value='$list.8.value'>checked</eq>/> {$data.lang} </label>
                                 </volist>
                             </b>
-                            <span>{$list.2.lang}</span>
+                            <span>{$list.8.lang}</span>
                         </li>
                         <li>
-                            <strong>{$list.3.info}：</strong>
+                            <strong>{$list.9.info}：</strong>
                             <b>
-                                <volist name="list.3.list" id="data">
-                                    <label><input type="radio" name="system[{$list.3.varname}]" value="{$data.val}" <eq name='data.val' value='$list.3.value'>checked</eq>/> {$data.lang} </label>
+                                <volist name="list.9.list" id="data">
+                                    <label><input type="radio" name="system[{$list.9.varname}]" value="{$data.val}" <eq name='data.val' value='$list.9.value'>checked</eq>/> {$data.lang} </label>
                                 </volist>
                             </b>
-                            <span>{$list.3.lang}</span>
+                            <span>{$list.9.lang}</span>
                         </li>
                     </ul>
                     <div class="input1">
@@ -62,6 +80,18 @@
         Powered by Commerz 1.0 版权所有 © 2013 迪米盒子网络科技有限公司，并保留所有权利。
     </div>
 </div>
+<script type="text/javascript">
+$(function(){
+    $(".sendway").click(function(){
+        var val = $(this).val();
+        if(val == 2){
+            $(".sendshow").show(100);
+        }else{
+            $(".sendshow").hide(100);
+        }
+    })
+})
+</script>
 <script>
 $(function(){
 	$(".odd li:odd").css("background","#fff");

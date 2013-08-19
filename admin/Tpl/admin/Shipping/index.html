@@ -1,0 +1,56 @@
+{__NOLAYOUT__}
+<include file="main:style" />
+<div class="content">
+    <div class="site">
+        Commerz Board <a href="{:U('index/home')}">管理中心</a> > 物流配送方式设置
+    </div>
+   	<div class="install mt10">
+    	<dl>
+        	<dt>
+                <a href="{:U('shipping/index')}" class="hover">配送设置</a>
+                <a href="{:U('shipping/add')}">添加配送</a>
+            </dt>
+            <dd>
+            	<div class="login mt10">
+                	<h3>物流配送方式列表</h3>
+                    <div class="table">
+                    	<table>
+                        	<tr>
+                            	<th>配送方式</th>
+                                <th>货到付款</th>
+                                <th>配送状态</th>
+                                <th>物流保价</th>
+                                <th>物流排序</th>
+                                <th>操作</th>
+                            </tr>
+                            <volist name="list" id="vo">
+                                <tr>
+                                    <td>{$vo.shipping_name}</td>
+                                    <td><eq name="vo.is_cod" value="0">否<else/>是</eq></td>
+                                    <td><eq name="vo.status" value="0">关闭<else/>启用</eq></td>
+                                    <td><eq name="vo.is_gua" value="0">否<else/>是</eq></td>
+                                    <td>{$vo.sort}</td>
+                                    <td>
+                                        <a href="{:U('shipping/modify',array('id'=>$vo['shipping_id']))}">编辑</a>
+                                        <a href="{:U('shipping/area',array('id'=>$vo['pay_id']))}">区域设置</a>
+                                        <a href="{:U('shipping/delete',array('id'=>$vo['pay_id']))}">删除</a></td>
+                                </tr>
+                            </volist>
+                        </table>
+                    </div>
+                </div>
+                <div class="page">{$page}</div>
+            </dd>
+        </dl>
+    </div>
+    <div class="copy">
+        Powered by Commerz 1.0 版权所有 © 2013 迪米盒子网络科技有限公司，并保留所有权利。
+    </div>
+</div>
+<script>
+$(function(){
+	$(".odd li:odd").css("background","#fff");
+	$(".even li:even").css("background","#fff");
+	$(".table tr:odd").css("background","#fff");
+});
+</script>
