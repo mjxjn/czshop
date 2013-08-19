@@ -2,7 +2,7 @@
 if(!defined("Commerz")) exit("Access Denied");
 class AdminLogAction extends CommonAction{
 	public function index(){
-		$adminLog = D('System/adminLog');
+		$adminLog = D('System/AdminLog');
 		import('ORG.Util.Page');// 导入分页类
 		$count = $adminLog->count();// 查询满足要求的总记录数
 
@@ -11,10 +11,9 @@ class AdminLogAction extends CommonAction{
 		$Page->setConfig('last','尾页');
 		$Page->setConfig('theme','%first% %upPage% %linkPage% %downPage% %end%');
 		$show = $Page->show();// 分页显示输出
-		$list = $adminLog->scope('default,list')->limit($Page->firstRow.','.$Page->listRows)->select();
-
+		$list = $adminLog->relation(true)->scope('default,list')->limit($Page->firstRow.','.$Page->listRows)->select();
 		//getAdmin
-		$adminUser=D('System/adminUser');
+		$adminUser=D('System/AdminUser');
 		$adminlist = $adminUser->scope('selectList')->select();
 
 		$this->assign('list',$list);

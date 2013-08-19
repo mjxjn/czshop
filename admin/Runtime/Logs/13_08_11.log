@@ -1,0 +1,50 @@
+[ 2013-08-11T00:07:26+08:00 ] 127.0.0.1 /admin.php?m=adminUser&a=update
+NOTIC: [2] array_walk_recursive() [<a href='function.array-walk-recursive'>function.array-walk-recursive</a>]: Unable to call filter_vars() - function does not exist D:\czshop\admin\ThinkPHP\Lib\Core\App.class.php 第 56 行.
+NOTIC: [2] htmlspecialchars() expects parameter 2 to be long, string given D:\czshop\admin\ThinkPHP\Lib\Core\App.class.php 第 56 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000558s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000695s ]
+NOTIC: [8] Undefined index:  act D:\czshop\admin\Lib\Action\AdminUserAction.class.php 第 45 行.
+SQL: SHOW COLUMNS FROM `cz_admin_user` [ RunTime:0.082508s ]
+SQL: SELECT `admin_id`,`admin_name`,`status` FROM `cz_admin_user` WHERE ( admin_id=8 ) LIMIT 1   [ RunTime:0.066684s ]
+
+[ 2013-08-11T00:07:52+08:00 ] 127.0.0.1 /admin.php?m=adminUser&a=update
+NOTIC: [2] array_walk_recursive() [<a href='function.array-walk-recursive'>function.array-walk-recursive</a>]: Unable to call filter_vars() - function does not exist D:\czshop\admin\ThinkPHP\Lib\Core\App.class.php 第 56 行.
+NOTIC: [2] htmlspecialchars() expects parameter 2 to be long, string given D:\czshop\admin\ThinkPHP\Lib\Core\App.class.php 第 56 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000630s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000813s ]
+NOTIC: [8] Undefined index:  act D:\czshop\admin\Lib\Action\AdminUserAction.class.php 第 45 行.
+SQL: SHOW COLUMNS FROM `cz_admin_user` [ RunTime:0.067084s ]
+SQL: SELECT `admin_id`,`admin_name`,`status` FROM `cz_admin_user` WHERE ( admin_id=8 ) LIMIT 1   [ RunTime:0.062316s ]
+
+[ 2013-08-11T00:08:16+08:00 ] 127.0.0.1 /admin.php?m=adminUser&a=update
+NOTIC: [2] array_walk_recursive() [<a href='function.array-walk-recursive'>function.array-walk-recursive</a>]: Unable to call filter_vars() - function does not exist D:\czshop\admin\ThinkPHP\Lib\Core\App.class.php 第 56 行.
+NOTIC: [2] htmlspecialchars() expects parameter 2 to be long, string given D:\czshop\admin\ThinkPHP\Lib\Core\App.class.php 第 56 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000756s ]
+NOTIC: [8] Undefined index:  act D:\czshop\admin\Lib\Action\AdminUserAction.class.php 第 45 行.
+SQL: SHOW COLUMNS FROM `cz_admin_user` [ RunTime:0.071245s ]
+SQL: SELECT `admin_id`,`admin_name`,`status` FROM `cz_admin_user` WHERE ( admin_id=8 ) LIMIT 1   [ RunTime:0.109616s ]
+
+[ 2013-08-11T00:08:41+08:00 ] 127.0.0.1 /admin.php?m=adminUser&a=update
+NOTIC: [2] array_walk_recursive() [<a href='function.array-walk-recursive'>function.array-walk-recursive</a>]: Unable to call filter_vars() - function does not exist D:\czshop\admin\ThinkPHP\Lib\Core\App.class.php 第 56 行.
+NOTIC: [2] htmlspecialchars() expects parameter 2 to be long, string given D:\czshop\admin\ThinkPHP\Lib\Core\App.class.php 第 56 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000645s ]
+NOTIC: [8] Undefined index:  act D:\czshop\admin\Lib\Action\AdminUserAction.class.php 第 45 行.
+SQL: SHOW COLUMNS FROM `cz_admin_user` [ RunTime:0.073453s ]
+SQL: SELECT `admin_id`,`admin_name`,`status` FROM `cz_admin_user` WHERE ( admin_id=8 ) LIMIT 1   [ RunTime:0.061644s ]
+
+[ 2013-08-11T00:21:46+08:00 ] 127.0.0.1 /admin.php?m=adminUser&a=update
+NOTIC: [2] array_walk_recursive() [<a href='function.array-walk-recursive'>function.array-walk-recursive</a>]: Unable to call filter_vars() - function does not exist D:\czshop\admin\ThinkPHP\Lib\Core\App.class.php 第 56 行.
+NOTIC: [2] htmlspecialchars() expects parameter 2 to be long, string given D:\czshop\admin\ThinkPHP\Lib\Core\App.class.php 第 56 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000683s ]
+NOTIC: [8] Undefined index:  act D:\czshop\admin\Lib\Action\AdminUserAction.class.php 第 45 行.
+SQL: SHOW COLUMNS FROM `cz_admin_user` [ RunTime:0.071459s ]
+SQL: SELECT `admin_id`,`admin_name`,`status` FROM `cz_admin_user` WHERE ( admin_id=8 ) LIMIT 1   [ RunTime:0.061618s ]
+

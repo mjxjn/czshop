@@ -31,7 +31,8 @@ class adminUserAction extends CommonAction {
 				$this->error($adminUser->getError());
 			}else{
 			    	// 验证通过
-			    	$adminUser->add();
+			    	$admin_id = $adminUser->add();
+			    	admin_log($admin_id,'adminuser','ok_adminadd');
 			    	$this->success(L('ok_adminadd'));
 			}
 			exit();
@@ -53,6 +54,7 @@ class adminUserAction extends CommonAction {
 					$adminUser->password = md5($_POST['password']);
 				}
 				$adminUser->save();
+				admin_log($_POST['admin_id'],'adminuser','ok_adminedit');
 				$this->success(L('ok_adminedit'));
 				exit();
 			}
@@ -78,7 +80,8 @@ class adminUserAction extends CommonAction {
 		if(empty($info)){
 			$this->error(L('no_adminuser'));
 		}else{
-			$this->success(L('del_success'));
+			admin_log($admin_id,'adminuser','ok_admindel');
+			$this->success(L('ok_admindel'));
 		}
 	}
 }

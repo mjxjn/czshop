@@ -1,5 +1,13 @@
-{__NOLAYOUT__}
-<include file="main:style" />
+<?php if (!defined('THINK_PATH')) exit();?>
+<link rel="stylesheet" type="text/css" href="../Public/images/style.css" />
+
+<!--[if IE 6]>
+<script type="text/javascript" src="../Public/js/DD_belatedPNG.js" ></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('*');
+</script>
+<![endif]-->
+<script type="text/javascript" src="../Public/js/jquery-1.7.2.min.js"></script>
 <link rel="stylesheet" href="../Public/date/css/jquery.ui.all.css">
 <script type="text/javascript" src="../Public/date/jQuery/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="../Public/date/jQuery/jquery.ui.core.js"></script>
@@ -19,17 +27,15 @@ $(function() {
     </div>
    	<div class="install mt10">
 	<div class="guanli">
-            <form name="form1" id="form1" action="{:U('adminLog/find')}" method="post">
+            <form name="form1" id="form1" action="<?php echo U('adminLog/find');?>" method="post">
             	<span>按管理员查看</span>
                 <select name="adminid">
-                    <volist name="adminlist" id="vo">
-                    <option value="{$vo.admin_id}">{$vo.admin_name}</option>
-                    </volist>
+                    <?php if(is_array($adminlist)): $i = 0; $__LIST__ = $adminlist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["admin_id"]); ?>"><?php echo ($vo["admin_name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
                 </select>
                 <input type="image" src="../Public/images/input_2.png" />
                 <input type="hidden" name="act" value="byadmin">
             </form>
-            <form name="form1" id="form1" action="{:U('adminLog/find')}" method="post">
+            <form name="form1" id="form1" action="<?php echo U('adminLog/find');?>" method="post">
                 <span>按时间查看</span>
                 <div class="day fl">
                     <input type="text" name="starttime" id="datepicker" class="time_input" /><em>~</em><input type="text" name="endtime" id="datepicker1" class="time_input" />
@@ -49,15 +55,13 @@ $(function() {
                                 <th>IP地址</th>
                                 <th>操作记录</th>
                             </tr>
-                            <volist name="list" id="vo">
-                            <tr>
-                            	<td><input type="checkbox" value="{$vo.log_id}" /></td>
-                            	<td>{$vo.admin_name}</td>
-                            	<td>{$vo.add_time|date='Y-m-d H:i:s',###}</td>
-                            	<td>{$vo.log_ip}</td>
-                                <td>{$vo.log_info}</td>
-                            </tr>
-                            </volist>
+                            <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+                            	<td><input type="checkbox" value="<?php echo ($vo["log_id"]); ?>" /></td>
+                            	<td><?php echo ($vo["admin_name"]); ?></td>
+                            	<td><?php echo (date('Y-m-d H:i:s',$vo["add_time"])); ?></td>
+                            	<td><?php echo ($vo["log_ip"]); ?></td>
+                                <td><?php echo ($vo["log_info"]); ?></td>
+                            </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                         </table>
                     </div>
                 </div>
@@ -65,7 +69,7 @@ $(function() {
                 	<a href="#">清除日志</a>
                 </div>
                 <div class="page fr">
-                	{$page}
+                	<?php echo ($page); ?>
                 </div>
 				<div class="clear"></div>
     </div>

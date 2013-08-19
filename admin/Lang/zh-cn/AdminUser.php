@@ -32,6 +32,7 @@ return array(
 
 	'ok_adminadd' => '添加管理员成功',
 	'ok_adminedit' => '修改管理员成功',
+	'ok_admindel' => '删除管理员成功',
 
 	'no_adminuser' => '没有此管理员',
 );

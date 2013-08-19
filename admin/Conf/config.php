@@ -66,5 +66,9 @@ return array(
 	'DEFAULT_LANG'=>'zh-cn',
 	'LANG_AUTO_DETECT'=>true,
 	//'LANG_LIST'=>'en-us,zh-cn,zh-tw',
+	
+	'DEFAULT_TIMEZONE'=>'Asia/Shanghai', // 设置默认
+
+	"LOAD_EXT_FILE"=>"functions",
 );
 ?>

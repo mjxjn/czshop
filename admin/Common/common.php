@@ -10,5 +10,5 @@
  */
 function admin_log($sn = '', $action, $content){
 	$adminLog = D('System/AdminLog');
-	echo $adminLog -> admin_log($sn = '', $action, $content);
+	$adminLog -> admin_log($sn, $action, $content);
 }
