@@ -2,57 +2,56 @@
 <include file="main:style" />
 <div class="content">
     <div class="site">
-        Commerz Board <a href="{:U('index/home')}">管理中心</a> > 支付平台设置
+        {$Think.lang.app_name} <a href="{:U('index/home')}">{$Think.lang.global_set}</a> > {$Think.lang.payment_setting}
     </div>
    	<div class="install mt10">
-        <form action="{:U('payment/saveconfig')}" method='post'>
+        <form action="{:U('payment/saveconfig')}" method='post' id="form">
             <input name="pay_id" type="hidden" value="{$data.pay_id}">
-    		<div class="sm">财付通是腾讯旗下的网上支付平台，使用此种方式需先于腾讯财付通公司签订合作协议。 <a href="#">立刻在线申请</a></div>
+    		<div class="sm">{$Think.lang.tips_tenpay}</div>
             	<ul class="web">
                 	<li>
-                        <strong>是否开启财付通支付方式：</strong>
+                        <strong>{$Think.lang.istenpay}：</strong>
                         <b>
-                            <label><input type="radio" name="status" value="1" <eq name="data.status" value="1">checked</eq> /> 开启 </label>
-                            <label><input type="radio" name="status" value="0" <eq name="data.status" value="0">checked</eq> /> 关闭 </label>
+                            <label><input type="radio" name="status" value="1" <eq name="data.status" value="1">checked</eq> /> {$Think.lang.open} </label>
+                            <label><input type="radio" name="status" value="0" <eq name="data.status" value="0">checked</eq> /> {$Think.lang.close} </label>
                         </b>
-                        <span>设置是否开启财付通支付方式，默认为关闭</span>
+                        <span>{$Think.lang.tenpay_tips_name}</span>
                     </li>
                 	<li>
-                        <strong>支付方式名称：</strong>
-    					<input type="text" value="{$data.pay_name}" class="text_input" name="pay_name"/><span>设置支付方式名称，此处设置将在会员结算时显示，默认为财付通</span>
+                        <strong>{$Think.lang.pay_name}：</strong>
+    					<input type="text" value="{$data.pay_name}" class="text_input" name="pay_name"/><span>{$Think.lang.tenpay_tips_name}</span>
                     </li>
     				<li>
-                        <strong>财付通商户号：</strong>
-    					<input type="text" value="" class="text_input" /><span>填写财付通签约商户号</span>
+                        <strong>{$Think.lang.tenpay_merchant}：</strong>
+    					<input type="text" value="" class="text_input" /><span>{$Think.lang.tips_tenpay_merchant}</span>
                     </li>
                     <li>
-                        <strong>财付通密钥：</strong>
-    					<input type="text" value="" class="text_input" /><span>填写财付通密钥</span>
+                        <strong>{$Think.lang.tenpay_key}：</strong>
+    					<input type="text" value="" class="text_input" /><span>{$Think.lang.tips_tenpay_key}</span>
                     </li>
                     <li>
-                        <strong>使用接口类型：</strong>
+                        <strong>{$Think.lang.api_type}：</strong>
                         <select><option>使用标准双接口类型</option></select>
-                        <span>选择您与财付通签约的接口类型</span>
+                        <span>{$Think.lang.tips_tenpay_api}</span>
                     </li>
                     <li>
-                        <strong>手续费设置：</strong>
-    					<input type="text" value="{$data.pay_fee}" class="text_input" name="pay_fee"/><span>您可以对财付通支付设置是否收取手续费，单位为%，默认为0，不收取</span>
+                        <strong>{$Think.lang.pay_fee}：</strong>
+    					<input type="text" value="{$data.pay_fee}" class="text_input" name="pay_fee"/><span>{$Think.lang.tenpay_tips_fee}</span>
                     </li>
                     <li>
-                        <strong>支付方式描述：</strong>
+                        <strong>{$Think.lang.pay_desc}：</strong>
     					<textarea name="pay_desc">{$data.pay_desc}</textarea>
-                        <p>您可以在这里编辑支付方式的详细描述，将在用户结算时显示</p>
+                        <p>{$Think.lang.tips_desc}</p>
                     </li>
                     
                 </ul>
                 <div class="submit">
-                	<input type="image" src="../Public/images/input_1.png" style="margin-left: 18px;"/>
-                    <a href="{:U('payment/index')}">返回</a>
+                	<a href="javascript:void(0)" class="clos1" onclick='$("#form").submit()'>{$Think.lang.save}</a><a href="{:U('payment/index')}">{$Think.lang.return}</a>
                 </div>
             </form>
         </div>
     <div class="copy">
-        Powered by Commerz 1.0 版权所有 © 2013 迪米盒子网络科技有限公司，并保留所有权利。
+        {$Think.lang.copy}
     </div>
 </div>
 <script>

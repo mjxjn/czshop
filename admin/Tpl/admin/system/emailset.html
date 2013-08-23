@@ -2,15 +2,15 @@
 <include file="main:style" />
 <div class="content">
     <div class="site">
-        Commerz Board <a href="{:U('index/home')}">管理中心</a> > 邮件服务器设置
+        {$Think.lang.app_name} <a href="{:U('index/home')}">{$Think.lang.global_set}</a> > {$Think.lang.email_setting}
     </div>
    	<div class="install mt10">
     	<dl>
         	<dt>
-                <a href="{:U('system/emailset')}" class="hover">邮件设置</a>
-                <a href="{:U('system/emailtest')}">测试发送</a>
+                <a href="{:U('system/emailset')}" class="hover">{$Think.lang.mail_setting}</a>
+                <a href="{:U('system/emailtest')}">{$Think.lang.test_send}</a>
             </dt>
-            <form method="post" action="{:U('system/save')}">
+            <form method="post" action="{:U('system/save')}" id="form">
                 <input name="groupid" value="{$groupid}" type="hidden">
                 <dd>
                     <ul class="web">
@@ -69,8 +69,8 @@
                             <span>{$list.9.lang}</span>
                         </li>
                     </ul>
-                    <div class="input1">
-                        <input type="image" src="../Public/images/input_1.png" />
+                    <div class="submit1 input1">
+                        <a href="javascript:void(0)" class="clos1" onclick='$("#form").submit()'>{$Think.lang.save}</a>
                     </div>
                 </dd>
             </form>

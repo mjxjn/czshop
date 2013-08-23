@@ -75,7 +75,7 @@ class SystemAction extends CommonAction {
      */
     public function save(){
         if(empty($_POST['groupid']) || empty($_POST['system'])){
-            $this->error('参数有误！');
+            $this->error(L('param_error'));
         }
         $system = D("System/System");
 
@@ -83,7 +83,7 @@ class SystemAction extends CommonAction {
            $system->where("varname = '".$key."' and groupid = ".$_POST['groupid'])->setField("value",$value);
         }
 
-        $this->success("修改成功！");
+        $this->success(L('edit_success'));
     }
     public function emailset(){
         $system = D("System/System");

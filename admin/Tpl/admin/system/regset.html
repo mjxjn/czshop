@@ -2,12 +2,12 @@
 <include file="main:style" />
 <div class="content">
     <div class="site">
-        Commerz Board <a href="{:U('index/home')}">管理中心</a> > 注册与登录设置
+        {$Think.lang.app_name} <a href="{:U('index/home')}">{$Think.lang.global_set}</a> > {$Think.lang.log_setting}
     </div>
     <div class="install mt10">
         <dl>
-            <dt><a href="{:U('system/regset')}" class="hover">注册设置</a><a href="{:U('system/logset')}">登录设置</a></dt>
-            <form method="post" action="{:U('system/save')}">
+            <dt><a href="{:U('system/regset')}" class="hover">{$Think.lang.reg_setting}</a><a href="{:U('system/logset')}">{$Think.lang.log_setting}</a></dt></a></dt>
+            <form method="post" action="{:U('system/save')}" id="form">
                 <input name="groupid" value="{$groupid}" type="hidden">
                 <dd>
                     <ul class="web">
@@ -42,15 +42,15 @@
                             </li>
                         </volist>
                     </ul>
-                    <div class="input1">
-                        <input type="image" src="../Public/images/input_1.png" />
+                    <div class="submit1 input1">
+                        <a href="javascript:void(0)" class="clos1" onclick='$("#form").submit()'>{$Think.lang.save}</a>
                     </div>
                 </dd>
             </form>
         </dl>
     </div>
     <div class="copy">
-        Powered by Commerz 1.0 版权所有 © 2013 迪米盒子网络科技有限公司，并保留所有权利。
+        {$Think.lang.copy}
     </div>
 </div>
 <script>

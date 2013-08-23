@@ -2,27 +2,27 @@
 <include file="main:style" />
 <div class="content">
     <div class="site">
-        Commerz Board <a href="{:U('index/home')}">管理中心</a> > 地区管理
+        {$Think.lang.app_name} <a href="{:U('index/home')}">{$Think.lang.global_set}</a> > {$Think.lang.area_setting}
     </div>
    	<div class="goods mt10">
         <div class="login mt10">
-        	<h3><span class="add_pai"><a href="javascript:void(0)" class="show_box1">添加新地区</a></span>地区列表</h3>
+        	<h3><span class="add_pai"><a href="javascript:void(0)" class="show_box1">{$Think.lang.add_new_area}</a></span>{$Think.lang.area_list}</h3>
             <div class="table">
                 <table cellspacing="0" cellpadding="0" border="0" style="font-size: 12px;">
                     <tr>
-                        <th width="19.8%"><strong>地区名称</strong></th>
-                        <th width="19.8%"><strong>地区排序</strong></th>
-                        <th width="19.8%"><strong>添加子地区</strong></th>
-                        <th width="19.8%"><strong>编辑当前地区</strong></th>
-                        <th width="19.8%"><strong>删除操作</strong></th>
+                        <th width="19.8%"><strong>{$Think.lang.area_name}</strong></th>
+                        <th width="19.8%"><strong>{$Think.lang.area_sort}</strong></th>
+                        <th width="19.8%"><strong>{$Think.lang.add_children_area}</strong></th>
+                        <th width="19.8%"><strong>{$Think.lang.edit_area}</strong></th>
+                        <th width="19.8%"><strong>{$Think.lang.delete_area}</strong></th>
                     </tr>
                     <volist name="list" id="vo">
                         <tr id="{$vo.area_id}">
                             <td align='left'><b class="areatoggle" val='{$vo.area_id}' grade="2"><img src="../Public/images/ico_jia.png">&nbsp;{$vo.area_name}</b></td>
                             <td><span><input type="text" value="{$vo.sort}" class="input_shu" onblur="setsort({$vo.area_id},this.value,{$vo.sort})"/></span></td>
-                            <td><span><a href="javascript:void(0)" class="show" onclick="addchildren({$vo.area_id},'{$vo.area_name}')"><img src="../Public/images/ico_33.png" alt="添加子地区" /></a></span></td>
-                            <td><span><a href="javascript:void(0)" onclick="modifyarea({$vo.area_id})"><img src="../Public/images/ico_34.png" alt="编辑" /></a></span></td>
-                            <td><span class="dell" onclick="dellarea({$vo.area_id},this)"><a href="javascript:void(0)"><img src="../Public/images/ico_cuo.png" alt="删除"/></a></span></td>
+                            <td><span><a href="javascript:void(0)" class="show" onclick="addchildren({$vo.area_id},'{$vo.area_name}')"><img src="../Public/images/ico_33.png"/></a></span></td>
+                            <td><span><a href="javascript:void(0)" onclick="modifyarea({$vo.area_id})"><img src="../Public/images/ico_34.png"/></a></span></td>
+                            <td><span class="dell" onclick="dellarea({$vo.area_id},this)"><a href="javascript:void(0)"><img src="../Public/images/ico_cuo.png"/></a></span></td>
                         </tr>
                     </volist>
                 </table>
@@ -32,32 +32,32 @@
 		<div class="clear"></div>
     </div>
     <div class="copy">
-        Powered by Commerz 1.0 版权所有 © 2013 迪米盒子网络科技有限公司，并保留所有权利。
+        {$Think.lang.copy}
     </div>
 </div>
 <!-- 添加地区 -->
 <div class="pop_box1">
     <dl>
-        <dt><strong><b>添加地区</b></strong><span><a href="javascript:void(0)" class="clos1"><img src="../Public/images/ico_close.png" /></a></span></dt>
-        <form method="post" action="{:U('area/addsave')}">
+        <dt><strong><b>{$Think.lang.add_new_area}</b></strong><span><a href="javascript:void(0)" class="clos1"><img src="../Public/images/ico_close.png" /></a></span></dt>
+        <form method="post" action="{:U('area/addsave')}" id="form">
             <dd>
                 <ul class="web">
                     <li>
-                        <strong>地区名称设置：</strong>
-                        <input type="text" class="text_input" name="area_name"><span>设置当前地区名称</span>
+                        <strong>{$Think.lang.area_name}：</strong>
+                        <input type="text" class="text_input" name="area_name"><span>{$Think.lang.tips_area_name}</span>
                     </li>
                     <li>
-                        <strong>上级地区设置：</strong>
+                        <strong>{$Think.lang.parent_area}：</strong>
                         <select class="addarea" name="pid"></select>
-                        <span>选择地区的上级节点</span>
+                        <span>{$Think.lang.tips_parent_area}</span>
                     </li>
                     <li>
-                        <strong>排序：</strong>
-                        <input type="text" class="text_input" name="sort"><span>设置当前地区排序，数字越小越靠前</span>
+                        <strong>{$Think.lang.area_sort}：</strong>
+                        <input type="text" class="text_input" name="sort"><span>{$Think.lang.tips_sort}</span>
                     </li>
                 </ul>
                 <div class="submit1 center mt5">
-                    <input type="image" src="../Public/images/input_1.png" /><a href="#" class="clos1">取消</a>
+                    <a href="javascript:void(0)" class="clos1" onclick='$("#form").submit()'>{$Think.lang.save}</a><a href="#" class="clos1">{$Think.lang.cancle}</a>
                 </div>
             </dd>
         </form>
@@ -70,7 +70,7 @@ function setsort(area_id,sort,old){
     var Datatype = /^\d{1,4}$/;
 
     if(false === Datatype.test(sort)){
-        alert("只能输入4为以内的数字！");
+        alert("{$Think.lang.error_area_sort}");
     }else{
         if(sort != old){
             $.ajax({
@@ -88,7 +88,7 @@ function setsort(area_id,sort,old){
 }
 //删除地区
 function dellarea(area_id,tag){
-    if(confirm("确定删除？")){
+    if(confirm("{$Think.lang.tips_delete}")){
         $.ajax({
             type: "POST",
             url: "{:U('area/ajaxdel')}",
@@ -124,7 +124,7 @@ function getarea(area_id,grade){
                 var html = "";
                 for(var i in msg.data){
                     msg.data[i].sort = msg.data[i].sort == null ? '0' : msg.data[i].sort;
-                    html += '<tr class="tr_'+msg.data[i].pid+'"><td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>'+msg.data[i].area_name+'</b></td><td><span><input type="text" value="'+msg.data[i].sort+'" class="input_shu" onblur="setsort('+msg.data[i].area_id+',this.value,'+msg.data[i].sort+')"/></span></td><td>&nbsp;</td><td><span><a href="javascript:void(0)" onclick="modifyarea('+msg.data[i].area_id+')"><img src="../Public/images/ico_34.png" alt="编辑" /></a></span></td><td><span class="dell onclick="dellarea('+msg.data[i].area_id+',this)"><a href="javascript:void(0)"><img src="../Public/images/ico_cuo.png" alt="删除"/></a></span></td></tr>';
+                    html += '<tr class="tr_'+msg.data[i].pid+'"><td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>'+msg.data[i].area_name+'</b></td><td><span><input type="text" value="'+msg.data[i].sort+'" class="input_shu" onblur="setsort('+msg.data[i].area_id+',this.value,'+msg.data[i].sort+')"/></span></td><td>&nbsp;</td><td><span><a href="javascript:void(0)" onclick="modifyarea('+msg.data[i].area_id+')"><img src="../Public/images/ico_34.png"/></a></span></td><td><span class="dell onclick="dellarea('+msg.data[i].area_id+',this)"><a href="javascript:void(0)"><img src="../Public/images/ico_cuo.png"/></a></span></td></tr>';
                 }
                 $("#area_"+area_id).after(html);
                 $("#area_"+area_id).children().children().attr("onclick","delarea("+area_id+","+grade+")");
@@ -135,7 +135,7 @@ function getarea(area_id,grade){
 }
 //修改地区
 function modifyarea(area_id){
-    $(".pop_box1 dl dt b").html("编辑当前地区"); // 弹出框标题
+    $(".pop_box1 dl dt b").html("{$Think.lang.edit_area}"); // 弹出框标题
     $(".pop_box1 form").attr("action","{:U('area/modifysave')}"); // 提交表单的地址
     $("input[name=area_id]").remove(); // 移除area_id
     $(".addarea").html(""); // 清空地区
@@ -163,7 +163,7 @@ function addchildren(id,name){
     $("input[name=sort]").val(""); // 清空排序
     $(".addarea").html("<option value='"+id+"'>"+name+"</option>"); // 上级地区
     //$(".addarea").attr("disabled","disabled"); //禁止输入
-    $(".pop_box1 dl dt b").html("添加子地区"); // 弹出框标题
+    $(".pop_box1 dl dt b").html("{$Think.lang.add_children_area}"); // 弹出框标题
     $(".pop_box1 form").attr("action","{:U('area/childrensave')}"); // 提交表单的地址
     $("input[name=area_id]").remove(); // 移除area_id
     $(".pop_box1").show();
@@ -175,7 +175,7 @@ $(function(){
         $(".addarea").html(""); // 清空地区
         $(".addarea").attr("disabled",false); // 清空禁止输入
         $("input[name=sort]").val(""); // 清空排序
-        $(".pop_box1 dl dt b").html("添加地区"); // 弹出框标题
+        $(".pop_box1 dl dt b").html("{$Think.lang.add_area}"); // 弹出框标题
         $(".pop_box1 form").attr("action","{:U('area/addsave')}"); // 提交表单的地址
         $("input[name=area_id]").remove(); // 移除area_id
         $.ajax({
@@ -221,7 +221,7 @@ $(function(){
                         var html = "";
                         for(var i in msg.data){
                             msg.data[i].sort = msg.data[i].sort == null ? '0' : msg.data[i].sort;
-                            html += '<tr class="tr_'+msg.data[i].pid+'" id="area_'+msg.data[i].area_id+'" lv2="'+msg.data[i].area_id+'"><td align="left">&nbsp;&nbsp;&nbsp;&nbsp;<b val="'+msg.data[i].area_id+'" onclick="getarea('+msg.data[i].area_id+',3)"><img src="../Public/images/ico_jia.png">&nbsp;'+msg.data[i].area_name+'</b></td><td><span><input type="text" value="'+msg.data[i].sort+'" class="input_shu" onblur="setsort('+msg.data[i].area_id+',this.value,'+msg.data[i].sort+')"/></span></td><td><span><a href="javascript:void(0)" class="show" onclick="addchildren({$vo.area_id},'{$vo.area_name}')"><img src="../Public/images/ico_33.png" alt="添加子地区" /></a></span></td><td><span><a href="javascript:void(0)" onclick="modifyarea('+msg.data[i].area_id+')"><img src="../Public/images/ico_34.png" alt="编辑" /></a></span></td><td><span class="dell" onclick="dellarea('+msg.data[i].area_id+',this)"><a href="javascript:void(0)"><img src="../Public/images/ico_cuo.png" alt="删除"/></a></span></td></tr>';
+                            html += '<tr class="tr_'+msg.data[i].pid+'" id="area_'+msg.data[i].area_id+'" lv2="'+msg.data[i].area_id+'"><td align="left">&nbsp;&nbsp;&nbsp;&nbsp;<b val="'+msg.data[i].area_id+'" onclick="getarea('+msg.data[i].area_id+',3)"><img src="../Public/images/ico_jia.png">&nbsp;'+msg.data[i].area_name+'</b></td><td><span><input type="text" value="'+msg.data[i].sort+'" class="input_shu" onblur="setsort('+msg.data[i].area_id+',this.value,'+msg.data[i].sort+')"/></span></td><td><span><a href="javascript:void(0)" class="show" onclick="addchildren('+msg.data[i].area_id+','+"'"+msg.data[i].area_name+"'"+')"><img src="../Public/images/ico_33.png" alt="{$Think.lang.add_children_area}" /></a></span></td><td><span><a href="javascript:void(0)" onclick="modifyarea('+msg.data[i].area_id+')"><img src="../Public/images/ico_34.png"/></a></span></td><td><span class="dell" onclick="dellarea('+msg.data[i].area_id+',this)"><a href="javascript:void(0)"><img src="../Public/images/ico_cuo.png"/></a></span></td></tr>';
                         }
                         thistag.parent().parent().after(html);
                         thistag.children().attr("src","../Public/images/ico_jian.png");

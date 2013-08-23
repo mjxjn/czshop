@@ -23,7 +23,6 @@ return array(
 	'webmaster' => '管理员',
 	'no_log' => '无记录',
 	'success' => '成功',
-	'del_success' => '删除成功！',
 
 	//全局设置菜单
 	'backend' => '后台首页',
@@ -49,6 +48,7 @@ return array(
 	'save' => '保存',
 	'cancle' => '取消',
 	'verify_delete' => '确认删除?',
+	'return' => '返回',
 
 	//状态
 	'open' => '开启',
@@ -57,5 +57,13 @@ return array(
 	//分页
 	'first_page' => '首页',
 	'last_page' => '尾页',
+
+	'param_error' => '参数有误！',
+	'edit_success' => '修改成功！',
+	'edit_error' => '修改失败！',
+	'add_success' => '添加成功！',
+	'add_error' => '添加失败！',
+	'del_success' => '删除成功！',
+	'del_error' => '删除失败！',
 );
 ?>

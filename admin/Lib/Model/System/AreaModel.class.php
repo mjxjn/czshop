@@ -2,10 +2,10 @@
 class AreaModel extends CommonModel{
 
 	protected $_validate = array(
-		array('area_name','require','地区名称不能为空！'),
-		array('sort','require','排序不能为空！'),
+		array('area_name','require','{%no_area_name}'),
+		array('sort','require','{%no_area_sort}'),
 
-		array('sort','/^\d{1,4}$/','排序必须为4位以内的数字！'),
+		array('sort','/^\d{1,4}$/','{%error_area_sort}'),
 	);
 
 	protected $_scope = array(

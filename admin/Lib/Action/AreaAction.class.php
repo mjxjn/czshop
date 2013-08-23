@@ -42,7 +42,7 @@ class AreaAction extends CommonAction {
     public function ajaxarea(){
 
         if(empty($_POST['area_id']) || empty($_POST['grade'])){
-            $this->ajaxReturn('参数有误！',"error",0);
+            $this->ajaxReturn(L('param_error'),"error",0);
             exit();
         }
 
@@ -58,7 +58,7 @@ class AreaAction extends CommonAction {
      */
     public function ajaxsort(){
         if(empty($_POST['area_id'])){
-            $this->ajaxReturn('参数有误！',"error",0);
+            $this->ajaxReturn(L('param_error'),"error",0);
             exit();
         }
 
@@ -67,9 +67,9 @@ class AreaAction extends CommonAction {
         $result = $area->where("area_id = ".$_POST['area_id'])->setField('sort',$_POST['sort']);
 
         if($result){
-            $this->ajaxReturn('修改成功！',"success",1);
+            $this->ajaxReturn(L('edit_success'),"success",1);
         }else{
-            $this->ajaxReturn('修改失败！',"error",0);
+            $this->ajaxReturn(L('edit_error'),"error",0);
         }
     }
     /**
@@ -77,7 +77,7 @@ class AreaAction extends CommonAction {
      */
     public function ajaxaddarea(){
         if(empty($_POST['time'])){
-            $this->ajaxReturn('参数有误！',"error",0);
+            $this->ajaxReturn(L('param_error'),"error",0);
             exit();
         }
 
@@ -97,7 +97,7 @@ class AreaAction extends CommonAction {
     public function addsave(){
 
         if(empty($_POST)){
-            $this->error('参数有误！');
+            $this->error(L('param_error'));
         }
 
         $area = D("System/Area");
@@ -114,9 +114,9 @@ class AreaAction extends CommonAction {
 
         if($result){
             $area->where("area_id = ".$result)->setField('path',$parent['path'].",".$result);
-            $this->success('添加成功！',U('area/index'));
+            $this->success(L('add_success'),U('area/index'));
         }else{
-            $this->error('添加失败！');
+            $this->error(L('add_error'));
         }
     }
     /**
@@ -125,7 +125,7 @@ class AreaAction extends CommonAction {
     public function ajaxdel(){
 
         if(empty($_POST['area_id'])){
-            $this->ajaxReturn('参数有误！',"error",0);
+            $this->ajaxReturn(L('param_error'),"error",0);
             exit();
         }
 
@@ -134,21 +134,21 @@ class AreaAction extends CommonAction {
         $children = $area->where("pid = ".$_POST['area_id'])->count();
 
         if(false === $children){
-            $this->ajaxReturn('参数有误！',"error",0);
+            $this->ajaxReturn(L('param_error'),"error",0);
             exit();
         }
 
         if($children > 0){
-            $this->ajaxReturn('该地区有下级地区，不能删除！',"error",0);
+            $this->ajaxReturn(L('no_area_delete'),"error",0);
             exit();
         }
 
         $result = $area->where("area_id = ".$_POST['area_id'])->delete();
 
         if($result){
-            $this->ajaxReturn('删除成功！',"success",1);
+            $this->ajaxReturn(L('del_success'),"success",1);
         }else{
-            $this->ajaxReturn('删除失败！',"error",0);
+            $this->ajaxReturn(L('del_error'),"error",0);
         }
     }
     /**
@@ -158,7 +158,7 @@ class AreaAction extends CommonAction {
     public function getAreaById(){
 
         if(empty($_POST['area_id'])){
-            $this->ajaxReturn('参数有误！',"error",0);
+            $this->ajaxReturn(L('param_error'),"error",0);
             exit();
         }
 
@@ -167,7 +167,7 @@ class AreaAction extends CommonAction {
         $result = $area->getAreaById($_POST['area_id']);
 
         if(!$result){
-            $this->ajaxReturn('参数有误！',"error",0);
+            $this->ajaxReturn(L('param_error'),"error",0);
             exit();
         }
         
@@ -178,7 +178,7 @@ class AreaAction extends CommonAction {
      */
     public function modifysave(){
         if(empty($_POST['area_id'])){
-            $this->error('参数有误！');
+            $this->error(L('param_error'));
             exit();
         }
 
@@ -192,9 +192,9 @@ class AreaAction extends CommonAction {
         $result = $area->save();
 
         if($result){
-            $this->success("修改成功！",U('area/index'));
+            $this->success(L('edit_success'),U('area/index'));
         }else{
-            $this->error("请修改之后在保存！");
+            $this->error(L('edit_error'));
         }
     }
     /**
@@ -203,7 +203,7 @@ class AreaAction extends CommonAction {
     public function childrensave(){
 
         if(empty($_POST['pid'])){
-            $this->error('参数有误！');
+            $this->error(L('param_error'));
             exit();
         }
         $area = D("System/Area");
@@ -211,7 +211,7 @@ class AreaAction extends CommonAction {
          $parent = $area->getAreaById($_POST['pid']);
 
         if(!$parent){
-            $this->error('参数有误！',"error",0);
+            $this->error(L('param_error'),"error",0);
             exit();
         }
 
@@ -226,9 +226,9 @@ class AreaAction extends CommonAction {
 
         if($result){
             $area->where("area_id = ".$result)->setField('path',$parent['path'].",".$result);
-            $this->success('添加成功！',U('area/index'));
+            $this->success(L('add_success'),U('area/index'));
         }else{
-            $this->error('添加失败！');
+            $this->error(L('add_error'));
         }
 
     }

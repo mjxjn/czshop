@@ -2,30 +2,30 @@
 <include file="main:style" />
 <div class="content">
     <div class="site">
-        Commerz Board <a href="{:U('index/home')}">管理中心</a> > 注册与登录设置
+        {$Think.lang.app_name} <a href="{:U('index/home')}">{$Think.lang.global_set}</a> > {$Think.lang.log_setting}
     </div>
    	<div class="install mt10">
     	<dl>
-        	<dt><a href="{:U('system/regset')}">注册设置</a><a href="{:U('system/logset')}" class="hover">登录设置</a></dt>
+        	<dt><a href="{:U('system/regset')}">{$Think.lang.reg_setting}</a><a href="{:U('system/logset')}" class="hover">{$Think.lang.log_setting}</a></dt>
             <dd>
             	<div class="login mt10">
-                	<h3>第三方登录平台</h3>
+                	<h3>{$Think.lang.third_login}</h3>
                     <div class="table">
                     	<table>
                         	<tr>
-                            	<th>图标</th>
-                                <th>名称</th>
-                                <th>状态</th>
-                                <th>描述</th>
-                                <th>操作</th>
+                            	<th>{$Think.lang.login_logo}</th>
+                                <th>{$Think.lang.login_name}</th>
+                                <th>{$Think.lang.login_status}</th>
+                                <th>{$Think.lang.login_infos}</th>
+                                <th>{$Think.lang.operate}</th>
                             </tr>
                             <volist name="list" id="vo">
                                 <tr>
                                 	<td><img src="{$vo.logo}" alt="{$vo.name}" /></td>
                                 	<td>{$vo.name}</td>
-                                	<td><eq name="vo.status" value="0">关闭<else/>启用</eq></td>
+                                	<td><eq name="vo.status" value="0">{$Think.lang.close}<else/>{$Think.lang.open}</eq></td>
                                 	<td>{$vo.infos}</td>
-                                	<td><a href="#">编辑</a></td>
+                                	<td><a href="#">{$Think.lang.edit}</a></td>
                                 </tr>
                             </volist>
                         </table>
@@ -36,7 +36,7 @@
         </dl>
     </div>
     <div class="copy">
-        Powered by Commerz 1.0 版权所有 © 2013 迪米盒子网络科技有限公司，并保留所有权利。
+        {$Think.lang.copy}
     </div>
 </div>
 <script>

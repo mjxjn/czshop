@@ -2,35 +2,35 @@
 <include file="main:style" />
 <div class="content">
     <div class="site">
-        Commerz Board <a href="{:U('index/home')}">管理中心</a> > 邮件服务器设置
+        {$Think.lang.app_name} <a href="{:U('index/home')}">{$Think.lang.global_set}</a> > {$Think.lang.email_setting}
     </div>
    	<div class="install mt10">
     	<dl>
         	<dt>
-                <a href="{:U('system/emailset')}">邮件设置</a>
-                <a href="{:U('system/emailtest')}" class="hover">测试发送</a>
+                <a href="{:U('system/emailset')}">{$Think.lang.mail_setting}</a>
+                <a href="{:U('system/emailtest')}" class="hover">{$Think.lang.test_send}</a>
             </dt>
             <dd>
             	<ul class="web">
                     <li>
-                    	<strong>测试发件人：</strong>
-                        <input type="text" class="text_input"/><span>填写发件人邮箱</span>
+                    	<strong>{$Think.lang.test_send_man}：</strong>
+                        <input type="text" class="text_input"/><span>{$Think.lang.tips_send_man}</span>
                     </li>
                     <li>
-                        <strong>测试收件人：</strong>
+                        <strong>{$Think.lang.test_receive_man}：</strong>
 						<textarea></textarea>
-                        <p>如果要测试包含用户名的邮件地址，格式为 username <user@domain.com> 。多个邮件地址每行一个</p>
+                        <p>{$Think.lang.tips_receive_man}</p>
                     </li>
                     
                 </ul>
-                <div class="input1">
-                	<input type="image" src="../Public/images/input_1.png" />
+                <div class="submit1 input1">
+                	<a href="javascript:void(0)" class="clos1" onclick='$("#form").submit()'>{$Think.lang.save}</a>
                 </div>
             </dd>
         </dl>
     </div>
     <div class="copy">
-        Powered by Commerz 1.0 版权所有 © 2013 迪米盒子网络科技有限公司，并保留所有权利。
+        {$Think.lang.copy}
     </div>
 </div>
 <script>

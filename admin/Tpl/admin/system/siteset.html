@@ -2,18 +2,18 @@
 <include file="main:style" />
 <div class="content">
     <div class="site">
-        Commerz Board <a href="{:U('index/home')}">管理中心</a> > 站点设置
+        {$Think.lang.app_name} <a href="{:U('index/home')}">{$Think.lang.global_set}</a> > {$Think.lang.web_setting}
     </div>
    	<div class="install mt10">
     	<dl>
         	<dt>
-                <a href="{:U('system/siteset?groupid=1')}" <eq name="groupid" value="1">class="hover"</eq>>站点信息</a>
-                <a href="{:U('system/siteset?groupid=2')}" <eq name="groupid" value="2">class="hover"</eq>>基本设置</a>
-                <a href="{:U('system/siteset?groupid=3')}" <eq name="groupid" value="3">class="hover"</eq>>购物设置</a>
-                <a href="{:U('system/siteset?groupid=4')}" <eq name="groupid" value="4">class="hover"</eq>>显示设置</a>
-                <a href="{:U('system/siteset?groupid=5')}" <eq name="groupid" value="5">class="hover"</eq>>商品设置</a>
+                <a href="{:U('system/siteset?groupid=1')}" <eq name="groupid" value="1">class="hover"</eq>>{$Think.lang.web_info}</a>
+                <a href="{:U('system/siteset?groupid=2')}" <eq name="groupid" value="2">class="hover"</eq>>{$Think.lang.basic_setting}</a>
+                <a href="{:U('system/siteset?groupid=3')}" <eq name="groupid" value="3">class="hover"</eq>>{$Think.lang.shopping_setting}</a>
+                <a href="{:U('system/siteset?groupid=4')}" <eq name="groupid" value="4">class="hover"</eq>>{$Think.lang.show_setting}</a>
+                <a href="{:U('system/siteset?groupid=5')}" <eq name="groupid" value="5">class="hover"</eq>>{$Think.lang.goods_setting}</a>
             </dt>
-            <form method="post" action="{:U('system/save')}">
+            <form method="post" action="{:U('system/save')}" id="form">
                 <input name="groupid" value="{$groupid}" type="hidden">
                 <dd>
                 	<ul class="web">
@@ -49,8 +49,8 @@
                             </li>
                         </volist>
                     </ul>
-                    <div class="input1">
-                    	<input type="image" src="../Public/images/input_1.png" />
+                    <div class="submit1 input1">
+                    	<a href="javascript:void(0)" class="clos1" onclick='$("#form").submit()'>{$Think.lang.save}</a>
                     </div>
                 </dd>
             </form>
